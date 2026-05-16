@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Residencia Lloret de Mar · ACTIA</title>
+  <meta name="description" content="Residencia para personas mayores en Lloret de Mar — 136 plazas + centro de día. Sistema industrializado en madera de entramado ligero." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    /* Project page-specific styles */
+    .proj-page { background: var(--graphite); color: var(--ink-panel); }
+
+    .proj-hero {
+      padding: 140px var(--gutter) 80px var(--gutter);
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+    .proj-hero .crumbs {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tech-grey);
+      display: flex; gap: 14px; align-items: center;
+      margin-bottom: 8px;
+    }
+    .proj-hero .crumbs a { color: var(--tech-grey); }
+    .proj-hero .crumbs a:hover { color: var(--ink-panel); }
+    .proj-hero .crumbs .sep { color: var(--rule); }
+    .proj-hero .category {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--yellow-deep);
+    }
+    .proj-hero h1 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(56px, 8vw, 144px);
+      line-height: 0.92;
+      letter-spacing: -0.015em;
+      margin: 0;
+      color: var(--ink-panel);
+      text-transform: none;
+      text-wrap: balance;
+      max-width: 16ch;
+    }
+
+    .proj-media-1 {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: url("https://framerusercontent.com/images/LuYfCgyAZ0k9LDqexSmyfqiCW3M.jpg?width=3165&height=1781") center/cover no-repeat;
+      background-color: var(--graphite-2);
+    }
+
+    .proj-media-2 {
+      width: 100%;
+      aspect-ratio: 7 / 5;
+      background: url("https://framerusercontent.com/images/7dTuqF0kce6SzSXu7pEQFKkh1k.jpg?width=2200&height=1571") center/cover no-repeat;
+      background-color: var(--graphite-2);
+      margin-top: 1px;
+    }
+
+    .proj-details {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: clamp(60px, 8vw, 120px) var(--gutter);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: clamp(40px, 5vw, 80px);
+      align-items: start;
+    }
+    @media (max-width: 900px) { .proj-details { grid-template-columns: 1fr; } }
+
+    .proj-facts {
+      display: grid;
+      gap: 28px;
+    }
+    .proj-facts .fact .k {
+      display: block;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--tech-grey);
+      margin-bottom: 8px;
+    }
+    .proj-facts .fact .v {
+      display: block;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(20px, 2vw, 28px);
+      line-height: 1.1;
+      letter-spacing: -0.005em;
+      color: var(--ink-panel);
+    }
+
+    .proj-copy {
+      font-family: var(--body);
+      font-size: clamp(15px, 1.05vw, 17px);
+      line-height: 1.7;
+      color: var(--tech-grey-2);
+      max-width: 70ch;
+    }
+    .proj-copy p { margin: 0 0 1.2em 0; }
+    .proj-copy p:last-child { margin-bottom: 0; }
+
+    .proj-gallery {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1px;
+      background: var(--rule);
+    }
+    @media (max-width: 800px) { .proj-gallery { grid-template-columns: 1fr; } }
+    .proj-gallery .item {
+      background-color: var(--graphite-2);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 4/5;
+    }
+    .proj-gallery .item.wide { aspect-ratio: 3/2; }
+    .proj-gallery .item-1 {
+      background-image: url("https://framerusercontent.com/images/dqSqV92gGxr17IuPqgPehn2TLZs.jpg?width=1571&height=2200");
+    }
+    .proj-gallery .item-2 {
+      background-image: url("https://framerusercontent.com/images/feuI8akXyFIfFdJMW8ceGD65Pgc.jpg?width=2200&height=1467");
+    }
+
+    .proj-media-wide {
+      width: 100%;
+      aspect-ratio: 3/2;
+      background: url("https://framerusercontent.com/images/lXpNdPuAl01ZRKv2brnwEUVFE.jpg?width=2200&height=1467") center/cover no-repeat;
+      background-color: var(--graphite-2);
+    }
+
+    .proj-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--ink-panel);
+      overflow: hidden;
+      position: relative;
+    }
+    .proj-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+    .proj-media-final {
+      width: 100%;
+      aspect-ratio: 3/2;
+      background: url("https://framerusercontent.com/images/cBReXl1LIL4yPMW2jy8e0pUH90.jpg?width=2200&height=1467") center/cover no-repeat;
+      background-color: var(--graphite-2);
+    }
+
+    .proj-next {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: clamp(60px, 8vw, 120px) var(--gutter);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--rule);
+    }
+    .proj-next h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 80px);
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+      margin: 0;
+      color: var(--ink-panel);
+    }
+    .proj-next .link {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-panel);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .proj-next .link::after { content: "→"; color: var(--yellow-deep); }
+  </style>
+</head>
+<body class="proj-page">
+
+  <!-- Simplified header (same brand mark as home) -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="../index.html" class="brandmark" aria-label="ACTIA home">
+        <img src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" class="logo-img" />
+      </a>
+      <nav class="nav" aria-label="primary">
+        <a href="../index.html#system">Sistema</a>
+        <a href="../index.html#factory">Fábrica</a>
+        <a href="../index.html#projects" class="active">Proyectos</a>
+        <a href="../index.html#open-project">Industrializar</a>
+        <a href="../index.html#impact">Impacto</a>
+        <a href="../index.html#audience">Promotores</a>
+      </nav>
+      <div class="header-cta">
+        <a class="social-link" href="https://www.linkedin.com/company/actia-construccion-madera" target="_blank" rel="noopener noreferrer" aria-label="ACTIA en LinkedIn">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.04h4.56V23H.22zM8.04 8.04h4.37v2.05h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.48 3.04 5.48 7v8.27h-4.56v-7.33c0-1.75-.03-4-2.44-4-2.44 0-2.82 1.91-2.82 3.88V23H8.04z"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/actia_desarrollo/" target="_blank" rel="noopener noreferrer" aria-label="ACTIA en Instagram">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.17 8.8 2.16 12 2.16zm0-2.16C8.74 0 8.33.01 7.05.07 5.77.13 4.9.33 4.14.63a6 6 0 00-2.16 1.4A6 6 0 00.59 4.19C.29 4.95.09 5.82.03 7.1.01 8.38 0 8.79 0 12.05s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91a6 6 0 001.4 2.16 6 6 0 002.16 1.4c.76.3 1.63.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56a6 6 0 002.16-1.4 6 6 0 001.4-2.16c.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a6 6 0 00-1.4-2.16A6 6 0 0019.86.59C19.1.29 18.23.09 16.95.03 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm6.4-11.84a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
+          </svg>
+        </a>
+        <a href="../index.html#open-project" class="btn primary">Abrir proyecto <span class="arrow"></span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="proj-hero">
+      <div class="crumbs">
+        <a href="../index.html">ACTIA</a>
+        <span class="sep">/</span>
+        <a href="../index.html#projects">Proyectos</a>
+        <span class="sep">/</span>
+        <span>Residencia Lloret de Mar</span>
+      </div>
+      <span class="category">Equipamientos</span>
+      <h1>Residencia Lloret de Mar</h1>
+    </section>
+
+    <!-- Hero imagery: drone view + secondary shot -->
+    <div class="proj-media-1" role="img" aria-label="Vista dron de la Residencia Lloret de Mar"></div>
+    <div class="proj-media-2" role="img" aria-label="Fachada del edificio en madera"></div>
+
+    <!-- Project facts + long copy -->
+    <section class="proj-details">
+      <aside class="proj-facts">
+        <div class="fact">
+          <span class="k">Industry</span>
+          <span class="v">Residencia ITE</span>
+        </div>
+        <div class="fact">
+          <span class="k">Year</span>
+          <span class="v">2025–2026</span>
+        </div>
+        <div class="fact">
+          <span class="k">Client</span>
+          <span class="v">Ayuntamiento Lloret de Mar</span>
+        </div>
+        <div class="fact">
+          <span class="k">Plazas</span>
+          <span class="v">136 + 20 centro de día</span>
+        </div>
+        <div class="fact">
+          <span class="k">Sistema</span>
+          <span class="v">PB hormigón + 4 plantas madera</span>
+        </div>
+        <div class="fact">
+          <span class="k">Tecnología</span>
+          <span class="v">Entramado ligero industrializado</span>
+        </div>
+      </aside>
+
+      <div class="proj-copy">
+        <p>La nueva residencia para personas mayores de Lloret de Mar responde a la necesidad de dotar al municipio de un equipamiento sociosanitario contemporáneo, basado en un modelo asistencial centrado en la persona y en espacios que fomentan la convivencia, la autonomía y el bienestar de los usuarios.</p>
+
+        <p>El edificio, ubicado en el sector de Can Buch, se concibe como un equipamiento integrado en su entorno urbano y paisajístico, con una escala doméstica que busca alejarse de la imagen institucional tradicional de las residencias. El proyecto alberga 136 plazas residenciales y un centro de día con capacidad para 20 usuarios, organizados en unidades de convivencia de pequeño tamaño que reproducen dinámicas similares a las de un hogar.</p>
+
+        <p>Arquitectónicamente, el edificio se estructura en planta baja de hormigón y cuatro plantas superiores construidas con sistema industrializado de entramado ligero de madera. Esta solución constructiva permite optimizar los tiempos de ejecución, reducir el impacto ambiental de la obra y mejorar las prestaciones energéticas del edificio. La utilización de madera procedente de bosques gestionados de forma sostenible refuerza el compromiso del proyecto con una arquitectura baja en carbono y con la transición hacia modelos constructivos más responsables.</p>
+
+        <p>El sistema industrializado se basa en la prefabricación de módulos estructurales y de fachada, que se fabrican en taller y posteriormente se ensamblan en obra. Este proceso permite un mayor control de calidad, reduce residuos y minimiza las molestias asociadas a la construcción en el entorno urbano.</p>
+
+        <p>El programa se organiza alrededor de espacios comunes luminosos y de fácil orientación, que conectan las distintas unidades de convivencia con áreas de estancia, comedor y actividades. Las habitaciones, mayoritariamente individuales, se diseñan para ofrecer privacidad, confort y vistas al entorno, reforzando la sensación de hogar.</p>
+
+        <p>La residencia se plantea así como un equipamiento social contemporáneo, donde arquitectura, sostenibilidad y cuidado de las personas convergen para generar un entorno habitable, saludable y respetuoso con el medio ambiente.</p>
+      </div>
+    </section>
+
+    <!-- Gallery: construction details -->
+    <div class="proj-gallery">
+      <div class="item item-1" role="img" aria-label="Construcción de paneles industrializados de madera"></div>
+      <div class="item item-2 wide" role="img" aria-label="Detalle de la estructura de madera"></div>
+    </div>
+
+    <!-- Wide assembly shot -->
+    <div class="proj-media-wide" role="img" aria-label="Montaje de paneles en obra"></div>
+
+    <!-- Project video -->
+    <div class="proj-video" aria-label="Vídeo del proceso constructivo">
+      <video autoplay muted loop playsinline preload="metadata" controls>
+        <source src="https://framerusercontent.com/assets/7jMxuEvg4aHsWGSjP4slbA9ugHQ.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Final aerial -->
+    <div class="proj-media-final" role="img" aria-label="Vista aérea de Lloret de Mar"></div>
+
+    <!-- Next projects -->
+    <section class="proj-next">
+      <h3>Más proyectos</h3>
+      <a class="link" href="../index.html#projects">Ver pipeline completo</a>
+    </section>
+  </main>
+
+  <!-- Footer (reused styles) -->
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <h2 class="big">Las nuevas<br/>ciudades<br/><span class="y">salen de<br/>fábrica.</span></h2>
+        </div>
+        <div>
+          <h5>Plataforma</h5>
+          <ul>
+            <li><a href="../index.html#system">Sistema ACTIA OS</a></li>
+            <li><a href="../index.html#factory">Fábrica</a></li>
+            <li><a href="../index.html#impact">Impacto</a></li>
+            <li><a href="../index.html#open-project">Abrir proyecto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Compañía</h5>
+          <ul>
+            <li><a href="../index.html">Sobre ACTIA</a></li>
+            <li><a href="../index.html#projects">Proyectos</a></li>
+            <li><a href="#">Contacto técnico</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Location</h5>
+          <ul>
+            <li><a href="#">C/ Zaragoza, 16 · Polígono La Sarda</a></li>
+            <li><a href="#">Gurrea de Gállego, Huesca</a></li>
+            <li><a href="#">Spain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <div class="group">
+          <span>© 2026 ACTIA Desarrollo, S.L.</span>
+        </div>
+        <div class="group legal-links">
+          <a href="../index.html#privacy">Política de privacidad</a>
+          <a href="../index.html#cookies">Política de cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

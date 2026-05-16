@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACTIA — Las nuevas ciudades salen de fábrica</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body data-density="default" data-accent="default" style="font-family: Manrope">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="#top" class="brandmark" aria-label="ACTIA home">
+        <img src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" class="logo-img" />
+      </a>
+      <nav class="nav" aria-label="primary">
+        <a href="#system" class="active">Sistema</a>
+        <a href="#factory">Fábrica</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#open-project">Industrializar</a>
+        <a href="#impact">Impacto</a>
+        <a href="#audience">Promotores</a>
+      </nav>
+      <div class="header-cta">
+        <a class="social-link" href="https://www.linkedin.com/company/actia-construccion-madera" target="_blank" rel="noopener noreferrer" aria-label="ACTIA en LinkedIn">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.04h4.56V23H.22zM8.04 8.04h4.37v2.05h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.48 3.04 5.48 7v8.27h-4.56v-7.33c0-1.75-.03-4-2.44-4-2.44 0-2.82 1.91-2.82 3.88V23H8.04z"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/actia_desarrollo/" target="_blank" rel="noopener noreferrer" aria-label="ACTIA en Instagram">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.17 8.8 2.16 12 2.16zm0-2.16C8.74 0 8.33.01 7.05.07 5.77.13 4.9.33 4.14.63a6 6 0 00-2.16 1.4A6 6 0 00.59 4.19C.29 4.95.09 5.82.03 7.1.01 8.38 0 8.79 0 12.05s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91a6 6 0 001.4 2.16 6 6 0 002.16 1.4c.76.3 1.63.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56a6 6 0 002.16-1.4 6 6 0 001.4-2.16c.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a6 6 0 00-1.4-2.16A6 6 0 0019.86.59C19.1.29 18.23.09 16.95.03 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm6.4-11.84a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
+          </svg>
+        </a>
+        <a href="#open-project" class="btn primary">Abrir proyecto <span class="arrow"></span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================================================
+         INTRO STAGE — scroll-driven curtain reveal
+         The two photos start touching in the middle; on scroll they
+         separate to opposite edges and the logo emerges in the gap.
+         ============================================================ -->
+    <section class="intro-stage" id="intro" data-screen-label="00 Intro" aria-label="Entrada">
+      <div class="intro-sticky">
+        <div class="intro-frame">
+          <div class="intro-photo intro-photo-l" role="img" aria-label="Madera estructural en montaje">
+            <video class="intro-video" autoplay muted loop playsinline preload="auto" data-offset="0">
+              <source src="https://framerusercontent.com/assets/2TYxa4gFbwaBRVxdb93ArKvSR0.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="intro-photo intro-photo-r" role="img" aria-label="Fábrica ACTIA en producción">
+            <video class="intro-video" autoplay muted loop playsinline preload="auto" data-offset="3.5">
+              <source src="https://framerusercontent.com/assets/2TYxa4gFbwaBRVxdb93ArKvSR0.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="intro-center">
+            <img class="intro-logo" src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" />
+          </div>
+
+          <div class="intro-meta-top">
+            <span>ACTIA OS · v1.4</span>
+            <span class="intro-meta-mid">Industrialized wood architecture</span>
+            <span>Gurrea de Gállego · Huesca · ES</span>
+          </div>
+
+          <div class="intro-meta-bottom">
+            <div class="intro-progress">
+              <div class="intro-progress-track"><div class="intro-progress-fill"></div></div>
+              <span class="intro-progress-label"><span class="intro-percent">00</span>%</span>
+            </div>
+            <div class="intro-scroll-hint">
+              <span>Scroll para entrar</span>
+              <span class="intro-arrow">↓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" data-screen-label="01 Hero">
+
+      <div class="hero-main">
+        <div>
+          <div class="eyebrow">Estación 00 · Plataforma industrial</div>
+          <h1 class="display h-hero" style="margin-top: 28px;">
+            Las nuevas<br />
+            ciudades salen de <span class="stencil">fábrica</span>.
+          </h1>
+
+          <div class="hero-body">
+            <p class="lede">
+              ACTIA diseña, fabrica y ensambla edificios industrializados en madera con
+              precisión de fábrica y ambición arquitectónica. Desde la concepción del
+              proyecto hasta la entrega llave en mano. O desde tu proyecto actual hasta
+              su adaptación industrializada.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual: full-bleed factory reel -->
+      <div class="hero-visual" aria-label="Vídeo hero: fábrica + montaje + edificio final">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+          <source src="https://framerusercontent.com/assets/2TYxa4gFbwaBRVxdb93ArKvSR0.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="hero-kpis">
+        <div class="kpi">
+          <div class="num">−25 <span style="color:var(--tech-grey-2)">/</span> 35<span class="unit">%</span></div>
+          <div class="label">Menos plazo sobre rasante vs. tradicional</div>
+        </div>
+        <div class="kpi">
+          <div class="num">−70<span class="unit">%</span></div>
+          <div class="label">Reducción de tránsito en obra</div>
+        </div>
+        <div class="kpi">
+          <div class="num">13.000<span class="unit">m²</span></div>
+          <div class="label">Fábrica en Gurrea de Gállego</div>
+        </div>
+        <div class="kpi">
+          <div class="num">250<span class="unit">/yr</span></div>
+          <div class="label">Viviendas equivalentes en capacidad</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROBLEM
+         ============================================================ -->
+    <section class="problem" id="problem" data-screen-label="02 Problema">
+      <div class="shell">
+        <div class="section-header tight">
+          <div class="meta">
+            <span class="id">02 · Diagnóstico</span>
+            <span class="station-tag">Station 02 / Brief</span>
+          </div>
+          <h2 class="display h-section">La obra tradicional ha llegado tarde al futuro.</h2>
+          <p class="lede">
+            Durante décadas, la construcción ha aceptado como normales los retrasos, los sobrecostes,
+            los residuos, el ruido urbano, la falta de mano de obra cualificada y la incertidumbre.
+            ACTIA nace para cambiar la secuencia. No construimos más deprisa porque corramos más.
+            Construimos mejor porque decidimos antes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Split goes edge-to-edge (outside .shell) -->
+      <div class="split">
+        <div class="pane left">
+          <div>
+            <span class="pane-title">Antes · Obra tradicional</span>
+            <h3 style="margin-top:14px;">Improvisar<br/>bajo la lluvia.</h3>
+          </div>
+          <div class="tags">
+            <span class="t">Barro</span>
+            <span class="t">Acopios</span>
+            <span class="t">Camiones</span>
+            <span class="t">Errores</span>
+            <span class="t">Ruido</span>
+            <span class="t">Esperas</span>
+            <span class="t">Climatología</span>
+            <span class="t">Mano de obra ↓</span>
+            <span class="t">Plazo ?</span>
+            <span class="t">Coste ?</span>
+          </div>
+        </div>
+
+        <div class="pane right">
+          <div>
+            <span class="pane-title">Ahora · Sistema ACTIA</span>
+            <h3 style="margin-top:14px;">Decidir<br/>bajo techo.</h3>
+          </div>
+          <div class="tags">
+            <span class="t" style="color:var(--yellow)">Modelo BIM</span>
+            <span class="t" style="color:var(--yellow)">Paneles 2D</span>
+            <span class="t" style="color:var(--yellow)">Módulos 3D</span>
+            <span class="t" style="color:var(--yellow)">DfMA</span>
+            <span class="t" style="color:var(--yellow)">Control fábrica</span>
+            <span class="t" style="color:var(--yellow)">Plazo fijo</span>
+            <span class="t" style="color:var(--yellow)">Coste cerrado</span>
+            <span class="t" style="color:var(--yellow)">Calidad medida</span>
+            <span class="t" style="color:var(--yellow)">−70% obra</span>
+            <span class="t" style="color:var(--yellow)">+ CO₂ stock</span>
+          </div>
+        </div>
+
+        <div class="vs">VS</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SOLUTION — exploded building
+         ============================================================ -->
+    <section class="solution" id="solution" data-screen-label="03 Solución">
+      <div class="shell">
+        <div class="grid">
+          <div class="exploded forjado" id="exploded" data-mode="exploded" aria-label="Forjado ACTIA · vista axonométrica">
+            <div class="axis-label">Forjado · vista axonométrica</div>
+            <div class="stage">
+              <div class="layer l1" style="--i:0">
+                <div class="slab fermacell"></div>
+                <span class="label">Doble placa Fermacell 12,5 mm · panel de cierre superior</span>
+              </div>
+              <div class="layer l2" style="--i:1">
+                <div class="slab floorrock"></div>
+                <span class="label">Aislamiento FloorRock</span>
+              </div>
+              <div class="layer l3" style="--i:2">
+                <div class="slab osb"></div>
+                <span class="label">Panel OSB</span>
+              </div>
+              <div class="layer l4" style="--i:3">
+                <div class="slab beams"></div>
+                <span class="label">Vigas forjado madera laminada 200 × 300 mm</span>
+              </div>
+              <div class="layer l5" style="--i:4">
+                <div class="slab aislanat"></div>
+                <span class="label">Aislamiento Aislanat · fibra de papel reciclado e = 15 cm</span>
+              </div>
+              <div class="layer l6" style="--i:5">
+                <div class="slab rastreles"></div>
+                <span class="label">Rastreles 30 × 20 mm</span>
+              </div>
+              <div class="layer l7" style="--i:6">
+                <div class="slab fermacell"></div>
+                <span class="label">Doble placa Fermacell 12,5 mm · panel de cierre inferior</span>
+              </div>
+            </div>
+            <div class="controls">
+              <button class="chip" data-mode-btn="assembled">Ensamblado</button>
+              <button class="chip active" data-mode-btn="exploded">Explotado</button>
+            </div>
+          </div>
+
+          <div class="copy">
+            <div class="eyebrow">03 · Propuesta</div>
+            <h2 class="display h-section">Menos obra.<br/><span style="color:var(--yellow)">Más edificio.</span></h2>
+            <p class="lede">
+              Industrializar no es repetir edificios. Es repetir precisión.
+              Cada proyecto ACTIA se descompone en componentes fabricables,
+              coordinados y ensamblables. La arquitectura mantiene su singularidad;
+              el proceso gana control.
+            </p>
+            <div class="checklist">
+              <div class="item">Estructura</div>
+              <div class="item">Fachada</div>
+              <div class="item">Forjados</div>
+              <div class="item">Tabiques</div>
+              <div class="item">Cubierta</div>
+              <div class="item">Cocinas + baños 3D</div>
+              <div class="item">Instalaciones</div>
+              <div class="item">Acabados</div>
+            </div>
+            <div style="margin-top: 32px; display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="#system" class="btn primary">Ver sistema ACTIA <span class="arrow"></span></a>
+              <a href="#components" class="btn ghost">Explorar componentes <span class="arrow"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MODES — three ways of working
+         ============================================================ -->
+    <section class="modes" id="modes" data-screen-label="04 Modos de trabajo">
+      <div class="shell">
+        <div class="section-header">
+          <div class="meta">
+            <span class="id">04 · Modos de entrada</span>
+            <span class="station-tag">Entry · 3 modes</span>
+          </div>
+          <h2 class="display h-section">Entramos al principio.<br/>O cuando el proyecto ya existe.</h2>
+        </div>
+
+        <div class="grid">
+          <article class="mode-card">
+            <h3><span class="sub">Para promotores, operadores y administraciones</span>ACTIA<br/>Integral</h3>
+            <p class="who">Un único socio · ciclo completo · responsabilidad única</p>
+            <p class="desc">Diseño, ingeniería, fabricación, montaje, acabados y entrega llave en mano. Tú compartes el objetivo, nosotros entregamos el edificio.</p>
+            <div class="scope">
+              <div class="row"><span>Diseño + arquitectura</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Ingeniería + DfMA</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Fabricación offsite</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Montaje + acabados</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Entrega llave en mano</span><span class="yes">Sí</span></div>
+            </div>
+          </article>
+
+          <article class="mode-card">
+            <h3><span class="sub">Para arquitectos, ingenierías y equipos técnicos</span>ACTIA<br/>Compatible</h3>
+            <p class="who">Tu proyecto · tu autoría · nuestro sistema</p>
+            <p class="desc">Lo analizamos, lo adaptamos y lo hacemos industrializable sin borrar su autoría. Convertimos un proyecto redactado en un proyecto fabricable.</p>
+            <div class="scope">
+              <div class="row"><span>Diagnóstico industrial</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Re-modulación + DfMA</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Fabricación offsite</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Montaje opcional</span><span class="yes">Opt.</span></div>
+              <div class="row"><span>Autoría arquitectónica</span><span class="yes">Mantenida</span></div>
+            </div>
+          </article>
+
+          <article class="mode-card">
+            <h3><span class="sub">Para proyectos avanzados listos para fábrica</span>ACTIA<br/>Producción</h3>
+            <p class="who">Documentación técnica → componentes construibles</p>
+            <p class="desc">Convertimos documentación técnica en componentes construibles. Paneles 2D, módulos 3D, fachadas y forjados producidos en línea, listos para obra.</p>
+            <div class="scope">
+              <div class="row"><span>Diseño / ingeniería</span><span class="no">No incl.</span></div>
+              <div class="row"><span>Re-ingeniería de fábrica</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Fabricación offsite</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Logística + paquetización</span><span class="yes">Sí</span></div>
+              <div class="row"><span>Montaje + acabados</span><span class="no">Bajo demanda</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="footer">
+          <p class="body-sm" style="max-width: 56ch; margin: 0;">
+            Cada modo entra por el mismo formulario: <span style="color:var(--yellow)">Abrir proyecto</span>. Te asignamos un técnico
+            de oficina y te devolvemos un diagnóstico industrial sobre tu proyecto en 7 días.
+          </p>
+          <a href="#open-project" class="btn primary">Enviar proyecto para diagnóstico industrial <span class="arrow"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FACTORY MAP
+         ============================================================ -->
+    <section class="factory-map" id="factory" data-screen-label="05 Fábrica">
+      <div class="shell">
+        <div class="section-header">
+          <div class="meta">
+            <span class="id">05 · Centro productivo</span>
+            <span class="station-tag">Station 05 / Factory</span>
+          </div>
+        </div>
+        <div class="layout">
+          <div class="text">
+            <div class="eyebrow">Gurrea de Gállego · Huesca</div>
+            <h2 class="display h-section" style="margin-top:18px;">La obra<br/>empieza<br/>bajo techo.</h2>
+            <p class="lede factory-lede" style="margin-top: 16px;">
+              En Gurrea de Gállego, ACTIA produce edificios antes de que lleguen a obra.
+              La fábrica es el corazón del sistema: paneles 2D, módulos 3D, control de calidad,
+              paquetización y logística radial.
+            </p>
+            <p class="quote">Gurrea no es una dirección. <em>Es un radio de acción.</em></p>
+          </div>
+
+          <div class="map" id="logistic-map">
+            <div class="hud-top">
+              <span>MAP · GURREA / RADIO LOGÍSTICO</span>
+              <span>SCALE 1 : 4.2M</span>
+            </div>
+
+            <svg viewBox="225 -20 410 330" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D6CCB5" stroke-width="0.6"/>
+                </pattern>
+                <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#F0A000" stop-opacity="0.30"/>
+                  <stop offset="100%" stop-color="#F0A000" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Technical grid background -->
+              <rect x="225" y="-20" width="410" height="330" fill="url(#grid)"/>
+
+              <!-- Spain provinces map (dark beige) — real cartographic silhouette -->
+              <g class="spain-map" fill="#C9B98E" stroke="#8C7A52" stroke-width="0.35" stroke-linejoin="round">
+<path d="m 438.39514,249.58858 -0.01,0.64 -1.23,0.51 -0.44,1.01 -1.72,0.46 -2.19,-2.7 -1.48,-1.17 -1.33,-0.24 -1.63,1.04 -1.35,-0.9 0.35,0.36 -0.44,-0.32 -2.25,0.65 -1.68,3.23 -0.68,0.73 -1.44,0.57 -1.91,0.06 -1.17,-0.81 -0.95,0.35 -2.01,-1.94 -1.45,0.48 -7.49,-0.55 -2.3,0.53 -0.72,0.81 -1.5,0.69 -1.64,-0.11 -1.26,-0.95 0.11,0.23 -0.9,0.12 -1.26,-0.99 -1.5,-0.09 -0.55,0.58 -1.03,-0.11 -0.38,0.46 -0.55,-0.62 -0.48,0.27 -1.83,-0.84 -3.32,0.95 -3.05,-0.75 -0.99,0.82 -2.11,0.31 -3.96,0.11 -1.82,-0.38 -0.58,0.53 0.04,-0.39 -2.68,4.01 -0.6,0.61 -1.92,0.69 -0.9,1.82 -2.84,0.77 -2.97,-0.73 -1.61,0.02 -2.56,1.58 -2.04,0.29 -2.02,1.19 -0.61,-0.03 -1.15,1.33 -0.77,2.24 -1.85,2.64 -0.62,2.51 -0.7,-0.04 -0.58,-0.73 -1.08,0.11 -0.6,1.16 0.46,2.38 -0.92,0.69 -0.59,-0.13 -3.3,1.59 -0.99,-1.41 -1.16,-0.62 -0.99,0.21 -1.52,-0.93 -0.52,0.33 -1.72,-2.25 -1.54,-1.3 -3.24,0.08 -1.86,-3.46 -1.04,-0.39 -1.01,-2.36 -1,-0.91 -1.97,-4.35 -0.78,-0.16 1.04,-0.51 -0.32,0.33 0.35,0.1 0.06,-0.32 -0.12,0.42 0.52,1 0.13,-0.39 0.08,0.25 0.74,-1.3 0.23,-0.92 -0.25,-0.46 -1,0.05 -0.92,-1.27 -0.61,0.18 0.28,-0.18 -0.5,-0.23 0.09,0.48 -0.5,-0.53 -0.37,0.36 -0.99,-0.64 -1.33,-3.52 2.32,-1.85 -1.11,-0.65 -1.29,-3.12 -2.24,-2.67 -6.37,-4.23 -2.78,-1.28 -1.89,-1.49 0.6,0.96 2.21,1.81 -3.02,-2.61 -0.65,-0.08 0.39,0.42 -0.34,-0.02 -2.69,-1.23 -7.37,0.57 -0.99,0.79 -0.97,-0.38 -0.3,-1.66 -0.5,-0.67 0.32,-0.8 -0.56,-1.25 0.03,-2.71 -0.62,-0.66 0.5,-0.32 -0.66,-1.73 0.17,-0.59 -0.57,-0.38 -0.21,-0.84 -0.54,-0.06 -0.33,-1.05 0.42,-0.2 0.1,-1.55 1.36,-1.49 0.92,-3.74 0.75,-0.23 2.54,-2.58 0.53,-1.92 0.71,-1.01 -0.09,-1.9 1.55,-0.7 1.97,-0.01 0.11,-0.89 0.67,-0.48 1.1,0.84 1.47,-0.13 0.57,-2.79 0.94,-1.72 -0.38,-0.21 0.03,-0.51 0.92,-1.15 0,0 2.32,1.04 1.38,-0.04 -0.44,2.28 1.05,-0.02 0.03,0.43 0.63,0.27 0.72,-0.31 1.94,0.35 0.56,-0.27 0.69,0.73 0,0 0.43,0.52 0,0 0.12,1.33 0.66,-0.2 0,0 0.32,0 0,0 1.94,0.75 0.31,-0.21 -0.16,-0.61 0.73,-0.58 -0.25,-0.32 1.03,-0.1 1.24,0.32 0.28,1.15 0.74,0.63 0,0 0.13,0.05 0,0 0.62,0.63 1.4,0.25 0.37,0.41 1.03,-0.1 0.56,0.74 1.77,-1.51 1.78,-0.46 2.67,0.09 0.49,-1.78 0.71,-0.72 -0.57,-0.73 0.08,-0.58 1.24,-0.93 0.08,-0.79 0.71,-0.56 1.41,-0.1 0.49,-0.38 0.69,0.17 0.78,-0.56 1.13,0.53 0.04,0.73 -0.26,-0.36 -0.31,0.17 0.26,0.54 -1.24,0.79 0.19,1.39 0.77,0.23 1.93,-1.93 1.42,0.22 0.19,-0.64 1.03,-0.44 -0.15,-0.77 0.35,-0.66 0,0 0.1,-0.05 0,0 0.04,-2 -1.3,-2.28 0.44,-1.28 -0.74,-0.71 0.03,-0.55 1.01,-1.66 0.72,-0.46 0.96,0 0.13,-0.72 1.85,-1.25 0,0 -0.11,-0.26 0,0 0.39,-0.67 0.47,0.26 -0.22,-0.5 0.62,-1.03 1.7,0.17 -0.09,-0.51 0.52,-0.64 0.97,-0.5 0.88,-1.1 0.25,0.26 0.15,-0.63 0.22,0.38 0.1,-0.35 0.33,0.27 -0.01,-0.53 0.47,-0.06 0,0 0.04,-0.08 0,0 -0.46,-1.34 2.35,0.36 1.4,-0.77 0,0 0.99,0.43 0.21,0.78 1.57,0.43 1.88,-0.08 0.51,2.45 4.1,1.41 0.12,0.67 1.02,0.17 1.18,0.89 0.78,1.27 0.22,-0.28 0.52,0.18 0.2,0.5 0.48,-0.18 2.39,2.81 4.49,2 0.49,-0.13 -0.25,-1.13 0.37,-0.69 3.64,0.72 5.87,0.38 1.61,-0.2 0.67,-0.63 0.19,-0.79 0.67,-0.2 0,0 0.5,-0.16 0,0 1.14,0.39 0.27,-0.35 3.12,1.06 0.73,-0.38 0.16,-1.5 0.38,-0.07 0.85,0.31 0.21,1.12 1.64,0.38 1.2,-0.3 1.31,-1.18 -0.04,-0.68 0,0 0.11,-0.31 0,0 1.31,-0.42 0,0 0.15,0.07 0,0 1.21,0.74 3.8,0.64 1.93,-1.33 1.74,2.39 0.23,-1.48 0.75,-0.63 1.66,0.01 0.63,0.57 0.54,-0.8 0.63,-0.34 0.21,0.26 0,-0.34 1.06,-0.51 0.11,-0.43 0.2,0.17 0.29,-0.77 2.58,1.27 1.79,-0.62 0,0 0.25,0 0,0 0.86,0.78 -0.11,2.64 2.44,0.62 -0.06,3.28 1.19,0.55 0.16,0.72 -0.5,1.68 0.2,1.08 -2.91,3.53 0.75,0.44 0,0 0.35,0 0,0 2.49,1.32 2.22,0.2 0,0 1.11,0.78 1.25,2.23 2.19,1.7 1.31,-0.41 1.07,0.94 0.6,-0.35 1.11,0.51 0.44,-0.39 0.49,0.21 0,0 0.17,-0.01 0,0 0.2,0.26 -0.57,0.79 -0.37,2.29 0.37,1.65 -0.47,0.92 0.3,1.64 0,0 0.18,0.19 0,0 4.08,6.6 0.98,0.72 -0.04,-0.62 2.05,0.37 2.96,2.32 0,0 -1.34,0.7 -0.88,1.64 -2.49,2.7 -1.34,5.33 -1.4,2.71 0.13,1.37 -0.29,0.42 -0.91,0 -0.72,1.26 -0.63,0.13 -0.35,0.47 0.11,1.39 -1.07,0.51 -0.62,0.94 z" id="ES-AN"/>
+<path d="m 444.20514,66.648576 0.28,0.55 1.87,-0.03 1.43,1.39 1.7,-0.31 2.62,1.83 0,0 0.66,0.13 0,0 0.52,-0.16 0,0 0.32,-0.3 0,0 2.51,0.15 0.76,-0.9 -0.09,-0.49 1.19,-2.2 0.93,-0.93 -0.16,-1.1 0,0 -0.28,0.03 0,0 -0.84,-0.02 -0.39,-1.22 -0.88,-0.73 0.19,-1.99 -0.68,-1.44 0.7,-1.97 -0.2,-0.66 1.89,-2.29 -0.14,-0.6 -0.66,-0.27 0.49,-1.68 1.76,-1.87 -0.33,-1.78 0.64,-1.24 0.96,0.53 0.57,-0.25 0,0 0.14,0 0,0 0.04,-1.07 1.18,-0.79 -0.56,-0.46 0.6,0.02 0.12,-1.36 3.06,0.04 0.01,-1.62 0.38,-0.35 1.54,-0.11 1.26,-1.48 0.61,0.01 0.01,-0.64 0.97,-0.08 0.46,-0.89 -0.33,-0.45 0.11,-1.76 1,-0.79 0.08,-1.26 0.94,-0.71 1.57,0.07 0,0 -0.23,0.85 0.96,0.65 0.5,-0.22 0.56,0.89 1.49,1.08 0.04,0.93 0.9,-0.01 0.03,0.91 0.42,0.16 0.23,-0.56 0.43,-0.02 0.06,-0.65 0.61,-0.61 1.68,1.21 0.86,-0.46 0.7,0.23 1,-1.33 0.59,0.11 0.34,-0.56 1.49,1.06 0.41,-0.08 0.13,0.53 1.38,0.8 0.74,-0.41 1.48,2.86 1.01,0.11 0.19,0.83 1.26,0.37 0.65,-0.16 0.17,-0.44 0.97,0.19 0.74,-0.68 0.98,0.15 1.32,-0.46 0.39,-0.52 2.27,0.78 0.11,0.83 0.83,0.73 0.72,-0.36 0.12,-0.79 0.95,-0.72 1.7,1.23 1.54,-0.34 1.04,0.31 0.29,-0.42 1.61,0.29 0.28,-0.39 1.74,0.53 0,0 0.11,0.26 0,0 0.22,0.14 0,0 0.61,0.82 0.27,1.34 1.68,0.42 -0.69,2.45 0.25,0.38 -0.43,-0.19 -0.36,0.45 -0.04,0.52 0.53,0.28 -0.68,0.66 -0.34,-0.26 -0.3,0.32 1.48,3.7 -0.62,0.69 1.28,0.52 -0.81,0.55 0.65,0.55 -1.68,4.88 -0.12,0.6 0.46,0.32 -0.57,0.48 0.24,1.23 -0.87,2.59 -0.39,0.24 0,1.51 -0.33,0.62 -0.12,-0.39 -0.54,0.18 -0.35,0.99 -0.49,-0.21 -0.67,1.05 1.21,0.66 -0.31,0.07 -0.09,1.14 0.4,0.51 -0.72,0.31 -0.02,0.42 -0.66,-0.03 -0.33,1.15 -0.81,-0.02 -0.83,0.76 -0.42,1.29 -1.87,0.25 -0.09,0.93 -0.31,-0.29 -1.58,2.21 -0.04,0.68 0.87,1.05 -0.21,1.16 1.42,0.24 0.71,-0.33 0.53,2.14 -1.36,1.89 -1.51,0.21 0.34,1.21 -0.94,2.01 1.44,1.51 -0.7,0.89 0.57,0.43 -0.11,0.52 0.59,0.94 -0.21,1.51 -0.39,-0.05 -0.05,0.47 -1.14,0.06 -0.72,2.37 -1.12,0.27 -0.17,0.7 -0.9,-0.26 -0.34,0.4 0.01,1.430004 0.51,0.09 0.3,0.97 -0.34,0.46 0.37,-0.18 -0.01,0.45 0.37,-0.21 0.89,0.72 -0.49,0.19 0.6,1.21 0,0 -0.05,0.28 0,0 0.34,0.22 -1.09,1.82 0,0 0.03,0.2 0,0 -0.39,1.07 1.04,2.23 -1.19,1.21 -0.14,0.7 -1.43,0.44 -0.05,0.48 -0.39,-0.31 0.25,0.57 0,0 -0.62,0.52 -1.06,-0.29 -1.84,1.27 0,0 -0.32,-0.11 0,0 -0.32,-1.01 0,0 -0.01,-0.11 0,0 -0.54,-0.17 0,0 -0.54,0.03 0,0 -1.09,0.09 -1.23,-0.58 -0.97,-0.86 -0.02,-0.62 -1.41,0.05 -0.94,1.54 -0.16,1.77 -1.93,1.1 -0.61,-0.69 -1.33,0.5 0.26,1.87 1.24,0.37 0.84,-0.25 -0.19,3.41 0.65,0.56 0.12,0.8 -1.68,0.68 -0.35,0.54 1.63,1.95 0.15,0.79 -1.59,0.91 -0.74,1.23 -0.63,-0.03 -0.3,0.41 0.47,1.08 -1.18,0.72 -1.8,0.55 -1.39,-0.84 -0.95,4.05 -0.83,0.39 -0.5,0.82 0.36,1.16 -0.44,-0.13 -1.37,1.06 -1.97,-0.06 -0.73,1.84 -1.47,0.59 -0.05,1.89 1.12,1.5 -2.03,1.2 -1.15,-0.87 0.3,-0.63 -0.34,-0.98 0.24,-0.76 -0.44,-0.89 -0.32,0.28 -1.51,-0.85 -2.27,0.08 -0.55,0.38 -0.65,-0.14 -0.22,0.37 -0.47,-0.33 0,0 -0.63,-1.45 0,0 2.22,-0.91 0.33,-0.47 -0.17,-0.69 -1.91,-1.54 -2.65,-0.13 0,-1.02 -0.81,-0.5 -0.44,-1.05 0,0 -0.17,-0.43 0,0 -0.03,-0.32 -0.54,0.46 0.01,1.78 -0.45,0.2 0,0 -0.49,0.43 0,0 -0.62,-0.3 -0.49,0.2 0,0 -0.3,-0.18 0,0 -1.28,-0.18 0,0 0.29,-1.9 -0.96,0.41 -0.95,-0.64 -0.87,0.45 -4.03,-4.27 -0.81,1.16 -0.24,-0.87 0.25,-0.57 0.61,-0.05 -0.66,-0.76 0,0 -0.16,-0.09 0,0 -1.33,-1.68 -0.73,-0.29 0.03,-0.38 0.22,-0.32 0.24,0.22 1.09,-1.92 1.41,-0.79 -0.25,-1.68 0.24,-1.44 0.53,-0.56 2.04,1.05 1.42,-1.22 -0.48,-0.63 0.75,-2.58 -0.66,-1.84 0.54,-0.75 0.07,-1.26 -0.48,-1.24 -0.45,-0.09 -1.3,-1.7 0.34,-1.72 0,0 -0.25,-0.58 0,0 -0.86,-0.76 0,0 -0.31,-0.49 0,0 -3.86,-4.000004 -1.4,-0.47 -1.28,-1.22 0,0 -0.34,0.1 0,0 -1.33,-1.39 -2.54,0.85 0,0 -0.74,-0.9 -1.77,-0.44 -0.79,-3.78 0.55,-1.57 -0.17,-0.74 1.05,-0.61 0.64,-2.69 1.76,0.65 -0.22,1.14 0.4,0.43 2.45,-0.83 0.03,-0.49 -0.46,-0.13 0.05,-1.35 -0.75,-0.89 0.39,-2.15 -0.76,-1.25 0.05,-0.72 1.86,0.03 0.74,-1.27 0,0 0.24,-0.14 0,0 0.37,-0.02 0.43,-0.84 1.38,-0.08 -0.09,-0.85 1,-1.37 -0.91,-0.44 0.12,-0.62 -1.37,-1.29 0.92,-1.37 0.04,-0.96 -1,-1.86 -0.05,-2.3 0,0 z" id="ES-AR"/>
+<path d="m 335.46514,5.658576 0.33,0.63 1.35,0.44 -0.23,0.53 0.59,0.36 0.3,0.88 2.14,0.43 -0.42,0.37 -0.22,-0.24 0.13,0.63 0.34,-0.27 -0.32,0.53 0.64,0.08 0.23,-0.33 0.47,0.29 0.77,-0.59 0.69,0.38 2.05,-0.18 0.61,0.31 2.39,-0.4 0.51,0.93 0.44,-0.34 2.11,0.16 2.16,2.3 2.5,-0.39 3,0.98 2.38,-0.15 1.41,0.72 0.96,-0.12 0.1,0.47 0.6,-0.22 3.18,1.18 2.08,0.46 2.9,0.05 0,0 0.03,0.49 -0.75,0.9 0.59,1.63 -0.14,1.27 -0.71,0.36 -0.12,-0.66 -1.44,-0.5 -0.71,1.2 -2.62,0.39 0.27,0.84 -0.48,1.74 -1.1,-0.19 -0.89,0.38 0,0 -0.14,-0.07 0,0 -0.61,0.08 0,0 -0.83,-1.64 -1.15,-0.39 -1.44,0.97 -0.87,1.39 -0.67,-0.41 -1.46,0.13 -0.72,2.92 -1.04,-0.04 -0.21,-0.42 -1.61,0.79 0,0 -0.08,0.18 0,0 -3.14,0.36 -0.52,-0.58 -0.68,-0.02 -0.42,0.31 -0.19,1.37 -2.41,-0.2 -0.38,1.25 -3.85,-0.49 -1.51,-0.86 -1.02,0.57 -1.07,2.06 0.08,0.6 -1.16,0.25 -0.99,0.03 -0.54,-0.65 -0.76,0.02 0.08,-0.5 -0.72,0.04 -1.18,-1.01 -0.47,-1.69 -1.26,0.37 -1.64,-0.75 -0.47,1.63 -1.08,0.44 -1.08,-1.02 -1.03,0.02 -0.35,1.37 -1.01,-0.26 -0.55,-0.71 -0.3,0.34 -0.85,-0.18 -0.11,-0.52 -0.74,-0.5 -0.39,0.66 -0.64,0.12 0.11,0.65 -0.5,0.11 -0.33,1.1 -0.38,-0.16 -0.24,0.42 -0.7,-0.37 0,0 -0.18,0.01 0,0 0.13,0.93 1.04,0.13 -0.01,0.86 -1.15,0.24 -0.35,0.51 -0.59,-0.3 -0.88,0.55 -1.86,-0.44 -2.08,0.1 -0.95,0.2 -1.02,1.3 -0.36,-0.04 0.05,-0.6 -1.39,-0.58 0,0 -0.46,-0.46 0.14,-1.16 -0.94,-1.13 -1.02,-0.03 -1.27,-1.72 -0.05,1.48 -0.41,0.02 -0.68,-0.93 0.43,-0.77 0.44,0.24 -0.03,-0.98 0.74,-0.94 0.67,0.45 0.54,-0.63 0.62,0 1.12,-1.16 0.19,-0.77 -0.91,-1.06 -0.79,0.19 0.05,0.35 -1.47,0.92 -0.5,-0.08 -0.64,-1.14 0.42,-0.84 -0.15,-0.58 -0.82,-0.16 -0.25,-0.57 -0.3,0.33 -1.11,-1.12 -0.26,-0.89 0.27,-1.34 -1.08,0.06 -0.82,-1.01 0.06,-1.53 -0.24,-0.51 -0.59,0.33 -0.49,-0.3 0.12,-0.68 0,0 -0.04,-0.13 0,0 0.01,-0.94 1.89,0.1 0.38,-1.05 0.93,-0.65 0,0 0.62,-0.95 -0.28,-0.37 0.31,-0.81 0.7,0.06 -0.68,-0.55 0.06,-0.56 1.47,0.13 0.6,-0.55 0.16,0.21 0.05,-0.46 1.49,0.2 0.35,0.43 0.67,-0.49 1.17,0.61 1.77,-0.44 0.58,0.67 0.38,-0.54 0.96,0.13 1.31,-0.46 0.22,0.38 0.41,-0.14 0.1,0.42 1.54,-0.03 0.24,0.38 1.65,-0.12 0.08,-0.81 1.15,0.67 0.9,-0.27 1.12,0.34 2.69,-1.01 0.32,-0.63 0.63,0.58 0.32,-0.25 0.16,0.47 0.4,-0.24 -0.01,0.56 0.75,-0.17 1.23,0.53 2.63,-1.24 0.64,0.58 1.04,-0.25 0.51,-0.56 -0.26,-0.14 0.88,-0.34 0,-0.65 0.93,-0.02 0.6,-0.47 0.03,-0.71 0.43,-0.04 z" id="ES-AS"/>
+<path d="m 405.09514,22.748576 -0.6,-2.02 1.09,-0.51 0.47,0.26 -0.54,1.05 0.03,1.05 0,0 -0.45,0.17 z m -8.22,-11.71 0.02,0.42 0.98,-0.27 0.31,0.62 0.6,-0.11 0.39,0.79 1.92,0.35 0.19,0.78 -0.8,0.17 0.75,1.02 0.48,-0.31 1.22,0.3 1.16,-0.28 -0.05,0.72 0.59,-0.35 2.04,0.48 0.93,1.23 1.09,0.4 0,0 -0.11,1.94 -0.91,0.12 -0.5,0.55 -0.42,-0.93 -1.46,0.7 -0.43,-0.39 -0.75,0.29 -0.25,-0.3 -0.2,0.84 -1.19,0.29 -0.42,0.89 -1.39,0.38 0.22,0.71 0,0 0.18,0.28 0,0 0.46,2.8 0,0 -2.01,0.01 -2.22,-0.71 -0.82,0.09 -0.23,-0.68 -1.04,-0.44 -0.91,1.39 0,0 -0.02,0.17 0,0 -0.57,0.84 -1.32,0.57 -0.33,0.75 -1.79,0 -0.71,-0.35 0.16,1.82 -1.15,-0.01 -0.72,0.98 -0.96,0.51 -0.99,2.53 0.45,0.83 1.17,-0.13 -0.07,0.57 1.78,-2.06 1,0.99 -0.97,1.09 -1.21,-0.48 0.46,0.84 -0.83,-0.01 0.7,0.3 -0.41,0.55 0,0 -0.04,0.21 0,0 1.1,0.33 0.23,-1.35 0.75,0.36 0.58,1.64 -0.16,1.28 -1.12,0.46 -0.82,-0.66 -0.48,1.35 -0.55,-0.21 -1.28,0.56 -0.12,-0.38 -0.46,0 -0.16,-2.3 -0.42,0.44 0.14,0.45 -0.46,0.23 0.13,0.42 -0.56,0.28 0.08,0.59 -0.96,0.16 -0.48,-1.09 -1.36,0.07 -0.91,-0.76 -0.04,-0.42 0.67,-0.61 0.61,0.19 0.28,-0.9 -0.61,-0.51 -1.36,0.98 -0.67,-0.45 0.07,-1.98 -0.4,-0.22 -0.06,-1.49 -2.95,-0.65 -1.46,-2.27 -1.7,-1.01 -0.41,0.82 -1.16,-0.26 -1.03,1.01 -1.28,-0.61 -0.88,0.7 -1.21,-0.34 -1.44,0.2 -0.14,-1.28 -0.63,-0.02 -0.01,-0.71 -1.79,-1 -0.51,-0.88 0.44,-1.18 -0.46,-0.61 0.34,-0.31 0,0 0.61,-0.08 0,0 0.14,0.07 0,0 0.89,-0.38 1.1,0.19 0.48,-1.74 -0.27,-0.84 2.62,-0.39 0.71,-1.2 1.44,0.5 0.12,0.66 0.71,-0.36 0.14,-1.27 -0.59,-1.63 0.75,-0.9 -0.03,-0.49 0,0 1.12,0.17 1.42,-0.35 0.98,0.28 1.24,-0.55 0.44,0.6 1.16,0.04 2.86,-0.49 1.71,-0.66 0.82,-0.73 0.74,0.18 0.21,-0.44 0.34,0.43 0.38,-0.59 1.48,0.4 -0.36,-0.13 0.93,-1.1 2.91,-0.31 0.72,-0.6 0.74,0.12 -0.06,0.52 0.63,0.39 -1.06,0.24 -0.9,0.71 -0.01,0.4 0.65,0.23 -0.11,0.85 0.25,-0.54 0.12,0.27 0.63,-0.4 -0.35,-0.41 0.37,-0.04 0.14,-0.59 0.73,-0.07 -0.67,-0.35 1.01,0.04 0.34,-0.55 0.92,-0.06 1.16,-0.87 0.85,0.06 0.73,-0.6 z m -14.25,25.6 0.04,-0.05 0,0 0.02,0 0,0 0.36,0.18 0,0 0.11,0.78 -0.34,0.24 -0.27,-0.82 0,0 0.08,-0.33 z m -1.55,0.12 0.15,0.16 0,0 -0.03,0.17 0,0 -0.3,0.12 0,0 -0.19,-0.26 0,0 -0.04,-0.1 0,0 0.02,-0.09 0,0 0.1,-0.04 0,0 0.29,0.04 z" id="ES-CB"/>
+<path d="m 414.47514,44.638576 0.33,0.41 -0.51,-0.2 0,0 0.18,-0.21 z m -1.41,0.14 -0.19,0.1 0,0 0.03,-0.17 0,0 0.07,-0.11 0,0 -0.02,-0.13 0,0 -0.01,-0.04 0,0 0.27,-0.03 0,0 -0.02,0.2 0,0 -0.13,0.18 z m 4.46,-6.62 0.08,-0.05 0,0 2.5,-0.29 2.39,1.05 1.1,-0.19 0.38,0.73 0.83,-0.45 -0.42,1.43 -0.4,0.47 -0.3,-0.14 -0.24,0.69 0.87,1.04 1.48,-0.57 0.15,1.39 -0.84,0.27 -0.17,-0.39 -2.21,0.07 -0.63,-0.91 -1.23,-0.06 -0.38,0.44 -1.34,-0.15 -0.48,-1.18 -1.07,-0.38 -1.22,-1.14 0.82,-1.54 0,0 0.16,-0.47 0,0 0.1,0.17 0,0 0.07,0.16 z m -36.66,-1.41 0.21,0.02 0,0 0.09,0.04 0,0 0,0 0,0 0.06,0.11 0,0 -0.03,0.17 0,0 -0.3,0.12 0,0 -0.19,-0.26 0,0 -0.04,-0.1 0,0 0.02,-0.09 0,0 0.1,-0.04 0,0 0.08,0.03 z m 2.02,-0.06 0.17,0.08 0,0 0.11,0.78 -0.34,0.24 -0.27,-0.82 0,0 0.12,-0.38 0,0 0.02,0 0,0 0.19,0.1 z m -74.12,-3.38 1.39,0.58 -0.05,0.6 0.36,0.04 1.02,-1.3 0.95,-0.2 2.08,-0.1 1.86,0.44 0.88,-0.55 0.59,0.3 0.35,-0.51 1.15,-0.24 0.01,-0.86 -1.04,-0.13 -0.13,-0.93 0,0 0.18,-0.01 0,0 0.7,0.37 0.24,-0.42 0.38,0.16 0.33,-1.1 0.5,-0.11 -0.11,-0.65 0.64,-0.12 0.39,-0.66 0.74,0.5 0.11,0.52 0.85,0.18 0.3,-0.34 0.55,0.71 1.01,0.26 0.35,-1.37 1.03,-0.02 1.08,1.02 1.08,-0.44 0.47,-1.63 1.64,0.75 1.26,-0.37 0.47,1.69 1.18,1.01 0.72,-0.04 -0.08,0.5 0.76,-0.02 0.54,0.65 0.99,-0.03 1.16,-0.25 -0.08,-0.6 1.07,-2.06 1.02,-0.57 1.51,0.86 3.85,0.49 0.38,-1.25 2.41,0.2 0.19,-1.37 0.42,-0.31 0.68,0.02 0.52,0.58 3.14,-0.36 0,0 0.08,-0.18 0,0 1.61,-0.79 0.21,0.42 1.04,0.04 0.72,-2.92 1.46,-0.13 0.67,0.41 0.87,-1.39 1.44,-0.97 1.15,0.39 0.83,1.64 0,0 -0.34,0.31 0.46,0.61 -0.44,1.18 0.51,0.88 1.79,1 0.01,0.71 0.63,0.02 0.14,1.28 1.44,-0.2 1.21,0.34 0.88,-0.7 1.28,0.61 1.03,-1.01 1.16,0.26 0.41,-0.82 1.7,1.01 1.46,2.27 2.95,0.65 0.06,1.49 0.4,0.22 -0.07,1.98 0.67,0.45 1.36,-0.98 0.61,0.51 -0.28,0.9 -0.61,-0.19 -0.67,0.61 0.04,0.42 0.91,0.76 1.36,-0.07 0.48,1.09 0.96,-0.16 -0.08,-0.59 0.56,-0.28 -0.13,-0.42 0.46,-0.23 -0.14,-0.45 0.42,-0.44 0.16,2.3 0.46,0 0.12,0.38 1.28,-0.56 0.55,0.21 0.48,-1.35 0.82,0.66 1.12,-0.46 0.17,-1.29 -0.58,-1.64 -0.75,-0.36 -0.23,1.35 -1.1,-0.33 0,0 0.04,-0.21 0,0 0.41,-0.55 -0.7,-0.3 0.83,0.01 -0.46,-0.84 1.21,0.48 0.97,-1.09 -1,-0.99 -1.78,2.06 0.07,-0.57 -1.17,0.13 -0.45,-0.83 0.99,-2.53 0.96,-0.51 0.66,-0.98 1.15,0.01 -0.16,-1.82 0.71,0.35 1.79,0 0.33,-0.75 1.32,-0.57 0.57,-0.84 0,0 0.02,-0.17 0,0 0.91,-1.39 1.04,0.44 0.23,0.68 0.82,-0.09 2.22,0.71 2.01,-0.01 0,0 4.46,-2.39 0.85,0.98 1.48,-0.22 0.65,0.42 -1.06,1.82 0.78,0.53 0.29,-0.2 0.2,0.46 -0.62,0.86 0.45,0.26 -0.02,1.4 -0.95,0.29 0.85,0.55 2.27,0.15 0.67,0.8 -0.13,0.4 1.68,1.18 -1.07,1.11 -1.97,0.33 -1.54,-0.69 0.06,-0.6 -2.15,-0.57 -1.65,2.51 1.92,2.05 0.26,-0.05 -0.42,-0.41 0.82,-1.12 0.93,0.46 1.05,-1.3 0.28,0.77 -1.36,2.5 0.92,0.57 -0.63,1.17 2.67,-0.29 0.18,0.96 0.69,-0.05 0,0 0,0.13 0,0 0.99,1.23 1.36,-0.14 0.76,0.52 0.14,0.87 0,0 -0.07,0.07 0,0 0.29,0.7 0.84,0.38 0,0 -0.68,0.64 -0.37,-0.25 -0.38,0.3 -0.93,-0.72 -1,0.13 -0.61,-0.35 -0.37,0.46 -1.78,-0.32 0.63,1.91 0,0 -0.41,0.1 0,0 -0.78,1.19 -0.8,0.43 0.26,0.33 0.95,-0.19 0.44,0.35 -0.11,0.95 -0.52,0.56 1.33,1.54 -0.45,0.79 0.18,1.99 -0.69,-0.95 0.11,-0.72 -0.61,-0.02 -0.11,1.12 0.56,0.01 0.58,0.91 -1.26,0.33 0.22,0.85 0,0 0.16,0.12 0,0 -0.31,0.45 0.47,2.47 -0.39,1.19 -0.68,0.58 2.6,4.05 2.62,-0.08 0.59,1.78 0,0 0,0.29 0,0 0.87,0.84 0.83,-0.78 1.2,-0.24 0.42,-2.37 0,0 0.07,-0.25 0,0 0.48,-0.56 0.6,0.23 0.44,-0.26 0.77,0.78 -0.07,0.73 -1.28,1.87 0.3,0.85 1.13,-0.22 0.82,0.66 1.33,-0.35 1.18,0.39 0.89,-2.06 0.89,-0.64 0.05,-1.63 0.76,0.26 0.76,-0.31 0.46,-0.76 3.27,-0.3 1.05,0.5 0.38,1.55 0.9,-0.51 2.92,0.16 -0.03,0.69 -0.87,0.5 1.44,2.23 -0.36,0.31 0.23,1.24 2.67,0.65 0,0 0.16,0.16 0,0 0.74,0.72 0.5,-0.03 2.91,-1.74 0,0 0.04,2.29 1.01,1.86 -0.05,0.97 -0.91,1.36 1.36,1.29 -0.12,0.62 0.91,0.44 -1,1.37 0.09,0.85 -1.37,0.08 -0.43,0.85 -0.37,0.02 0,0 -0.23,0.14 0,0 -0.74,1.27 -1.87,-0.03 -0.05,0.72 0.75,1.25 -0.38,2.15 0.75,0.9 -0.05,1.35 0.46,0.13 -0.03,0.5 -2.45,0.82 -0.4,-0.43 0.22,-1.14 -1.77,-0.65 -0.64,2.69 -1.05,0.62 0.18,0.73 -0.55,1.57 0.79,3.79 1.77,0.44 0.74,0.9 0,0 -0.3,1.2 0.44,1.280004 -0.25,0.33 -2.08,-1.800004 -1.16,1.22 -1.42,-0.49 -0.83,1.020004 -0.81,-0.12 -0.84,0.5 -0.91,-1.040004 -1.68,1.010004 -0.36,-0.53 -1.02,-0.18 -0.38,-1.340004 -0.73,-0.16 -0.22,-1.02 -0.55,-0.46 -1.02,0.81 -0.57,-0.38 0.42,-1.03 -1.15,-0.23 0.77,-0.49 0.1,-0.91 -1.08,0.31 -0.45,-0.85 -1.7,-0.41 -0.24,-0.79 -1.19,0.03 -0.44,0.68 -1.12,-0.11 -1.28,-0.61 -0.11,-1.56 -1.03,-0.38 -0.91,0.47 -0.29,0.77 -1.85,0.13 -1.17,0.54 -3.41,-1.07 -1.27,0.39 -0.58,1.31 -0.49,-0.63 -0.49,0.65 -0.89,-0.12 -0.33,0.33 -1.58,-0.17 -0.53,-0.54 0.42,1.01 -0.12,1.15 -1.09,-0.06 -0.59,1.12 -1.1,0.48 0,0 -0.25,0.23 0,0 -0.06,0.05 0,0 -0.31,-0.1 0,0 -0.31,0 0,0 0,0 0,0 -1.36,0.18 -1.15,0.82 -1.23,1.890004 -1.71,1.05 -1.1,1.88 -3.06,1.23 -0.79,1.38 -0.44,0.09 -1.12,5 -1.34,0.21 -1.15,-0.42 -0.73,1.59 -1.74,2.14 0,0 -0.63,-0.31 0,0 -0.41,0.11 0,0 -1.44,0.23 -0.6,0.46 0,0 0,0 0,0 -0.42,-0.15 -0.78,0.51 -0.05,0.6 0,0 -0.38,0.38 1.18,0.32 0,0 0.33,0.88 -0.3,1.37 -0.87,0.5 -0.16,0.54 0.32,2.47 -0.68,1.03 0.51,0.93 -2.72,0.15 -0.56,0.73 0.1,1.31 -0.6,0.33 0.17,0.76 -1.26,0.22 -0.68,-1.03 -0.54,0.09 0.48,1.74 -1.08,1.23 0.24,1.23 -0.52,0.27 0,0 -1.73,0.67 -1.05,-0.36 -0.18,-1.49 -0.43,-0.39 0.16,-0.76 -1.11,0.31 0,0 -0.56,0.39 0,0 -1.21,-0.5 -0.37,0.77 0.27,0.71 -1.79,1.25 0,0 -0.08,0.18 0,0 -1.28,0.88 -0.15,1.23 -1.88,0.84 0,0 -0.26,0.07 0,0 -0.31,-1.74 -1.34,0.29 -0.57,0.93 -0.29,-0.11 -1.12,1.25 -0.8,0.21 -0.85,0.12 -0.27,-0.84 -1.37,-0.12 0,0 -0.18,-0.04 0,0 -1.04,0.11 0,0 -0.6,-0.18 0,0 -0.19,-0.08 0,0 -0.88,-1.7 -0.05,-1.91 0.73,-1.64 -2.31,0.36 -1.17,1.53 -0.7,0.34 -1.44,0 0,0 -0.22,-0.07 0,0 -0.33,-0.21 0,0 -0.41,-0.21 0,0 -0.79,-0.17 -0.2,-1 -0.78,-0.15 -0.21,-0.71 -0.9,-0.77 -1.27,-0.07 -0.73,0.48 -0.74,-0.21 -0.29,-0.38 0.49,-0.9 -0.69,-1.33 -2.29,1.41 -0.69,1.46 -1.56,-0.5 0,0 -0.28,-0.19 0,0 -0.74,-0.53 0,0 -0.13,-0.18 0,0 0.06,-0.74 -2.38,-0.59 0.6,-0.29 -0.1,-0.48 0.35,-0.28 -0.31,-0.15 0.49,-0.18 -0.53,-0.37 0,0 -0.13,-0.05 0,0 -1.02,-0.48 0.33,-0.71 -0.78,0.21 -0.36,-0.79 -1.98,-1.04 -3.2,1.86 0,0 -0.38,0.39 0,0 -0.18,0.71 -1.33,0.14 -0.62,0.98 -0.66,-0.04 -2.22,1.12 -0.46,0.77 0.16,1.04 -0.82,0.73 -2.09,0.21 -0.74,0.76 -0.71,-0.96 -1.05,1.05 -0.77,-0.34 0,0 -0.48,0 0,0 -0.1,0.26 -0.76,-0.18 -0.87,-0.74 0,0 0.11,-1.1 1.89,-1.16 0.29,-1.21 -1.49,-1.6 -0.31,-1.41 1.39,-2.24 -0.14,-1.37 -1.13,-0.66 1.31,-3.26 -0.96,-3.31 0.39,-1.89 -0.27,-1.33 0.69,-0.13 0,-0.52 -0.22,-0.8 -1.05,-0.68 -0.3,-1.74 -1.7,-1.87 -0.29,-0.93 0.45,-0.33 1.49,0.41 1.4,-0.35 1.42,-2.320004 -0.37,-1.13 1.91,-1.78 0.21,-0.98 1.15,-1.36 1.33,0.11 0.26,-0.39 0.46,0.58 1.41,-1.32 0.28,0.39 0.51,-0.13 0.38,-0.3 -0.25,-0.52 1.12,-0.33 0.86,-1.72 1.03,-0.41 -0.43,-0.36 0.08,-0.56 0.59,-0.31 0.45,0.53 0.94,-0.3 -0.43,-0.86 1,-0.83 -0.25,-0.6 3.11,-4.49 -0.37,-0.83 -0.79,-0.33 -1.7,-1.92 -4,-0.93 -0.38,0.59 -1.14,0.4 -1.35,-1.06 0.04,-1.39 -0.53,-0.75 1.43,-4.52 -1.5,-0.54 0.68,-1.74 -1.13,-1.24 -0.87,0.94 -2.14,0.27 -1.41,-0.33 -0.64,-1.55 -0.75,-0.21 -0.82,1.71 -3.1,-0.03 -0.39,-0.84 -0.65,-0.2 0,0 -0.15,-0.78 0.73,-1.17 -0.37,-1.01 -0.92,0.09 -0.65,-0.87 0.8,-0.39 0.43,-1.37 0.97,-0.27 0.23,-1.58 1.18,-0.63 0.41,-0.9 1.14,-0.44 1.26,0.71 0.06,-0.56 0,0 -0.14,-0.3 0,0 1.62,-2.37 0.15,-2.28 -0.9,-0.28 -0.39,-0.55 -1.07,-0.17 -0.58,-0.65 0,0 0.02,-0.08 0,0 0.66,-0.76 -0.19,-0.92 0.41,-0.52 -0.42,-0.96 -0.85,0.24 -2.04,-1.24 -0.83,0.12 -0.4,0.88 -1.71,-0.47 0,0 -0.5,-0.04 0,0 -0.55,-0.03 0.45,-0.79 -0.17,-0.88 0.84,-1.13 -0.38,-0.46 0.04,-1.21 1.15,-0.56 -1.04,-1.91 0.91,-1.05 1.04,-0.07 0.35,-1.07 0.67,0.49 1.86,-1.72 -0.05,-0.53 0.74,-0.79 -0.79,-1.86 1,-0.29 -0.18,-0.91 0.47,-0.33 z" id="ES-CL"/>
+<path d="m 378.13514,114.77858 0.6,-0.46 1.44,-0.23 0,0 0.41,-0.11 0,0 0.63,0.31 0,0 -0.38,0.78 0.36,1.55 -1.86,0.7 0,0 -0.45,0.04 0,0 -0.45,-0.13 -0.22,-0.79 -0.52,0.01 0,0 -1.18,-0.32 0.38,-0.38 0,0 1.69,-0.1 -0.45,-0.87 z m 20.01,-17.530004 0.31,0 0,0 0.31,0.1 0,0 0.06,-0.05 0,0 0.25,-0.23 0,0 1.1,-0.48 0.59,-1.12 1.09,0.06 0.12,-1.15 -0.42,-1.01 0.53,0.54 1.58,0.17 0.33,-0.33 0.89,0.12 0.49,-0.65 0.49,0.63 0.58,-1.31 1.27,-0.39 3.41,1.07 1.17,-0.54 1.85,-0.13 0.29,-0.77 0.91,-0.47 1.03,0.38 0.11,1.56 1.28,0.61 1.12,0.11 0.44,-0.68 1.19,-0.03 0.24,0.79 1.7,0.41 0.45,0.85 1.08,-0.31 -0.1,0.91 -0.77,0.49 1.15,0.23 -0.42,1.03 0.57,0.38 1.02,-0.81 0.55,0.46 0.22,1.02 0.73,0.16 0.38,1.340004 1.02,0.18 0.36,0.53 1.68,-1.010004 0.91,1.040004 0.84,-0.5 0.81,0.12 0.83,-1.020004 1.42,0.490004 1.16,-1.220004 2.08,1.800004 0.25,-0.33 -0.44,-1.280004 0.3,-1.2 0,0 2.54,-0.84 1.33,1.39 0,0 0.34,-0.1 0,0 1.28,1.22 1.4,0.47 3.86,4.010004 0,0 0.31,0.48 0,0 0.87,0.76 0,0 0.25,0.59 0,0 -0.34,1.71 1.3,1.71 0.45,0.09 0.48,1.24 -0.07,1.26 -0.54,0.75 0.66,1.85 -0.75,2.57 0.48,0.64 -1.42,1.21 -2.04,-1.05 -0.53,0.56 -0.25,1.44 0.25,1.67 -1.41,0.79 -1.09,1.92 -0.23,-0.22 -0.23,0.32 -0.03,0.37 0.73,0.29 1.33,1.68 0,0 0.17,0.1 0,0 0.66,0.76 -0.61,0.05 -0.25,0.57 0.24,0.86 0.82,-1.16 4.03,4.27 0.87,-0.45 0.95,0.64 0.96,-0.41 -0.3,1.9 0,0 -0.01,0.69 1.19,0.86 -0.28,0.27 1.22,2.72 2.66,0.34 0,0 0.05,0.1 0,0 0.72,0.23 2.25,-0.57 0,0 0.63,1.45 0,0 -1.72,0.75 -0.18,0.58 0.39,0.7 0,0 -0.09,0.43 0,0 -0.46,3.35 -1.6,2.42 0.35,1.4 -0.44,0.68 -0.96,0.29 0,0 -0.73,-0.35 0,0 -0.78,-0.29 -0.93,0.79 -1.59,3.14 -1.57,0.95 0.48,0.09 0.1,1.64 -0.35,0.16 0.24,0.63 -0.27,0.7 -0.41,0.15 0.23,0.81 0.63,0.09 0,0 -0.2,0.24 0,0 0.6,0 -0.18,0.65 0.61,0 -0.26,0.32 0.38,-0.21 0,0 0.07,-0.06 0,0 0.19,0.61 -0.39,0.01 0.5,0.18 -0.05,0.48 0,0 -0.12,0.06 0,0 0.67,-0.49 0,0 0.06,0.16 0,0 0.06,0.33 0.05,-0.65 0.69,0.16 -0.29,0.31 0.67,0.05 0,0.44 0.47,-0.04 0.84,0.77 0.23,-0.29 0,0 0.18,0.05 0,0 0.94,0.35 0,0 0.16,0 0,0 0.57,0.07 0,0 0.16,0.08 0,0 0.91,0.35 0.32,-0.33 1.24,0.68 -0.52,3.35 -2,3.62 -0.21,2.11 1.01,0.75 2.23,3.34 3.01,-0.19 0.88,-0.54 1.12,0.2 0.3,1.19 0.66,0.59 -0.32,1.3 0.35,1.11 -0.14,1.36 -0.9,0.42 1.25,2.65 -1.29,1.37 -1.74,0.03 0,0 -2.44,-1.91 -0.1,-0.95 -1.82,-0.56 -1.37,0.43 0,0 -0.33,0.16 0,0 -2.54,2.08 -0.65,-0.92 -0.51,0.18 -1.71,1.69 -0.11,2.33 -0.95,0.67 -0.27,0.94 0.47,1.81 0.05,3.72 -3.02,2.26 -2.16,-0.02 -0.62,-1 0,0 -0.01,-0.14 0,0 0.26,-0.53 -0.51,-0.5 -0.45,0.38 -0.72,-0.6 -0.69,0.06 -0.03,0.46 -0.67,-0.14 0.3,0.46 -3.4,2.02 -1.99,0.56 -1.77,-0.85 -0.5,0.37 0,0 -0.36,0.66 0,0 -0.95,1.34 -2.68,1.17 -1.48,3.29 -1.71,1.42 -0.27,1.41 0,0 -2.22,-0.2 -2.49,-1.32 0,0 -0.35,0 0,0 -0.75,-0.44 2.91,-3.53 -0.2,-1.08 0.5,-1.68 -0.16,-0.72 -1.19,-0.55 0.06,-3.28 -2.44,-0.62 0.11,-2.64 -0.86,-0.78 0,0 -0.25,0 0,0 -1.79,0.62 -2.58,-1.27 -0.29,0.77 -0.2,-0.17 -0.11,0.43 -1.06,0.51 0,0.34 -0.21,-0.26 -0.63,0.34 -0.54,0.8 -0.63,-0.57 -1.66,-0.01 -0.75,0.63 -0.23,1.48 -1.74,-2.39 -1.93,1.33 -3.8,-0.64 -1.21,-0.74 0,0 -0.15,-0.07 0,0 -1.31,0.42 0,0 -0.11,0.31 0,0 0.04,0.68 -1.31,1.18 -1.2,0.3 -1.64,-0.38 -0.21,-1.12 -0.85,-0.31 -0.38,0.07 -0.16,1.5 -0.73,0.38 -3.12,-1.06 -0.27,0.35 -1.14,-0.39 0,0 -0.5,0.16 0,0 -0.67,0.2 -0.19,0.79 -0.67,0.63 -1.61,0.2 -5.87,-0.38 -3.64,-0.72 -0.37,0.69 0.25,1.13 -0.49,0.13 -4.49,-2 -2.39,-2.81 -0.48,0.18 -0.25,-0.43 -0.52,-0.11 -0.22,0.28 -0.78,-1.27 -1.18,-0.89 -1.02,-0.17 -0.12,-0.67 -4.1,-1.41 -0.51,-2.45 -1.88,0.08 -1.57,-0.43 -0.21,-0.78 -0.99,-0.43 0,0 1.57,-0.43 1.49,-4.27 0.53,-0.78 1.8,0.14 0.44,-1.87 -1.98,-0.9 -0.46,0.12 -1.11,-3.43 2.29,0.89 1.13,-0.43 0,0 0.09,-0.05 0,0 0.17,-0.55 -0.47,-0.33 0,0 -0.28,-0.11 0,0 -0.52,-0.98 0.93,-2.12 0,0 0.19,0 0,0 0.67,-1.21 1.89,0.2 2.46,0.97 -1.6,-1.56 -0.16,-1.2 -0.5,-0.29 -0.77,-2.4 1.45,-0.29 0.06,-1.27 0.96,-2.08 -0.55,-0.92 -1.33,0.98 0,0 -0.21,0.09 0,0 -0.81,0.79 -1.55,0.3 0,0 -0.07,0.07 0,0 -0.97,0.66 -2.19,-0.84 -2.92,-3.28 -0.8,-0.18 -1.96,-2.41 0,0 -0.46,-0.41 0,0 -0.81,-0.96 1.25,-1.56 0,0 -0.01,-0.33 0,0 0.58,-2.21 -0.94,-1.39 0.39,-0.23 -0.21,-1.44 -1.08,0.12 -1.27,1.59 -1.47,-0.25 -0.11,-2.41 0.73,-1.22 -1.12,-1.05 -2.21,0.5 1.13,-3.73 -0.1,-4.09 0.91,-0.56 0,0 0.19,0.08 0,0 0.6,0.18 0,0 1.04,-0.11 0,0 0.18,0.04 0,0 1.37,0.12 0.27,0.84 0.85,-0.12 0.8,-0.21 1.12,-1.25 0.29,0.11 0.57,-0.93 1.34,-0.29 0.31,1.74 0,0 0.26,-0.07 0,0 1.88,-0.84 0.15,-1.23 1.28,-0.88 0,0 0.08,-0.18 0,0 1.79,-1.25 -0.27,-0.71 0.37,-0.77 1.21,0.5 0,0 0.56,-0.39 0,0 1.11,-0.31 -0.16,0.76 0.43,0.39 0.18,1.49 1.05,0.36 1.73,-0.67 0,0 1.33,0.6 0.43,-0.6 2.12,-0.74 0.07,-0.76 1.4,-1.05 0.14,-1.05 0.6,0.37 0.18,2.5 0.45,-0.03 0.31,0.46 0.37,-0.29 0.26,0.5 0.68,-0.51 0.62,-1.4 1.57,-0.8 1.31,1.1 -0.04,0.65 1.16,0.13 0.82,-0.83 1.32,0.59 -0.05,0.48 0.93,0.93 1.04,-0.13 0.11,0.84 0.51,-0.51 0.44,0.45 1.06,0 1.08,1.05 0.77,-0.57 0.98,1.36 0.76,0.22 0.61,-0.51 0.88,0.53 0.58,-0.37 0.13,0.46 1.49,0.77 -0.39,1.9 -1.75,1.44 -0.44,-0.15 -0.36,1.12 -0.61,0.29 0.14,0.3 0,0 0.22,0.07 0,0 -0.11,0.24 -0.63,-0.28 0.15,0.5 -0.33,0.26 0.05,-0.66 -0.69,0.67 -0.64,-0.29 -0.66,0.88 -0.2,-0.41 -0.52,0.1 -0.54,0.42 0.2,0.28 0,0 -0.02,0.14 0,0 0.21,0.47 1.66,0.63 1.14,-1.15 0,0 0.18,-0.11 0,0 0.35,-0.7 0.95,-0.51 0.34,0.22 1.92,-0.69 -0.31,-0.74 0,0 0.41,-0.1 0,0 0.77,-0.8 1.86,-0.27 0.39,-0.98 0.99,0.27 0.58,-0.3 0.05,0.42 0.6,-0.33 0.78,0.39 0.59,-0.7 -0.05,-0.71 1.2,-0.22 0.82,1 0.75,0.19 0.25,-0.33 1.7,-0.1 0.38,-0.79 0,0 0.07,0 0,0 0.51,-0.32 0.17,0.93 1.08,0.11 0.96,-0.36 0.88,-1.2 -1.15,-1.26 0.18,-0.76 0.55,0.21 -0.47,-1.12 0.2,-1.35 -0.56,-1.74 -0.36,-0.39 -1.04,0.77 -0.6,1.05 -0.62,-0.47 0.4,-2.27 1.08,-1.37 -0.31,-0.63 0.6,-1.31 -0.67,-1.22 -1.17,-0.1 -0.07,-2.57 -0.86,-0.9 -0.9,0.09 0,0 -0.16,0.07 0,0 -0.68,-0.04 0.34,-1.22 -1.27,-0.91 0.25,-0.58 -0.44,-0.47 0.37,-0.2 0,0 0.04,-0.4 0,0 0.16,-0.36 -0.64,0.55 -0.66,-0.33 -0.19,-1.14 -0.57,-0.49 -0.32,0.78 -0.48,-0.41 -0.5,0.22 0,0 -0.03,-0.11 0,0 -0.64,-0.41 0.88,-1.42 -0.44,-0.29 0.1,-0.93 0,0 0,-0.11 0,0 -0.48,-0.65 -1.27,-0.15 1.16,-1.95 -0.16,-0.8 0.87,-0.56 -0.52,-0.92 0.47,-0.01 0.74,-2.89 0.54,-0.49 -1.18,-1.47 0.36,-1.41 -1.73,-0.420004 -0.57,-1.49 -0.81,-0.48 0.08,-0.55 z" id="ES-CM"/>
+<path d="m 548.96514,50.388576 -1.52,-0.24 0.88,-1.3 0.14,1.03 0.5,0.51 z m 30.49,11.57 0.41,0.75 1.01,0.15 -0.2,0.22 1.17,1.34 -0.41,0.86 0.01,1.42 -0.27,-0.04 0.63,1.24 0.57,0.15 0.08,0.71 -0.42,0.29 -0.22,1.48 -0.71,0.5 -0.14,0.72 -0.7,0.21 -0.53,0.75 -0.81,-0.12 -1.58,2.42 -1.84,0.79 -1.14,1.52 -3.22,1 -0.71,0.54 -0.38,0.93 -6.63,2.85 -4.04,2.67 -2.96,1.25 -2.04,2.68 -0.76,1.86 0.38,-1.6 -0.55,1.21 -0.44,0.05 -0.04,0.28 0.46,-0.14 -0.72,1.27 -0.84,0.67 -2.53,0.8 -2.38,0.12 -1.69,0.9 -1.43,0.02 -1.97,0.63 -0.38,0.47 0.17,-0.36 -6.1,1.33 -3.12,1.69 -2.64,0.18 -1.45,0.92 -0.25,0.08 0.22,-0.37 -0.97,0.36 -1,1.610004 -1.22,-0.72 -2.08,0.37 -1.76,0.85 -3.41,3.38 -1.89,2.89 -1.09,0.72 -0.28,0.83 -1.11,0.68 0.83,1.27 1.4,0.05 -1.08,-0.81 0.76,-0.04 1.7,2.1 1.79,0.45 -1.37,1.46 -2.43,1.28 -2.24,2.87 -1.35,0.21 -0.71,-0.85 0.45,0.25 -0.04,-0.57 1.08,0.72 0.33,-0.23 -0.51,-0.34 1.76,-0.27 0.86,-1.55 -1.4,-0.2 -0.84,0.54 -1.68,0.16 0.09,0.41 -0.32,-0.21 -1.48,1.74 -0.67,1.6 0,0 -2.06,-0.88 0.13,-1.09 -1.12,-0.87 -1.7,-0.21 -1.59,-0.74 -0.41,-0.56 0.55,-1.63 0,0 -0.2,-0.08 0,0 -0.08,-0.09 0,0 -0.27,-0.27 0,0 -0.63,0.08 0,0 -0.15,0 0,0 -0.31,-1.13 -0.77,0.3 -0.75,-0.35 0,0 -0.25,-0.58 0.39,0.31 0.05,-0.48 1.42,-0.43 0.15,-0.7 1.19,-1.21 -1.04,-2.23 0.39,-1.08 0,0 -0.03,-0.2 0,0 1.09,-1.82 -0.33,-0.22 0,0 0.04,-0.27 0,0 -0.6,-1.21 0.5,-0.19 -0.89,-0.72 -0.38,0.2 0.01,-0.45 -0.37,0.19 0.33,-0.47 -0.3,-0.96 -0.51,-0.1 0,-1.430004 0.34,-0.4 0.9,0.26 0.17,-0.7 1.12,-0.27 0.72,-2.37 1.14,-0.06 0.06,-0.47 0.39,0.05 0.21,-1.51 -0.59,-0.94 0.11,-0.52 -0.57,-0.43 0.7,-0.9 -1.45,-1.5 0.95,-2.01 -0.34,-1.2 1.5,-0.22 1.36,-1.88 -0.53,-2.15 -0.72,0.33 -1.42,-0.24 0.21,-1.16 -0.87,-1.05 0.04,-0.68 1.58,-2.21 0.3,0.3 0.09,-0.93 1.87,-0.25 0.42,-1.28 0.83,-0.77 0.82,0.03 0.33,-1.15 0.66,0.03 0.02,-0.42 0.72,-0.31 -0.39,-0.52 0.09,-1.14 0.31,-0.07 -1.21,-0.66 0.67,-1.05 0.49,0.2 0.35,-0.99 0.54,-0.18 0.13,0.39 0.33,-0.62 0,-1.51 0.38,-0.24 0.87,-2.59 -0.24,-1.22 0.57,-0.48 -0.46,-0.32 0.12,-0.6 1.68,-4.89 -0.64,-0.55 0.81,-0.55 -1.28,-0.52 0.62,-0.69 -1.48,-3.7 0.29,-0.32 0.34,0.26 0.69,-0.66 -0.53,-0.28 0.04,-0.53 0.36,-0.45 0.43,0.19 -0.26,-0.38 0.7,-2.45 -1.68,-0.42 -0.27,-1.34 -0.61,-0.82 0,0 -0.21,-0.14 0,0 -0.11,-0.25 0,0 0.39,0 0.17,-0.64 -0.51,-1.51 -0.57,-0.2 0.67,-0.75 -0.59,-0.28 0.69,-0.81 -0.32,-1.23 1.36,-0.86 1.84,0.92 0.71,-0.13 1.44,0.47 1.91,1.38 0.93,-0.61 0.64,0.71 1.69,0.21 0.9,-0.28 1.35,1.25 0.13,0.97 0.97,0.73 1.67,-0.71 0.62,0.47 2.8,-0.16 -0.15,0.59 0.99,0.51 0.02,0.75 0.69,0.52 0.16,1.09 0.66,0.81 -0.44,0.77 0.47,0.57 -0.81,1.1 0.98,-0.13 0.49,1.08 -1.32,1 0.59,0.31 0.2,1.39 2.78,0.19 0.32,-0.9 0.48,0.3 0.52,-0.67 1.6,0.01 0.38,-1.36 0.89,0.5 0.58,-0.42 1.06,0.54 1.06,-0.15 0.97,0.33 1.14,1.21 1.46,-0.14 0.12,0.84 0.49,0.29 0.19,1.47 1.44,1.25 1.88,-0.52 0.21,-0.56 0.64,-0.24 0.23,-0.95 0.83,-0.5 1.25,0.29 1.51,-0.82 1,0.57 0.63,-0.13 0.97,0.77 2.19,0.43 0.04,0.65 1.29,1.3 1.61,0.25 0.35,-0.74 0.62,-0.17 2.59,0.65 0.07,-0.68 -0.6,-1.05 0.49,0.02 0.07,-0.61 1.19,-0.61 1.06,-0.19 0.62,0.5 1.33,-1 0.34,-0.72 0.54,0.17 0.34,-0.48 1.24,0.4 0.8,-0.95 0.54,0.61 1.98,-0.29 1.26,1.76 0.93,-0.44 1.48,0.1 -0.44,0.25 0.27,0.41 -0.48,0.88 0.37,0.12 -0.31,0.33 0.21,0.73 0.65,0.32 0.2,0.59 0.92,-0.57 0.63,0.77 0.45,-0.37 0.53,0.54 0.98,0.21 -0.96,0.58 0.34,0.69 -0.61,-0.07 0.29,0.76 -0.24,0.45 -0.69,0.01 0.26,0.56 -0.96,-0.49 -0.26,0.71 -1.04,-0.52 -0.29,-0.69 -0.89,0.61 -0.62,1.56 0.27,2.56 z" id="ES-CT"/>
+<path d="m 307.61514,129.30858 0.87,0.75 0.76,0.17 0.1,-0.25 0,0 0.49,-0.01 0,0 0.77,0.34 1.05,-1.05 0.71,0.96 0.73,-0.77 2.1,-0.21 0.82,-0.73 -0.16,-1.04 0.47,-0.77 2.21,-1.12 0.67,0.04 0.62,-0.98 1.33,-0.14 0.18,-0.71 0,0 0.38,-0.39 0,0 3.19,-1.87 1.98,1.04 0.36,0.8 0.78,-0.21 -0.33,0.71 1.02,0.48 0,0 0.12,0.05 0,0 0.54,0.37 -0.5,0.18 0.32,0.16 -0.36,0.28 0.11,0.48 -0.6,0.28 2.38,0.6 -0.06,0.74 0,0 0.12,0.18 0,0 0.74,0.53 0,0 0.28,0.19 0,0 1.56,0.5 0.69,-1.45 2.3,-1.41 0.69,1.33 -0.49,0.9 0.29,0.38 0.73,0.21 0.73,-0.48 1.27,0.07 0.9,0.77 0.21,0.71 0.78,0.15 0.2,1 0.79,0.17 0,0 0.41,0.21 0,0 0.33,0.21 0,0 0.21,0.07 0,0 1.45,-0.01 0.7,-0.34 1.17,-1.53 2.31,-0.36 -0.73,1.64 0.05,1.91 0.88,1.7 0,0 -0.91,0.56 0.11,4.09 -1.13,3.72 2.21,-0.5 1.13,1.04 -0.73,1.23 0.11,2.41 1.47,0.25 1.27,-1.59 1.07,-0.12 0.21,1.43 -0.39,0.23 0.94,1.39 -0.58,2.21 0,0 0.01,0.34 0,0 -1.25,1.56 0.81,0.96 0,0 0.46,0.41 0,0 1.96,2.41 0.79,0.18 2.92,3.28 2.2,0.84 0.97,-0.65 0,0 0.06,-0.07 0,0 1.56,-0.3 0.8,-0.79 0,0 0.22,-0.09 0,0 1.32,-0.98 0.56,0.92 -0.96,2.08 -0.06,1.27 -1.45,0.3 0.77,2.39 0.5,0.29 0.16,1.21 1.6,1.56 -2.46,-0.97 -1.89,-0.2 -0.68,1.2 0,0 -0.18,0 0,0 -0.93,2.12 0.52,0.99 0,0 0.28,0.11 0,0 0.47,0.33 -0.17,0.55 0,0 -0.09,0.05 0,0 -1.13,0.43 -2.29,-0.89 1.1,3.42 0.46,-0.12 1.98,0.9 -0.44,1.87 -1.8,-0.13 -0.52,0.77 -1.49,4.27 -1.57,0.43 0,0 -1.4,0.77 -2.35,-0.36 0.47,1.34 0,0 -0.04,0.08 0,0 -0.47,0.06 0.01,0.53 -0.33,-0.27 -0.11,0.35 -0.22,-0.38 -0.15,0.63 -0.24,-0.26 -0.88,1.11 -0.97,0.49 -0.52,0.64 0.09,0.51 -1.7,-0.18 -0.61,1.03 0.22,0.5 -0.47,-0.26 -0.39,0.67 0,0 0.11,0.26 0,0 -1.85,1.25 -0.13,0.72 -0.96,0 -0.72,0.46 -1.01,1.65 -0.03,0.56 0.74,0.71 -0.44,1.28 1.3,2.27 -0.04,2 0,0 -0.1,0.06 0,0 -0.35,0.65 0.15,0.77 -1.03,0.44 -0.19,0.64 -1.41,-0.23 -1.94,1.94 -0.77,-0.23 -0.19,-1.39 1.24,-0.79 -0.27,-0.54 0.31,-0.16 0.26,0.36 -0.04,-0.73 -1.13,-0.53 -0.79,0.56 -0.69,-0.17 -0.49,0.38 -1.41,0.1 -0.71,0.56 -0.08,0.79 -1.24,0.93 -0.08,0.58 0.57,0.72 -0.71,0.73 -0.49,1.78 -2.66,-0.09 -1.78,0.46 -1.78,1.51 -0.56,-0.74 -1.03,0.1 -0.36,-0.41 -1.4,-0.25 -0.62,-0.63 0,0 -0.14,-0.05 0,0 -0.73,-0.63 -0.28,-1.15 -1.24,-0.32 -1.02,0.1 0.24,0.31 -0.73,0.59 0.16,0.6 -0.32,0.21 -1.94,-0.75 0,0 -0.32,0 0,0 -0.66,0.2 -0.12,-1.34 0,0 -0.43,-0.52 0,0 -0.69,-0.73 -0.56,0.27 -1.94,-0.34 -0.73,0.3 -0.62,-0.27 -0.03,-0.43 -1.05,0.01 0.43,-2.28 -1.37,0.04 -2.32,-1.04 0,0 -0.15,-0.48 -0.56,0.06 -0.43,0.47 -0.24,-0.25 -0.87,0.24 -0.46,0.7 -1.03,-0.1 -0.45,0.51 -1.46,-2 -0.43,-1.64 -0.46,-0.13 -2.75,-3.87 -0.2,-0.96 -0.99,-0.68 -0.5,0.13 1.02,-1.31 -0.71,-0.11 0.52,-2.23 1.62,-2.78 -0.76,-0.51 0.33,-2.96 1.36,-0.77 2.19,-2.35 0.91,-0.12 0.86,-1.27 0.77,-0.36 0.17,-0.54 -0.49,-0.99 2.61,-4.08 -0.25,-1.02 -0.73,-1.38 -1.21,-0.8 -2.03,0.61 -0.83,-0.31 -0.25,-0.47 0.35,-1.7 -2.22,-0.8 -0.7,-0.69 -0.22,-1.36 0.44,-0.95 -2.03,-1.99 -0.44,-1.58 0.64,-1.21 0.13,-1.62 -1.43,-0.97 -0.45,0.22 -0.44,-0.32 -0.26,-1.39 -1.06,-0.16 -1.01,-1.5 -0.86,-0.41 -0.75,-2.35 -0.4,-0.28 2.29,0.08 3.29,0.75 2.29,-0.92 2.81,0.48 0.62,-0.36 1.59,0.19 1.4,-0.46 1.09,-3.58 -0.25,-1.4 0.88,-0.41 1.19,-1.39 0.08,-2.14 0.45,-0.39 0.13,-1.58 0.57,-1.13 -2.07,-3.43 -1.64,-0.33 -0.83,-2.42 0.51,-1.42 1.24,-0.39 0.35,-0.71 1.15,0.12 z" id="ES-EX"/>
+<path d="m 252.04514,59.318576 0.5,0.59 -0.63,-0.17 0.13,-0.42 z m -0.24,-1.56 0.57,0.82 -0.45,0.58 0.24,-0.47 -0.36,-0.93 z m -0.09,-5.24 -0.66,1.48 -0.02,-0.97 0.36,-0.63 0.32,0.12 z m -2.54,-3.28 0.39,0.51 -0.28,0.25 -0.11,-0.76 z m 3.79,-3.27 0.13,0.35 0.37,-0.1 0.12,0.74 -0.43,0.08 0.11,0.67 -0.27,0.04 -0.21,-0.33 0.29,0.07 -0.24,-0.32 0.29,-0.62 -0.62,-0.39 0.46,-0.19 z m 25.8,-43.46 0.63,-1.08 0.34,0.23 0.63,-0.41 0.25,0.38 -0.33,1.08 0.57,0.94 -0.67,-0.44 -0.04,1.25 -0.37,0.12 0.52,0.46 -0.91,0.04 0.68,0.39 0.8,-0.52 -0.44,-0.92 0.89,-0.17 0.25,0.52 0.48,-0.17 -0.62,-0.56 0.5,-0.24 -0.05,-0.35 2.42,-0.92 0.99,-0.98 -0.05,-0.56 0.72,0.63 -1.04,1.44 0.54,0.22 0.23,-0.62 0.99,-0.24 0.23,1.16 0.59,0.16 -0.2,1.44 0.34,0.83 0.17,-0.99 0.51,-0.35 -0.22,-0.7 0.73,0.06 0.04,-0.76 0.9,-0.24 0.27,0.5 1.25,-0.03 -0.24,0.6 3.28,1.38 0.53,1.48 1.14,1.23 -0.36,0.33 0.48,-0.15 1.19,0.7 -0.29,0.56 -0.38,-0.04 0.52,0.22 -0.25,0.22 0.64,-0.7 2.01,0.59 1.38,-0.3 1.88,0.22 0.17,0.74 -0.44,0.64 -0.09,1.76 0,0 -0.93,0.65 -0.38,1.05 -1.89,-0.1 -0.02,0.93 0,0 0.05,0.13 0,0 -0.12,0.68 0.49,0.3 0.58,-0.33 0.25,0.45 -0.06,1.53 0.82,1.01 1.08,-0.06 -0.27,1.34 0.26,0.89 1.11,1.12 0.3,-0.33 0.25,0.57 0.82,0.16 0.15,0.58 -0.42,0.84 0.64,1.14 0.5,0.08 1.47,-0.92 -0.05,-0.35 0.79,-0.19 0.91,1.06 -0.19,0.77 -1.12,1.16 -0.62,0 -0.54,0.63 -0.67,-0.45 -0.74,0.94 0.03,0.98 -0.44,-0.24 -0.43,0.77 0.68,0.93 0.41,-0.02 0.05,-1.48 1.27,1.72 1.02,0.03 0.94,1.13 -0.14,1.16 0.46,0.46 0,0 -0.46,0.31 0.18,0.91 -1,0.29 0.79,1.86 -0.74,0.79 0.05,0.53 -1.86,1.72 -0.67,-0.49 -0.35,1.07 -1.04,0.07 -0.91,1.05 1.04,1.91 -1.15,0.56 -0.04,1.21 0.38,0.46 -0.84,1.13 0.17,0.88 -0.45,0.79 0.55,0.03 0,0 0.5,0.04 0,0 1.71,0.47 0.4,-0.88 0.83,-0.12 2.04,1.24 0.85,-0.24 0.42,0.96 -0.41,0.52 0.19,0.92 -0.66,0.76 0,0 -0.02,0.08 0,0 0.58,0.65 1.07,0.17 0.39,0.55 0.9,0.28 -0.15,2.28 -1.62,2.37 0,0 0.14,0.3 0,0 -0.06,0.56 -1.26,-0.71 -1.14,0.44 -0.41,0.9 -1.18,0.63 -0.23,1.58 -0.97,0.27 -0.43,1.37 -0.8,0.39 0.65,0.87 0.92,-0.09 0.37,1.01 -0.73,1.17 0.15,0.78 0,0 -0.7,0.84 -1.67,0.05 -0.52,-0.9 -0.84,-0.47 -1.62,0.22 -0.29,1.4 0.35,0.85 -0.57,1.39 -3.17,1.33 -1.13,0.08 -0.27,-0.38 -1.57,1.56 -0.7,-1.91 -1.18,-0.34 -0.94,1.11 -2.31,0.39 0.3,-1.38 0.46,-0.42 -2.03,-0.14 -1.15,-0.88 -1,0.54 -0.57,-0.22 -0.85,0.56 -1.23,0.14 -1.18,1.04 -0.34,-0.39 0.16,-2.2 -0.48,-0.18 -0.51,1.77 -1.54,0.19 -0.98,1.52 -1.13,0.52 -1.96,0.28 -1.01,-0.35 -0.16,-2.05 -0.85,0.11 -0.41,-1.37 1.47,-2.58 0.9,-0.87 1.12,-0.37 0.11,-1.18 -0.8,-1.17 -1.89,0.42 -0.41,-3.15 -0.7,0.76 -0.63,-0.22 -0.3,0.62 -1.65,0.69 -0.37,0.7 -0.87,-0.21 -0.5,0.5 -1.14,0.16 -0.52,-0.37 -2.1,0.09 -0.14,0.6 -0.54,0.3 -2.35,0.2 -0.67,0.72 -0.23,1.01 -2.19,1.37 -0.29,1.07 -1.76,0.84 -1.35,1.7 -0.28,-0.49 -0.22,-3.52 0.34,-1 -0.67,-4.05 0.58,0.02 0.78,-0.64 0.45,0.58 0.28,-0.14 0.14,-0.87 -0.84,-0.6 0.75,-0.01 0.2,-1.13 1.01,-0.65 0.43,-0.98 0.6,-0.03 -0.36,0.08 0.33,0.18 2.19,-2.14 1.34,-0.09 -0.41,-0.8 0.43,-1.25 -0.58,-0.36 -0.11,0.99 -0.65,0.42 0.04,0.87 -1.44,0.56 -0.15,-0.48 -0.37,0.07 -0.17,0.56 -0.75,0.49 -0.49,-0.19 -0.26,0.61 -0.57,-0.47 -0.47,0.29 -0.68,-0.36 -0.21,0.54 -0.26,-0.12 0.47,-2.16 0.68,1.13 0.39,-0.01 -0.08,-1.25 -0.5,-0.92 0.96,0 0.43,0.4 0.87,-0.44 0.8,-1.64 1.99,-1.55 -0.82,0.25 -0.24,-0.69 -2.26,1.91 -1.09,-0.48 -0.66,0.61 -1.15,-1.13 0.24,-0.75 -0.37,-0.8 -0.72,-0.19 -0.39,0.42 -0.47,-0.47 0.17,-0.6 1.31,-0.05 -0.06,-0.46 0.55,-0.28 0.43,1.06 -0.45,0.4 0.08,0.51 0.75,-0.54 0.66,0.49 -0.39,-1.21 0.63,-0.43 -0.34,-0.47 0.24,-0.83 -0.43,0.37 -0.28,-1.15 0.55,-0.32 -0.41,-0.09 0.1,-0.5 0.94,-0.15 0.8,-0.8 -0.34,-0.49 0.63,-1.21 -0.39,-0.21 -0.94,0.61 -0.48,-0.34 0.25,-0.73 -0.76,-0.79 0.01,0.96 -0.31,-0.16 -0.28,0.7 0.63,0.52 -0.56,0.23 0.03,0.73 -0.83,-0.15 0.37,-0.81 -0.72,-0.23 -1.01,1.15 0.48,0.78 -0.86,0.07 -0.29,0.55 -0.7,0.15 -0.03,1.12 -1.47,0.66 0.26,-1.49 -0.6,-0.68 -0.49,0.36 -0.46,-0.37 1.35,-2.16 0.5,-2.78 0.38,0 0.65,-1.14 0.85,-0.19 0.89,-1.47 0.41,-0.17 0.66,0.72 -0.38,-0.71 0.1,-0.85 0.93,-0.51 -0.42,-0.03 -0.26,0.46 -0.48,-0.68 -0.1,1.2 -0.45,0.19 -0.18,-0.35 -0.81,1.02 -0.51,-0.53 -0.03,0.55 -0.92,-0.11 -0.1,-0.78 -0.61,0.57 -0.61,-0.04 0.41,0.71 -1.12,1.13 -0.29,-0.58 -0.49,0.03 -0.48,-1.4 -0.44,-0.24 1.17,-0.92 -0.1,-0.72 -0.57,-0.09 -0.54,-1.07 0.59,-1.29 -0.9,-0.16 -0.93,-1.69 0.3,1.53 -0.73,-0.05 -0.32,-0.9 -0.37,0.02 -0.02,0.53 -0.85,0.36 -0.1,1.35 -0.33,-0.36 0.12,-0.72 -0.63,-0.43 0.12,-0.67 0.8,-1.23 0,-1.12 0.37,0.18 0.18,-0.32 -0.79,-0.22 -0.59,-1.7 0.63,0.4 0.48,-0.23 0.03,-1.51 0.97,0.16 0.05,-1.01 0.98,0.93 0.6,-1.21 1.04,-0.4 -1.1,0.23 -0.02,-0.92 -0.5,1.06 -0.56,-0.19 -0.28,-1.22 0.41,0.26 0.51,-0.43 0.16,-0.97 0.5,0.34 0.19,-0.49 0.41,0.19 0.14,-0.27 1.34,0.62 1.06,-0.44 0.8,-1.48 0.42,0.61 0.45,-0.46 0.96,0.06 -0.06,0.47 0.51,-0.25 0.31,-0.75 0.44,0 -0.45,-0.09 -0.72,0.88 0.18,-0.48 -0.4,-1.1 -0.66,0.04 -0.41,-0.51 0.93,-0.71 0.78,0.45 0.08,-0.44 0.48,0.03 -0.08,-1.07 0.98,0.35 0.1,-0.38 0.69,0.12 0.16,-0.96 1.48,1.53 2.14,0.49 2.7,-1.18 1.39,0.43 0.61,-0.18 0.65,-0.45 0.4,-1.17 0.5,0.23 0.57,-0.28 0.55,-0.86 0.76,0.5 0.2,-0.75 0.48,0.82 -0.54,0.19 0.52,0.33 0.07,0.85 -0.08,-0.4 0.95,-0.19 0.31,-1.17 -0.46,-0.1 0.14,-0.58 1.17,-0.35 0.33,0.78 0.85,0.09 0.44,0.66 -0.11,0.53 1.15,0.89 -0.09,-0.53 0.32,0.17 -0.53,-0.63 0.29,-0.38 -0.31,-1.1 0.41,-0.62 0.88,-0.06 0.03,-0.31 -0.65,-0.21 -0.56,0.35 -0.38,-0.41 -0.79,0.4 -0.57,-0.66 -1.01,-0.33 0.36,-0.07 -0.22,-0.32 1.09,-0.33 0.13,0.31 0.33,-0.42 0.71,0.39 0.74,-0.14 0.55,-0.47 -0.09,-0.41 0.36,0.21 0.23,-0.7 -1.9,0.94 0.03,-0.36 -0.46,0.11 0.05,-0.58 -0.57,0.98 -0.79,0.25 -0.55,-0.37 -0.6,0.44 -0.23,-0.24 0.79,-1.22 -0.24,-0.83 0.87,-0.59 -0.79,-0.98 0.35,-0.31 0.49,0.5 0.93,-0.05 1.87,-1.65 0.12,-0.75 0.93,0.14 -0.03,0.73 0.39,-1.39 0.82,-0.21 0.49,-0.98 0.18,1.09 0.42,-0.23 0.5,0.4 -0.57,-0.6 0.51,0 -0.03,-0.42 -0.56,0.01 0.37,-1.68 0.8,-0.35 0.89,0.33 1.31,-0.89 0.04,-0.48 0.6,0.1 z" id="ES-GA"/>
+<path d="m 443.90514,68.128576 -2.91,1.74 -0.5,0.03 -0.74,-0.72 0,0 -0.16,-0.16 0,0 -2.67,-0.65 -0.23,-1.24 0.36,-0.31 -1.44,-2.23 0.87,-0.5 0.03,-0.69 -2.92,-0.16 -0.9,0.51 -0.38,-1.55 -1.05,-0.5 -3.27,0.3 -0.46,0.76 -0.76,0.31 -0.76,-0.26 -0.05,1.63 -0.89,0.64 -0.89,2.06 -1.18,-0.39 -1.33,0.35 -0.82,-0.66 -1.13,0.22 -0.3,-0.85 1.28,-1.87 0.07,-0.73 -0.77,-0.78 -0.44,0.26 -0.6,-0.23 -0.48,0.56 0,0 -0.07,0.25 0,0 -0.41,2.33 -1.2,0.24 -0.83,0.78 -0.87,-0.84 0,0 0,-0.29 0,0 -0.59,-1.78 -2.62,0.08 -2.6,-4.05 0.68,-0.58 0.39,-1.19 -0.47,-2.47 0.31,-0.45 0,0 -0.16,-0.12 0,0 -0.22,-0.85 1.26,-0.33 -0.58,-0.91 -0.56,-0.01 0.11,-1.12 0.61,0.02 -0.11,0.72 0.69,0.95 -0.18,-1.99 0.45,-0.79 -1.33,-1.54 0.52,-0.56 0.11,-0.95 -0.44,-0.35 -0.95,0.19 -0.26,-0.33 0.8,-0.43 0.78,-1.19 0,0 0.41,-0.1 0,0 -0.63,-1.91 1.78,0.32 0.37,-0.46 0.61,0.35 1,-0.13 0.93,0.72 0.38,-0.3 0.37,0.25 0.68,-0.64 0,0 0.41,0.33 0.02,0.76 0.63,-0.12 -0.04,0.77 -0.56,0.35 0,0 0.08,0.4 0,0 0.52,0.53 0.11,-0.48 0.33,0.14 0.63,-0.56 0.41,-1.55 0.66,0.01 1.57,0.99 -0.27,2.01 0,0 -0.36,0.87 0,0 0.77,-0.33 -0.03,0.6 0.6,0.24 0.27,0.74 1.13,-0.73 0.28,1.13 0.68,-0.79 1.05,0.38 -0.18,-0.44 0.76,-0.88 -0.13,1.08 1.02,0.15 0.77,-0.38 0.74,0.26 0,0 0.6,0.61 1.28,0.31 0.19,0.49 0.37,-0.09 -0.1,-0.42 0,0 0.23,-0.11 0,0 0.8,0.41 0.02,-0.38 0.28,0.08 0,0 0.19,0.36 0,0 0.17,0.39 0.94,0.17 -0.06,0.38 0.75,0.25 -0.04,0.28 0.8,-0.08 0.42,0.39 0.46,-0.39 1.17,-0.06 -0.17,0.75 1.01,1.13 -0.24,0.8 0.53,0.12 1.38,-0.94 0.61,0.22 0.7,0.38 0.13,0.66 0.62,-0.01 0.29,0.48 0.35,-0.21 0.11,0.99 1.24,0.44 -0.06,1.33 0.49,0.09 0.09,-0.34 0.82,0.39 0.16,0.73 2.64,0.58 0.4,0.75 0.6,-0.01 -0.55,0.71 0.53,0.78 -0.57,0.4 -0.45,0.26 -1.11,-0.65 -0.68,0.46 -1.12,-0.53 -1.85,2.48 -0.37,0.97 0.19,1.03 1.23,0.98 0.24,-0.17 0,0 -0.27,1.45 z m -31.06,-23.28 0.05,-0.14 0,0 0.07,-0.11 0,0 -0.02,-0.13 0,0 -0.01,-0.04 0,0 0.27,-0.03 0,0 -0.02,0.2 0,0 -0.13,0.16 0,0 -0.19,0.1 0,0 -0.02,-0.01 z m 1.46,-0.04 0.17,-0.16 0,0 0.33,0.41 -0.51,-0.2 0,0 0,-0.05 z" id="ES-RI"/>
+<path d="m 378.13514,114.77858 0.45,0.86 -1.69,0.1 0,0 0.05,-0.6 0.78,-0.51 0.41,0.15 z m 20.01,-17.530004 -0.04,0.58 0.81,0.48 0.57,1.49 1.73,0.420004 -0.36,1.41 1.18,1.47 -0.54,0.49 -0.74,2.89 -0.47,0.01 0.52,0.92 -0.87,0.56 0.16,0.8 -1.16,1.95 1.27,0.15 0.48,0.65 0,0 0,0.11 0,0 -0.1,0.93 0.44,0.29 -0.88,1.42 0.64,0.41 0,0 0.03,0.11 0,0 0.5,-0.22 0.48,0.41 0.32,-0.78 0.57,0.49 0.19,1.14 0.66,0.33 0.64,-0.55 -0.16,0.36 0,0 -0.04,0.4 0,0 -0.37,0.2 0.44,0.47 -0.25,0.58 1.27,0.91 -0.34,1.22 0.68,0.04 0,0 0.16,-0.07 0,0 0.9,-0.09 0.86,0.9 0.07,2.57 1.17,0.1 0.67,1.22 -0.6,1.31 0.31,0.63 -1.08,1.37 -0.4,2.27 0.62,0.47 0.6,-1.05 1.04,-0.77 0.36,0.39 0.56,1.74 -0.2,1.35 0.47,1.12 -0.55,-0.21 -0.18,0.76 1.15,1.26 -0.88,1.2 -0.96,0.36 -1.08,-0.11 -0.17,-0.93 -0.51,0.32 0,0 -0.07,0 0,0 -0.38,0.79 -1.7,0.1 -0.25,0.33 -0.75,-0.19 -0.82,-1 -1.2,0.22 0.05,0.71 -0.59,0.7 -0.78,-0.39 -0.6,0.33 -0.05,-0.42 -0.58,0.3 -0.99,-0.27 -0.39,0.98 -1.86,0.27 -0.77,0.8 0,0 -0.41,0.1 0,0 0.31,0.74 -1.92,0.69 -0.34,-0.22 -0.95,0.51 -0.35,0.7 0,0 -0.18,0.11 0,0 -1.14,1.15 -1.66,-0.63 -0.21,-0.47 0,0 0.02,-0.14 0,0 -0.2,-0.28 0.54,-0.42 0.52,-0.1 0.2,0.41 0.66,-0.88 0.64,0.29 0.69,-0.67 -0.05,0.66 0.33,-0.26 -0.15,-0.5 0.63,0.28 0.11,-0.24 0,0 -0.22,-0.07 0,0 -0.14,-0.3 0.61,-0.29 0.36,-1.12 0.44,0.15 1.75,-1.44 0.39,-1.9 -1.49,-0.77 -0.13,-0.46 -0.58,0.37 -0.88,-0.53 -0.61,0.51 -0.76,-0.22 -0.98,-1.36 -0.77,0.57 -1.08,-1.05 -1.06,0 -0.44,-0.45 -0.51,0.51 -0.11,-0.84 -1.04,0.13 -0.93,-0.93 0.05,-0.48 -1.32,-0.59 -0.82,0.83 -1.16,-0.13 0.04,-0.65 -1.31,-1.1 -1.57,0.8 -0.62,1.4 -0.68,0.51 -0.26,-0.5 -0.37,0.29 -0.31,-0.46 -0.45,0.03 -0.18,-2.5 -0.6,-0.37 -0.14,1.05 -1.4,1.05 -0.07,0.76 -2.12,0.74 -0.43,0.6 -1.33,-0.6 0,0 0.52,-0.27 -0.24,-1.23 1.08,-1.23 -0.48,-1.74 0.54,-0.09 0.68,1.03 1.29,-0.15 -0.17,-0.76 0.6,-0.33 -0.1,-1.31 0.56,-0.73 2.72,-0.15 -0.51,-0.93 0.68,-1.03 -0.32,-2.47 0.16,-0.54 0.87,-0.5 0.3,-1.37 -0.33,-0.88 0,0 0.52,-0.01 0.22,0.79 0.45,0.13 0,0 0.45,-0.04 0,0 1.86,-0.7 -0.36,-1.55 0.38,-0.78 0,0 1.74,-2.14 0.73,-1.59 1.15,0.42 1.34,-0.21 1.12,-5 0.44,-0.09 0.79,-1.38 3.06,-1.23 1.1,-1.88 1.71,-1.05 1.23,-1.890004 1.15,-0.82 1.35,-0.23 z" id="ES-MD"/>
+<path d="m 474.44514,217.28858 -0.2,1.18 0.57,2.05 -0.7,-1.93 0.33,-1.3 z m -0.23,-1.07 -0.06,0.6 0.52,0.46 -0.54,-0.41 -0.21,-0.6 0.29,-0.05 z m -43.44,-8.56 0.27,-1.41 1.71,-1.42 1.48,-3.29 2.68,-1.17 0.95,-1.34 0,0 0.36,-0.66 0,0 0.5,-0.37 1.77,0.85 1.99,-0.56 3.4,-2.02 -0.3,-0.46 0.67,0.14 0.03,-0.46 0.69,-0.06 0.72,0.6 0.45,-0.38 0.51,0.5 -0.26,0.53 0,0 0.01,0.14 0,0 0.62,1 2.16,0.02 3.02,-2.26 -0.05,-3.72 -0.47,-1.81 0.27,-0.94 0.95,-0.67 0.11,-2.33 1.71,-1.69 0.51,-0.18 0.65,0.92 2.54,-2.08 0,0 0.33,-0.16 0,0 1.37,-0.43 1.82,0.56 0.1,0.95 2.44,1.91 0,0 0.69,2.85 -0.65,1.75 0.32,0.92 -2.15,2.03 0.4,0.21 -0.19,2.93 2.9,0.33 0.6,1.52 -0.6,2.85 -1.34,2.2 0.17,1.55 3.19,6.07 1.97,2.09 1.3,0.66 0.57,-0.08 0,0 0.38,1.95 -0.98,-0.97 -0.53,1.41 -1.11,0.96 -0.44,0.98 1.66,2.2 1.7,0.91 0.59,-0.79 0.42,0.7 0.4,-0.04 -0.9,1.09 -1.66,0.4 -1.02,0.69 -0.68,-0.34 -0.87,0.23 -1.15,0.84 -1.17,-0.23 -0.12,-0.27 0.57,-0.08 -0.8,-0.19 -0.26,-0.42 0.26,-0.32 -0.52,-0.11 0.14,0.68 -0.55,-0.14 -0.41,0.44 -1.37,-0.38 -0.99,0.54 -0.46,0.57 0.44,0.61 -1.51,-0.24 -0.15,-0.63 -0.88,-0.65 -1.14,-0.09 -0.31,0.65 -1.91,-0.17 -2.02,1.9 -1.6,0.7 -0.74,2.19 -0.89,-0.29 -1.16,0.92 -0.92,0.15 -0.87,0.88 0,0 -2.96,-2.32 -2.05,-0.37 0.04,0.62 -0.98,-0.72 -4.08,-6.6 0,0 -0.18,-0.19 0,0 -0.3,-1.64 0.47,-0.92 -0.37,-1.65 0.37,-2.29 0.57,-0.79 -0.2,-0.26 0,0 -0.17,0.01 0,0 -0.49,-0.21 -0.44,0.39 -1.11,-0.51 -0.6,0.35 -1.07,-0.94 -1.31,0.41 -2.19,-1.7 -1.25,-2.23 -1.06,-0.81 z" id="ES-MC"/>
+<path d="m 449.43514,18.578576 0.81,0.18 -0.18,0.89 0.61,1.16 0.87,0.08 0.54,-1.08 -0.17,-0.35 1.33,-0.21 1.41,0.84 1.36,-0.05 0.81,0.77 0,2.33 -0.53,0.43 -0.35,1.86 -1.6,1.46 0.9,1.56 2.35,0.66 0.26,-2.46 0.67,-0.69 1.33,-0.19 -1.06,1.82 1.26,0.95 1.33,-0.32 1.89,1.04 0.07,0.6 0.76,-0.59 0.91,0.88 1.88,0.3 0.42,0.65 1.44,0.79 1.03,-0.38 0.27,0.33 2.37,0.14 1.48,-0.63 0.66,0.84 -0.18,0.4 0.35,0.56 0,0 -1.57,-0.07 -0.94,0.71 -0.08,1.26 -1,0.79 -0.11,1.76 0.33,0.45 -0.46,0.89 -0.97,0.08 -0.01,0.64 -0.61,-0.01 -1.26,1.48 -1.54,0.11 -0.38,0.35 -0.01,1.62 -3.06,-0.04 -0.12,1.36 -0.6,-0.02 0.56,0.46 -1.18,0.79 -0.04,1.07 0,0 -0.14,0 0,0 -0.57,0.25 -0.96,-0.53 -0.64,1.24 0.33,1.78 -1.76,1.87 -0.49,1.68 0.66,0.27 0.14,0.6 -1.89,2.29 0.2,0.66 -0.7,1.97 0.68,1.44 -0.19,1.99 0.88,0.73 0.39,1.22 0.84,0.02 0,0 0.28,-0.03 0,0 0.16,1.1 -0.93,0.93 -1.19,2.2 0.09,0.49 -0.76,0.9 -2.51,-0.15 0,0 -0.32,0.3 0,0 -0.52,0.16 0,0 -0.66,-0.13 0,0 -2.62,-1.83 -1.7,0.31 -1.43,-1.39 -1.87,0.03 -0.28,-0.55 0,0 -0.24,0.18 -1.23,-0.99 -0.19,-1.02 0.36,-0.98 1.86,-2.47 1.11,0.53 0.68,-0.46 1.11,0.65 0.45,-0.26 0.57,-0.4 -0.53,-0.78 0.55,-0.71 -0.6,0 -0.41,-0.75 -2.64,-0.58 -0.16,-0.73 -0.82,-0.39 -0.09,0.33 -0.49,-0.09 0.06,-1.32 -1.24,-0.44 -0.1,-0.99 -0.35,0.21 -0.29,-0.47 -0.61,0.01 -0.14,-0.67 -0.7,-0.38 -0.6,-0.22 -1.38,0.94 -0.53,-0.12 0.25,-0.8 -1.02,-1.13 0.17,-0.75 -1.17,0.06 -0.46,0.39 -0.42,-0.39 -0.8,0.09 0.03,-0.28 -0.74,-0.26 0.06,-0.38 -0.95,-0.17 -0.17,-0.38 0,0 -0.18,-0.36 0,0 -0.29,-0.08 -0.02,0.38 -0.8,-0.41 0,0 -0.24,0.11 0,0 0.11,0.42 -0.37,0.09 -0.19,-0.48 -1.28,-0.31 -0.6,-0.61 0,0 -0.02,-0.77 0.83,-0.26 -0.11,-2.97 -0.71,-0.29 -0.8,1.4 -0.29,-0.72 -0.75,0.03 -0.24,-1.08 0.46,0.12 0.84,-1.24 0.98,-0.58 0.87,0.22 0.3,0.49 -0.25,0.33 2.42,-0.65 0.09,-0.59 -0.12,-0.36 -0.47,0.2 -0.35,-1.89 0.19,-0.58 1.49,-0.35 -0.49,-1.42 1.29,-2 -0.26,-1.68 0,0 -0.22,-0.32 0,0 0.32,0.01 0.04,-1.07 0.74,-0.95 0.8,0.53 1.45,-0.18 0.63,-0.3 0.35,-0.95 1.41,-0.25 0.3,-0.65 -0.37,-1.23 0.55,-0.61 0,0 0.07,-0.34 0,0 0.15,-0.61 1.77,-0.91 1.22,-1.41 -0.48,-0.65 0.17,-2.66 0.87,0.62 0.16,-0.87 0.4,0.73 0.32,-0.43 0,0 0.23,-0.05 0,0 1.28,-0.78 0.05,-1.14 0,0 0.3,-0.34 0,0 0.06,-0.07 0,0 0.41,0.04 0,0 0.9,-0.5 0,0 1.02,-0.5 z" id="ES-NC"/>
+<path d="m 533.64514,182.65858 0.48,0.79 0.43,-0.1 0.16,0.89 1.03,0.86 0.37,0.17 1.06,-0.66 0.44,0.8 -0.32,0.6 -1.33,-0.05 -1.01,-0.86 -1.07,-0.25 -1.72,1.53 -0.13,-2.72 0.44,-0.55 0.25,0.24 0.58,-0.31 0.18,-1.22 0.16,0.84 z m -0.46,-1.72 0.28,0.77 -0.42,-0.35 0.14,-0.42 z m 3.08,-11.16 0.6,0.83 1.27,0.1 -0.17,0.27 0.32,0.13 -0.5,0.14 -0.09,0.44 0.9,1.23 -0.99,0.43 -0.11,0.9 -1.27,0.21 -0.09,0.96 -0.3,0.1 0.24,0.27 -0.5,-0.06 -0.91,1.18 -0.54,-0.16 -0.01,0.49 -0.46,-0.45 -0.04,0.46 -0.48,-0.02 -0.45,0.94 0.08,1.56 -0.59,-0.37 -0.37,0.41 -0.73,-1.38 -0.66,0.5 -0.05,-0.36 -0.54,0.16 0,-0.47 -0.72,-0.13 -0.65,0.81 -0.65,-0.54 -0.3,-1.09 0.62,-1.29 -0.57,-0.67 0.38,-0.56 0.43,0.29 1.67,-0.22 -0.6,-0.7 0.38,-0.58 -0.13,-0.78 1.31,-0.76 0.47,-0.72 0.46,0.4 0.35,-0.6 0.78,0.06 0.2,-0.5 0.43,0.39 1.27,-1.02 0.29,0.41 0.27,-0.53 0.75,-0.11 z m 38.59,-1.63 0.61,0.21 -0.53,0.38 0.03,0.72 -1,-0.02 -0.12,-1.2 0.4,0.64 -0.06,-0.41 0.56,0.21 0.11,-0.53 z m -16.95,-14.83 -0.75,0.53 0.94,-0.93 -0.19,0.4 z m 23.98,-13.11 -0.27,0.55 -1.29,0.73 -0.64,-0.13 -0.56,0.99 -0.51,-0.43 -0.33,0.37 0.09,0.83 0.58,0.66 2.68,-1.11 -0.4,0.31 0.21,0.72 -0.5,0.72 -1.5,0.21 -0.02,1.07 0.52,0.93 0.76,0.7 2.3,0.98 2.05,-1.08 0.52,-1.04 2.34,1.57 0.72,-0.06 -0.17,0.87 0.71,0.26 -0.63,0.35 -0.02,1.72 -0.39,-0.02 -0.13,0.77 -0.79,-0.08 -0.38,0.53 -0.22,1.12 0.49,0.37 -0.69,0.14 -0.29,0.85 -0.98,0.45 0.22,0.14 -1.44,1.7 -0.35,2.52 -0.34,-0.35 0.17,0.33 -0.84,1.63 -0.31,0 0.2,0.2 -1.24,0.41 -0.45,0.87 -0.67,-0.12 -2.03,2.14 -0.61,0.12 -1,-1.55 -0.75,-0.21 0.09,-0.78 -0.84,-0.85 -0.78,-0.06 -0.44,0.44 -0.81,-0.48 -1.3,-0.07 -0.18,0.39 -0.6,-0.38 -0.53,0.15 -1.26,-1.55 0.14,-1.23 -0.68,-1.21 0.72,-1.22 -2.14,-1.79 -0.97,0.05 0.25,-0.22 -0.29,-0.04 -0.25,0.65 0.45,-0.15 -0.21,0.3 -0.71,-0.23 -0.43,0.73 -1.39,0.25 0.21,0.44 -0.37,0.22 -0.29,1.67 -0.88,-0.52 -0.39,0.23 0.08,-0.88 -0.62,-0.5 0.64,-0.42 -0.75,-0.67 -0.89,0.49 0.09,-0.5 -0.46,0 -0.49,0.59 0.01,-0.47 -0.69,0.06 0.73,-0.51 -0.48,0.08 -0.7,-0.72 0.27,-1.42 2.88,-1.68 1.82,-1.75 0.74,0.04 0.84,-0.58 0.91,-1.4 1.18,-0.58 0.16,-0.69 0.34,-0.23 0.32,0.3 0.17,-0.7 2.06,-1.02 0.08,-0.55 1.83,-0.19 0.24,-0.48 2.22,-1.02 0.4,-0.59 0.89,0.41 1.63,-1.02 -0.11,0.27 0.62,-0.1 -0.03,0.46 0.89,-0.55 0.72,0.13 1.24,-0.98 0.41,-0.04 -0.18,0.34 1.05,-0.32 z m 26.01,3.89 -3.59,-2.36 -2.06,-0.79 -1.63,0.56 -2.06,0.02 0.27,-2.8 -0.96,0.11 -0.19,-0.77 0.85,-1.1 1.21,-0.23 0.85,-0.06 0.63,0.49 0.33,-0.6 1.22,0.42 1.44,-0.51 0.58,0.48 0.96,-0.59 -0.2,-0.72 0.47,0.11 -0.17,0.93 0.3,0.53 0.81,-0.66 -0.17,1.31 0.37,-0.3 -0.1,-1.13 0.97,0.22 -0.32,0.92 0.57,0.44 0.36,-0.36 0.28,1.38 0.05,-0.7 0.34,0.57 1.36,0 -0.39,0.14 0.31,0.38 -0.32,0.63 0.4,0.17 -0.12,0.46 0.41,-0.17 0.14,1.37 0.61,0.49 0.06,0.64 0.46,0.14 -0.46,0.22 -0.39,-0.73 -1.05,-0.18 1.06,0.52 0.3,0.57 -0.1,1.17 -0.85,0.82 -1.75,-0.56 -1.09,-0.89 z" id="ES-IB"/>
+<path d="m 418.70514,13.518576 0.9,-0.37 0.32,1 1.29,0.87 1.23,-0.37 0.78,0.91 0.45,-0.11 0.47,0.47 0.59,-0.32 0.35,0.63 1.08,-0.12 1.31,1.52 2.88,1.38 1.96,0.13 1.49,-0.6 0.6,0.26 0.09,-0.29 0.35,0.71 0.9,0.28 3.44,-1.29 1.07,0.2 -0.05,-0.37 0.86,-0.47 1.24,0.06 1.84,-1.6 1.58,-0.6 0.23,1.23 -0.69,0.42 1.33,0.28 0.57,0.5 0.16,1.16 0,0 -0.9,0.5 0,0 -0.41,-0.04 0,0 -0.06,0.06 0,0 -0.3,0.34 0,0 -0.05,1.15 -1.28,0.78 0,0 -0.23,0.05 0,0 -0.32,0.42 -0.4,-0.72 -0.16,0.86 -0.87,-0.61 -0.17,2.66 0.48,0.65 -1.22,1.4 -1.77,0.91 -0.14,0.61 0,0 -0.07,0.34 0,0 -0.55,0.6 0.37,1.23 -0.29,0.65 -1.42,0.25 -0.35,0.94 -0.63,0.3 -1.45,0.18 -0.8,-0.53 -0.75,0.95 -0.04,1.07 -0.33,-0.01 0,0 0.22,0.32 0,0 0.26,1.68 -1.29,2 0.49,1.42 -1.49,0.35 -0.19,0.58 0.34,1.9 0.47,-0.21 0.13,0.36 -0.09,0.59 -2.42,0.65 0.26,-0.33 -0.31,-0.49 -0.86,-0.22 -0.98,0.58 -0.84,1.25 -0.46,-0.13 0.24,1.09 0.75,-0.03 0.29,0.72 0.8,-1.4 0.71,0.28 0.11,2.98 -0.83,0.26 0.02,0.76 0,0 -0.74,-0.26 -0.77,0.38 -1.02,-0.15 0.13,-1.08 -0.76,0.88 0.18,0.44 -1.05,-0.38 -0.68,0.79 -0.28,-1.13 -1.13,0.73 -0.27,-0.74 -0.6,-0.24 0.03,-0.6 -0.77,0.33 0,0 0.36,-0.87 0,0 0.27,-2.01 -1.57,-0.99 -0.66,-0.01 -0.41,1.55 -0.63,0.56 -0.33,-0.14 -0.11,0.48 -0.52,-0.53 0,0 -0.08,-0.4 0,0 0.56,-0.35 0.04,-0.77 -0.63,0.12 -0.02,-0.76 -0.41,-0.33 0,0 -0.84,-0.38 -0.29,-0.7 0,0 0.07,-0.07 0,0 -0.14,-0.87 -0.76,-0.52 -1.36,0.14 -0.99,-1.23 0,0 0,-0.13 0,0 -0.69,0.05 -0.18,-0.96 -2.67,0.29 0.63,-1.17 -0.92,-0.57 1.36,-2.5 -0.28,-0.77 -1.05,1.3 -0.93,-0.46 -0.82,1.12 0.42,0.41 -0.26,0.05 -1.92,-2.05 1.65,-2.51 2.15,0.57 -0.06,0.6 1.54,0.69 1.97,-0.33 1.07,-1.11 -1.68,-1.18 0.13,-0.4 -0.67,-0.8 -2.27,-0.15 -0.85,-0.55 0.95,-0.29 0.02,-1.4 -0.45,-0.26 0.62,-0.86 -0.2,-0.46 -0.29,0.2 -0.78,-0.53 1.06,-1.82 -0.65,-0.42 -1.48,0.22 -0.85,-0.98 -4.46,2.39 0,0 -0.46,-2.8 0,0 -0.18,-0.28 0,0 -0.22,-0.71 1.39,-0.38 0.42,-0.89 1.19,-0.29 0.2,-0.84 0.25,0.3 0.75,-0.29 0.43,0.39 1.46,-0.7 0.42,0.93 0.5,-0.55 0.91,-0.12 0.11,-1.94 0,0 0.7,-0.06 0.32,0.43 0.19,-0.74 0.32,0 1.38,0.91 0.39,-0.28 -0.3,0.27 0.64,0.5 0.17,-0.85 -0.62,-0.95 0.88,-0.33 0.93,-1.12 0.64,0.01 -0.01,-0.87 3.74,0.21 0.64,-0.53 z m -13.61,9.23 -0.6,-2.02 1.09,-0.51 0.47,0.26 -0.54,1.05 0.03,1.05 0,0 -0.45,0.17 z m 12.18,15.03 0.07,0.02 0,0 0.1,0.17 0,0 0.16,0.14 0,0 2.5,-0.29 2.39,1.05 1.1,-0.19 0.38,0.73 0.83,-0.45 -0.42,1.43 -0.4,0.47 -0.3,-0.14 -0.24,0.69 0.87,1.04 1.48,-0.57 0.15,1.39 -0.84,0.27 -0.17,-0.39 -2.21,0.07 -0.63,-0.91 -1.23,-0.06 -0.38,0.44 -1.34,-0.15 -0.48,-1.18 -1.07,-0.38 -1.22,-1.14 0.82,-1.54 0,0 0.08,-0.52 z" id="ES-PV"/>
+<path d="m 454.97514,133.73858 1.28,0.18 0,0 0.31,0.18 0,0 0.48,-0.2 0.62,0.3 0,0 0.49,-0.43 0,0 0.45,-0.2 -0.01,-1.78 0.54,-0.46 0.03,0.32 0,0 0.17,0.43 0,0 0.43,1.05 0.81,0.5 0.01,1.02 2.64,0.13 1.92,1.54 0.17,0.69 -0.33,0.47 -2.22,0.91 0,0 -2.25,0.57 -0.72,-0.23 0,0 -0.05,-0.1 0,0 -2.66,-0.34 -1.22,-2.72 0.28,-0.27 -1.19,-0.86 0.02,-0.7 z m 8.42,6.1 0.48,0.33 0.21,-0.37 0.65,0.15 0.55,-0.39 2.27,-0.07 1.51,0.85 0.32,-0.28 0.44,0.89 -0.24,0.76 0.34,0.98 -0.3,0.63 1.15,0.87 2.03,-1.2 -1.13,-1.51 0.06,-1.88 1.46,-0.59 0.73,-1.85 1.96,0.07 1.37,-1.06 0.44,0.13 -0.36,-1.16 0.5,-0.82 0.83,-0.39 0.96,-4.06 1.38,0.84 1.81,-0.55 1.18,-0.71 -0.47,-1.08 0.3,-0.41 0.63,0.03 0.74,-1.24 1.58,-0.91 -0.15,-0.79 -1.63,-1.96 0.35,-0.54 1.68,-0.67 -0.12,-0.81 -0.65,-0.56 0.19,-3.41 -0.83,0.25 -1.24,-0.38 -0.26,-1.87 1.33,-0.5 0.61,0.69 1.93,-1.09 0.16,-1.77 0.93,-1.54 1.41,-0.05 0.03,0.62 0.97,0.86 1.23,0.58 1.09,-0.09 0,0 0.54,-0.03 0,0 0.54,0.18 0,0 0.01,0.11 0,0 0.32,1 0,0 0.32,0.12 0,0 1.84,-1.27 1.06,0.28 0.62,-0.52 0,0 0.75,0.35 0.77,-0.3 0.31,1.13 0,0 0.15,0 0,0 0.63,-0.08 0,0 0.27,0.27 0,0 0.08,0.09 0,0 0.2,0.08 0,0 -0.55,1.63 0.41,0.56 1.59,0.74 1.7,0.21 1.12,0.87 -0.13,1.09 2.06,0.88 0,0 -1.01,2.29 -0.05,-0.27 -1.54,2.36 -0.25,1.52 -2.25,2.9 -1.06,0.81 -0.57,1.58 -1.97,1.26 -1.32,3.3 -2.65,1.74 -1.49,4.14 -1.61,1.95 -0.49,0.04 -2.66,4.4 -0.82,2.81 -1.4,1.57 -1.56,3.42 0.05,2.14 -0.38,-0.29 0.34,0.58 -0.45,0.21 0.84,3.67 2.43,5.08 -0.62,0.43 0.06,1.09 2.1,5.19 3.77,4.14 3.96,0.88 -0.43,0.14 0.19,0.3 0.14,-0.29 0,0.39 2.08,1.05 -0.4,0.39 0.22,0.68 0.52,0.48 0.38,-0.15 0.27,0.97 -1.4,0.55 -0.89,1.38 -0.56,-0.21 -0.85,0.48 -0.67,0.94 0.25,0.5 -0.93,-0.36 -0.53,0.56 -0.88,-0.17 -0.72,0.43 -0.94,1.38 0.35,0.56 -1.27,1.33 -1.47,-0.39 -0.59,0.68 -3.1,0.98 -2.41,1.58 -0.78,1.34 0.01,1.79 -1.16,-0.34 -1.19,1.24 0.26,-0.58 -0.61,0.29 -0.42,1.8 0.29,2.69 -0.4,0.48 -1.91,0.04 -0.59,0.6 -0.75,2.46 -0.12,3.4 -0.55,0.89 -0.89,0.3 -0.59,1.91 -0.84,0.47 -0.31,1.72 0,0 -0.57,0.08 -1.3,-0.66 -1.97,-2.09 -3.19,-6.07 -0.17,-1.55 1.34,-2.2 0.6,-2.85 -0.6,-1.52 -2.9,-0.33 0.19,-2.93 -0.4,-0.21 2.15,-2.03 -0.32,-0.92 0.65,-1.75 -0.69,-2.85 0,0 1.74,-0.03 1.29,-1.37 -1.25,-2.65 0.9,-0.42 0.14,-1.36 -0.35,-1.11 0.32,-1.3 -0.66,-0.59 -0.3,-1.19 -1.12,-0.2 -0.88,0.54 -3.01,0.19 -2.23,-3.34 -1.01,-0.75 0.21,-2.11 2,-3.62 0.52,-3.35 -1.24,-0.68 -0.32,0.33 -0.91,-0.35 0,0 -0.16,-0.08 0,0 -0.57,-0.07 0,0 -0.16,0 0,0 -0.94,-0.35 0,0 -0.18,-0.05 0,0 -0.23,0.29 -0.84,-0.77 -0.47,0.04 0,-0.44 -0.67,-0.05 0.29,-0.31 -0.69,-0.16 -0.05,0.65 -0.06,-0.33 0,0 -0.06,-0.16 0,0 -0.67,0.49 0,0 0.12,-0.06 0,0 0.05,-0.48 -0.5,-0.18 0.39,-0.01 -0.19,-0.61 0,0 -0.07,0.06 0,0 -0.38,0.21 0.26,-0.32 -0.61,0 0.18,-0.65 -0.6,0 0,0 0.2,-0.24 0,0 -0.63,-0.09 -0.23,-0.81 0.41,-0.15 0.27,-0.7 -0.24,-0.63 0.35,-0.16 -0.1,-1.64 -0.48,-0.09 1.57,-0.95 1.59,-3.14 0.93,-0.79 0.78,0.29 0,0 0.73,0.35 0,0 0.96,-0.29 0.44,-0.68 -0.35,-1.4 1.6,-2.42 0.46,-3.35 0,0 0.09,-0.43 0,0 -0.39,-0.7 0.18,-0.58 1.78,-0.8 z" id="ES-VC"/>
+</g>
+
+              <!-- Gurrea de Gállego — Huesca province (NE Aragón).
+                   Aragón bbox y=33..144, Gurrea in N portion → (475, 60) -->
+              <!-- Concentric radius rings around Gurrea -->
+              <g fill="none" stroke="#1A1614" stroke-width="0.7" opacity="0.18">
+                <circle cx="475" cy="60" r="48"/>
+                <circle cx="475" cy="60" r="95"/>
+                <circle cx="475" cy="60" r="155"/>
+              </g>
+
+              <!-- Center glow -->
+              <circle cx="475" cy="60" r="70" fill="url(#glow)"/>
+
+              <!-- Cross axes through Gurrea -->
+              <g stroke="#1A1614" stroke-width="0.5" opacity="0.15" stroke-dasharray="4 4">
+                <line x1="225" y1="60" x2="635" y2="60"/>
+                <line x1="475" y1="-20" x2="475" y2="310"/>
+              </g>
+
+              <!-- Routes (animated dashes) — Gurrea → 5 cities -->
+              <g class="routes" stroke="#1A1614" stroke-width="1.7" fill="none">
+                <line x1="475" y1="60" x2="389" y2="120" class="route" />  <!-- Madrid -->
+                <line x1="475" y1="60" x2="560" y2="88"  class="route" />  <!-- Barcelona -->
+                <line x1="475" y1="60" x2="496" y2="175" class="route" />  <!-- Valencia -->
+                <line x1="475" y1="60" x2="432" y2="19"  class="route" />  <!-- Bilbao -->
+                <line x1="475" y1="60" x2="470" y2="100" class="route" />  <!-- Zaragoza -->
+              </g>
+
+              <!-- Cities -->
+              <g font-family="JetBrains Mono, monospace" font-size="9" fill="#1A1614" font-weight="600">
+                <g transform="translate(389 120)">
+                  <circle r="4" fill="#1A1614"/>
+                  <text x="-60" y="-6">MADRID</text>
+                  <text x="-60" y="4" fill="#1A1614" opacity="0.65" font-size="7" font-weight="400">3h 50m · 320 km</text>
+                </g>
+                <g transform="translate(560 88)">
+                  <circle r="4" fill="#1A1614"/>
+                  <text x="-9" y="-6" text-anchor="end">BARCELONA</text>
+                  <text x="-9" y="4" text-anchor="end" fill="#1A1614" opacity="0.65" font-size="7" font-weight="400">3h 10m · 290 km</text>
+                </g>
+                <g transform="translate(496 175)">
+                  <circle r="4" fill="#1A1614"/>
+                  <text x="9" y="3">VALENCIA</text>
+                  <text x="9" y="13" fill="#1A1614" opacity="0.65" font-size="7" font-weight="400">4h 20m · 380 km</text>
+                </g>
+                <g transform="translate(432 19)">
+                  <circle r="4" fill="#1A1614"/>
+                  <text x="-78" y="-4">BILBAO</text>
+                  <text x="-78" y="6" fill="#1A1614" opacity="0.65" font-size="7" font-weight="400">3h 00m · 270 km</text>
+                </g>
+                <g transform="translate(470 100)">
+                  <circle r="3.5" fill="#2E8A5C"/>
+                  <text x="-66" y="-4">ZARAGOZA</text>
+                  <text x="-66" y="6" fill="#1A1614" opacity="0.65" font-size="7" font-weight="400">Polo logístico</text>
+                </g>
+              </g>
+
+              <!-- Origin: Gurrea de Gállego -->
+              <g transform="translate(475 60)">
+                <circle r="10" fill="#FFFCF5" stroke="#F0A000" stroke-width="2.2"/>
+                <circle r="4" fill="#F0A000"/>
+                <g font-family="JetBrains Mono, monospace" font-size="9" fill="#1A1614">
+                  <text x="16" y="-3" font-weight="700">GURREA DE GÁLLEGO</text>
+                  <text x="16" y="7" fill="#1A1614" opacity="0.7" font-size="7" font-weight="500">42.080° N · 0.776° W · HUESCA</text>
+                </g>
+              </g>
+
+              <!-- N indicator -->
+              <g transform="translate(600 -2)" font-family="JetBrains Mono, monospace" font-size="10" fill="#1A1614">
+                <text font-weight="700">N ↑</text>
+              </g>
+            </svg>
+
+            <div class="hud-bottom">
+              <div class="legend-inline">
+                <div class="row"><span class="swatch dashed"></span><span>Ruta planificada</span></div>
+                <div class="row"><span class="swatch dot"></span><span>Polo logístico</span></div>
+                <div class="row"><span>5 rutas activas</span></div>
+              </div>
+              <span>LIVE · 04 CAMIONES EN TRÁNSITO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full-width stats row (spans the viewport) -->
+      <div class="factory-stats-fw">
+        <div class="s"><div class="v">13.000<span class="u">m²</span></div><div class="k">Superficie productiva</div></div>
+        <div class="s"><div class="v">250<span class="u">eq/yr</span></div><div class="k">Viviendas/año equivalente</div></div>
+        <div class="s"><div class="v">2D + 3D</div><div class="k">Paneles + módulos volumétricos</div></div>
+        <div class="s"><div class="v">4h–6h</div><div class="k">Hub logístico a 4 capitales</div></div>
+      </div>
+
+      <!-- Full-bleed sticky-scroll: exterior photo stays pinned, then interior
+           slides up from below to cover it (parallax-style stack reveal). -->
+      <div class="factory-stack" id="factory-stack">
+        <div class="factory-stack-track">
+          <div class="factory-layer factory-layer-exterior"></div>
+          <div class="factory-layer factory-layer-interior">
+            <figcaption class="caption">Interior · Línea de producción · 13.000 m²</figcaption>
+          </div>
+        </div>
+      </div>
+    </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SYSTEM — production line
+         ============================================================ -->
+    <section class="system" id="system" data-screen-label="06 Sistema ACTIA">
+      <div class="shell">
+        <div class="section-header">
+          <div class="meta">
+            <span class="id">06 · ACTIA OS</span>
+            <span class="station-tag">8 estaciones · Brief → Entrega</span>
+          </div>
+          <h2 class="display h-section">Un edificio es una secuencia.<br/>ACTIA la controla completa.</h2>
+          <p class="lede">
+            Brief → Diseño → Ingeniería → Despiece → Fábrica → Transporte →
+            Ensamblaje → Entrega. Cada paso está cronometrado, modelado y trazado.
+          </p>
+        </div>
+
+        <div class="production-line" id="production-line">
+          <div class="rail-col" aria-hidden="true"></div>
+          <div class="stations">
+
+            <article class="station">
+              <div>
+                <div class="num">STATION 01 · STUDIO</div>
+                <h3>Proyecto</h3>
+                <p class="desc">
+                  Entrada de idea, parcela, anteproyecto, básico o ejecución.
+                  Asignación de oficina técnica, equipo de arquitectura y plan de coordinación.
+                </p>
+              </div>
+              <div class="side">
+                <div class="specs">
+                  <div class="row"><span>Input</span><span class="v">.dwg .ifc .rvt .pdf</span></div>
+                  <div class="row"><span>Output</span><span class="v">Diagnóstico industrial</span></div>
+                  <div class="row"><span>Tiempo</span><span class="v">7 días hábiles</span></div>
+                  <div class="row"><span>Equipo</span><span class="v">Studio · Engineering</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="station">
+              <div>
+                <div class="num">STATION 02 · ENGINEERING</div>
+                <h3>Ingeniería</h3>
+                <p class="desc">
+                  Cálculo, modulación, estructura, envolvente, acústica, fuego, instalaciones y logística.
+                  Modelo BIM coordinado y DfMA aplicado a cada componente.
+                </p>
+              </div>
+              <div class="side">
+                <div class="specs">
+                  <div class="row"><span>Modelo</span><span class="v">BIM + DfMA</span></div>
+                  <div class="row"><span>Disciplinas</span><span class="v">EST · ENV · INST · ACS · F</span></div>
+                  <div class="row"><span>Output</span><span class="v">Modelo de fabricación</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="station">
+              <div>
+                <div class="num">STATION 03 · DECONSTRUCT</div>
+                <h3>Despiece</h3>
+                <p class="desc">
+                  Cada muro, forjado, fachada, baño o cubierta se convierte en unidad fabricable.
+                  Listas de piezas, etiquetado único, orden de fábrica y secuencia de obra.
+                </p>
+              </div>
+              <div class="side">
+                <div class="specs">
+                  <div class="row"><span>Unidades</span><span class="v">~ 2.400 / edificio</span></div>
+                  <div class="row"><span>Trazabilidad</span><span class="v">QR · pieza única</span></div>
+                  <div class="row"><span>Coordinación</span><span class="v">CNC + Homag</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="station">
+              <div>
+                <div class="num">STATION 04 · FACTORY</div>
+                <h3>Fabricación</h3>
+                <p class="desc">
+                  Producción offsite en entorno controlado. Corte, fresado, multifunción Homag,
+                  paneles verticales, ventanas, montaje 3D, almacenaje y carga a camión.
+                </p>
+              </div>
+              <div class="side">
+                <div class="specs">
+                  <div class="row"><span>Líneas</span><span class="v">2D · 3D · cocinas-baños</span></div>
+                  <div class="row"><span>Control</span><span class="v">QA / lote · pieza</span></div>
+                  <div class="row"><span>Capacidad</span><span class="v">13.000 m² productivos</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="station">
+              <div>
+                <div class="num">STATION 05 · LOGISTICS</div>
+                <h3>Transporte</h3>
+                <p class="desc">
+                  Paquetización y carga optimizada. Secuencia de salida coordinada con el plan de montaje.
+                  Radio efectivo desde Gurrea hacia Madrid, Barcelona, Valencia y País Vasco.
+                </p>
+              </div>
+              <div class="side">
+                <div class="specs">
+                  <div class="row"><span>Modo</span><span class="v">Carga JIT</span></div>
+                  <div class="row"><span>Radio</span><span class="v">≤ 4h a 4 capitales</span></div>
+                  <div class="row"><span>Optimización</span><span class="v">−40% camiones / m²</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="station">
+              <div>
+                <div class="num">STATION 06 · ASSEMBLY</div>
+                <h3>Ensamblaje</h3>
+                <p class="desc">
+                  Montaje secuencial en obra con menos interferencias.
+                  Paneles, forjados y módulos 3D se posicionan en seco, en orden, en tiempo medido.
+                </p>
+              </div>
+              <div class="side">
+                <div class="specs">
+                  <div class="row"><span>Conexiones</span><span class="v">Secas · atornilladas</span></div>
+                  <div class="row"><span>Tránsito obra</span><span class="v">−70% vs. tradicional</span></div>
+                  <div class="row"><span>Tolerancia</span><span class="v">± 3 mm</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="station">
+              <div>
+                <div class="num">STATION 07 · LAYERS</div>
+                <h3>Capas e instalaciones</h3>
+                <p class="desc">
+                  Integración de sistemas técnicos y acabados. Las capas se aplican en orden
+                  industrial, sin esperar a oficios cruzados ni a la lluvia.
+                </p>
+              </div>
+              <div class="side">
+                <div class="specs">
+                  <div class="row"><span>Capas</span><span class="v">EST · ENV · INST · ACAB</span></div>
+                  <div class="row"><span>Acabados</span><span class="v">In-factory + on-site</span></div>
+                  <div class="row"><span>Calidad</span><span class="v">Controlada por lote</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="station">
+              <div>
+                <div class="num">STATION 08 · DELIVERY</div>
+                <h3>Entrega</h3>
+                <p class="desc">
+                  Edificio terminado, llave en mano o integrado con otros agentes.
+                  Manual de operación, modelo as-built y dossier ambiental medible.
+                </p>
+              </div>
+              <div class="side">
+                <div class="specs">
+                  <div class="row"><span>Entrega</span><span class="v">Llave en mano / mixta</span></div>
+                  <div class="row"><span>As-built</span><span class="v">BIM + IFC</span></div>
+                  <div class="row"><span>Dossier impacto</span><span class="v">CO₂ · agua · residuos</span></div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS — editorial grid (Life Habitat / Fioresta / Casernes style)
+         ============================================================ -->
+    <section class="projects" id="projects" data-screen-label="08 Proyectos">
+      <div class="shell">
+        <div class="section-header">
+          <div class="meta">
+            <span class="id">08 · Proyectos</span>
+            <span class="station-tag">Entregados · En curso</span>
+          </div>
+          <h2 class="display h-section">Edificios que ya<br/>han salido de la línea.</h2>
+          <p class="lede">Cada proyecto es un edificio producido: arquitectura mantenida, industrialización medida, plazo cumplido.</p>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Filtrar proyectos">
+          <button class="chip-pill active">Todos</button>
+          <button class="chip-pill">Equipamientos</button>
+          <button class="chip-pill">Residencial</button>
+        </div>
+
+        <div class="proj-grid">
+          <a class="proj-card" href="proyectos/residencia-lloret.html">
+            <div class="proj-photo">
+              <img loading="lazy" alt="Residencia Lloret de Mar"
+                   src="https://framerusercontent.com/images/LuYfCgyAZ0k9LDqexSmyfqiCW3M.jpg?width=1600&height=900" />
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">Residencia Lloret de Mar</h3>
+              <div class="proj-cat">Equipamientos</div>
+            </div>
+          </a>
+
+          <a class="proj-card" href="proyectos/residencia-llinars.html">
+            <div class="proj-photo">
+              <img loading="lazy" alt="Residencia Llinars del Vallès"
+                   src="https://framerusercontent.com/images/JGoQTRr8QFqaD7f6PovRviWGYrA.jpg?width=1600&height=1200" />
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">Residencia Llinars del Vallès</h3>
+              <div class="proj-cat">Equipamientos</div>
+            </div>
+          </a>
+
+          <a class="proj-card" href="proyectos/palamos.html">
+            <div class="proj-photo">
+              <img loading="lazy" alt="Edificio plurifamiliar en Palamós"
+                   src="assets/palamos-render.jpg" />
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">Edificio plurifamiliar de 11 viviendas en Palamós</h3>
+              <div class="proj-cat">Residencial</div>
+            </div>
+          </a>
+
+          <a class="proj-card" href="proyectos/girona-palau.html">
+            <div class="proj-photo">
+              <img loading="lazy" alt="Nuevas viviendas adosadas en Girona Palau"
+                   src="https://framerusercontent.com/images/ZBK2DLFONYs1RHIM6xX2kH54E.jpg?width=1600&height=1138" />
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">Nuevas viviendas adosadas en Girona Palau</h3>
+              <div class="proj-cat">Residencial</div>
+            </div>
+          </a>
+
+          <a class="proj-card" href="proyectos/taradell.html">
+            <div class="proj-photo">
+              <img loading="lazy" alt="Nuevas viviendas unifamiliares adosadas en Taradell"
+                   src="https://framerusercontent.com/images/eyCvpZlnHaUUi69YnnIp1CiCmnY.png?width=1600&height=1500" />
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">Nuevas viviendas unifamiliares adosadas en Taradell</h3>
+              <div class="proj-cat">Residencial</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="proj-cta">
+          <p class="body-sm" style="max-width:60ch; margin:0;">
+            Cada ficha de proyecto abre fotografía de fábrica, montaje y obra final,
+            dossier ambiental y datos as-built.
+          </p>
+          <a href="#" class="btn ghost">Ver todos los proyectos <span class="arrow"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         IMPACT — dashboard + calculator
+         ============================================================ -->
+    <section class="impact" id="impact" data-screen-label="09 Impacto">
+      <div class="shell">
+        <div class="section-header">
+          <div class="meta">
+            <span class="id">09 · Impacto medible</span>
+            <span class="station-tag">Live · acumulado plataforma</span>
+          </div>
+          <h2 class="display h-section">La sostenibilidad<br/>no se declara.<br/><span style="color:var(--signal-green)">Se calcula.</span></h2>
+          <p class="lede">
+            ACTIA no comunica sostenibilidad con hojas verdes. La mide por capas:
+            carbono, agua, peso, residuos, transporte, circularidad y ciclo de vida.
+          </p>
+        </div>
+
+        <div class="dashboard">
+          <div class="cell green">
+            <div class="head"><span>CO₂ almacenado</span><span class="live">LIVE</span></div>
+            <div class="num" data-counter="3704">0<span class="unit">t</span></div>
+            <div class="label">Madera estructural en operación</div>
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,22 10,20 20,18 30,15 40,14 50,11 60,9 70,7 80,5 90,3 100,2" stroke="#2E8A5C" fill="none" stroke-width="1.4"/></svg>
+          </div>
+          <div class="cell">
+            <div class="head"><span>Madera utilizada</span><span class="live">LIVE</span></div>
+            <div class="num" data-counter="4635">0<span class="unit">m³</span></div>
+            <div class="label">Bosques con gestión certificada PEFC/FSC</div>
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,20 12,19 24,17 36,16 48,13 60,11 72,9 84,7 96,5 100,4" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
+          </div>
+          <div class="cell">
+            <div class="head"><span>Peso reducido</span><span>vs. hormigón</span></div>
+            <div class="num" data-counter="63">0<span class="unit">%</span></div>
+            <div class="label">Menos carga transmitida al terreno</div>
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,14 10,15 20,13 30,14 40,12 50,13 60,11 70,12 80,10 90,11 100,9" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
+          </div>
+          <div class="cell">
+            <div class="head"><span>Residuos en obra</span><span class="live">LIVE</span></div>
+            <div class="num" data-counter="78">0<span class="unit">%</span></div>
+            <div class="label">Menos residuos generados in-situ</div>
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,8 10,9 20,10 30,11 40,13 50,14 60,16 70,17 80,19 90,20 100,22" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
+          </div>
+          <div class="cell">
+            <div class="head"><span>Camiones optimizados</span><span>JIT</span></div>
+            <div class="num" data-counter="40">0<span class="unit">%</span></div>
+            <div class="label">Menos viajes por m² entregado</div>
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,18 12,16 24,17 36,15 48,16 60,14 72,15 84,13 96,14 100,12" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
+          </div>
+          <div class="cell">
+            <div class="head"><span>Agua evitada</span><span>vs. húmedo</span></div>
+            <div class="num" data-counter="86">0<span class="unit">%</span></div>
+            <div class="label">Sistemas en seco · menos hormigón</div>
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,6 14,7 28,9 42,8 56,10 70,9 84,11 98,12 100,12" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
+          </div>
+          <div class="cell">
+            <div class="head"><span>Plazo reducido</span><span>vs. tradicional</span></div>
+            <div class="num" data-counter="30">0<span class="unit">%</span></div>
+            <div class="label">Sobre rasante, valor medio plataforma</div>
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,22 12,20 24,18 36,16 48,15 60,12 72,10 84,8 96,6 100,5" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
+          </div>
+          <div class="cell green">
+            <div class="head"><span>Trazabilidad</span><span class="live">100%</span></div>
+            <div class="num" data-counter="100">0<span class="unit">%</span></div>
+            <div class="label">Pieza, lote, bosque, transporte y posición</div>
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,4 100,4" stroke="#2E8A5C" fill="none" stroke-width="1.4"/></svg>
+          </div>
+        </div>
+
+        <!-- Calculator -->
+        <div class="calc-shell" id="calc">
+          <div class="calc-form">
+            <div class="eyebrow">Calculadora ACTIA · v1.4</div>
+            <h3>Calcula tu potencial industrial.</h3>
+            <p class="body-sm" style="margin:0;">
+              Indica los parámetros básicos y la plataforma estima superficie industrializable,
+              ahorro de plazo, madera necesaria, peso reducido y carbono almacenado.
+            </p>
+
+            <div class="calc-row">
+              <label>Superficie · <span class="data" id="calc-sqm-out">5.000 m²</span></label>
+              <input type="range" min="500" max="20000" step="100" value="5000" id="calc-sqm" />
+              <div class="range-readout">
+                <span>500 m²</span><span class="v" id="calc-sqm-mid">5.000 m²</span><span>20.000 m²</span>
+              </div>
+            </div>
+
+            <div class="calc-row">
+              <label>Plantas · <span class="data" id="calc-floors-out">4</span></label>
+              <input type="range" min="1" max="10" step="1" value="4" id="calc-floors" />
+              <div class="range-readout">
+                <span>1</span><span class="v" id="calc-floors-mid">4</span><span>10</span>
+              </div>
+            </div>
+
+            <div class="calc-row">
+              <label>Tipología</label>
+              <div class="options" data-group="type">
+                <button class="opt on" data-v="residencia">Residencia</button>
+                <button class="opt" data-v="vivienda">Vivienda</button>
+                <button class="opt" data-v="hotel">Hotel</button>
+                <button class="opt" data-v="equipamiento">Equipamiento</button>
+                <button class="opt" data-v="oficina">Oficina</button>
+              </div>
+            </div>
+
+            <div class="calc-row">
+              <label>Fase del proyecto</label>
+              <div class="options" data-group="phase">
+                <button class="opt" data-v="idea">Idea</button>
+                <button class="opt" data-v="ante">Anteproyecto</button>
+                <button class="opt on" data-v="basico">Básico</button>
+                <button class="opt" data-v="ejec">Ejecución</button>
+                <button class="opt" data-v="lic">Licencia</button>
+              </div>
+            </div>
+
+            <div class="calc-row">
+              <label>Ubicación</label>
+              <div class="options" data-group="loc">
+                <button class="opt on" data-v="madrid">Madrid</button>
+                <button class="opt" data-v="barcelona">Barcelona</button>
+                <button class="opt" data-v="valencia">Valencia</button>
+                <button class="opt" data-v="vasco">País Vasco</button>
+                <button class="opt" data-v="otra">Otra</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-result">
+            <div class="top"><span>Resultado preliminar</span><span class="live">LIVE</span></div>
+            <div class="row"><span class="k">Potencial industrialización</span><span class="v" id="r-pot">82<span class="unit">%</span></span></div>
+            <div class="row"><span class="k">Ahorro de plazo estimado</span><span class="v" id="r-plazo">−9<span class="unit">meses</span></span></div>
+            <div class="row"><span class="k">Madera necesaria</span><span class="v" id="r-madera">820<span class="unit">m³</span></span></div>
+            <div class="row"><span class="k">Peso reducido vs. hormigón</span><span class="v" id="r-peso">−61<span class="unit">%</span></span></div>
+            <div class="row green"><span class="k">CO₂ almacenado estimado</span><span class="v" id="r-co2">656<span class="unit">t</span></span></div>
+            <div class="next">
+              <span class="k">Siguiente paso recomendado</span>
+              <span class="v" id="r-next">Enviar a oficina técnica para diagnóstico industrial.</span>
+            </div>
+            <a href="#open-project" class="btn primary" style="margin-top:8px;">Enviar a oficina técnica <span class="arrow"></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOR WHOM
+         ============================================================ -->
+    <section class="for-whom" id="audience" data-screen-label="10 Para quién">
+      <div class="shell">
+        <div class="section-header">
+          <div class="meta">
+            <span class="id">10 · Audiencias</span>
+            <span class="station-tag">5 perfiles · 5 promesas</span>
+          </div>
+          <h2 class="display h-section">Un sistema<br/>para quienes no pueden<br/>permitirse improvisar.</h2>
+        </div>
+
+        <div class="audience">
+          <a class="a" href="#promoters">
+            <div>
+              <div class="code">A · Promotores</div>
+              <h4>Menos<br/>incertidumbre.</h4>
+              <p>Plazo controlado, coste cerrado y diferenciación comercial medible desde el día uno.</p>
+            </div>
+            <span class="read">Para promotores →</span>
+          </a>
+          <a class="a" href="#">
+            <div>
+              <div class="code">B · Administraciones</div>
+              <h4>Equipamientos<br/>que llegan antes.</h4>
+              <p>Menor impacto urbano, trazabilidad pública y entrega previsible para servicios esenciales.</p>
+            </div>
+            <span class="read">Para administraciones →</span>
+          </a>
+          <a class="a" href="#">
+            <div>
+              <div class="code">C · Sociosanitario</div>
+              <h4>Residencias<br/>que funcionan mejor.</h4>
+              <p>Operadores con plazos firmes, módulos sanitarios certificados y mantenimiento previsible.</p>
+            </div>
+            <span class="read">Para operadores →</span>
+          </a>
+          <a class="a" href="#technicians">
+            <div>
+              <div class="code">D · Técnicos</div>
+              <h4>Tu arquitectura,<br/>preparada para fábrica.</h4>
+              <p>Sin perder autoría. Convertimos tu proyecto en un edificio fabricable y coordinado.</p>
+            </div>
+            <span class="read">Para técnicos →</span>
+          </a>
+          <a class="a" href="#">
+            <div>
+              <div class="code">E · Inversores</div>
+              <h4>ESG que<br/>se puede medir.</h4>
+              <p>Activos con historia ambiental medible: CO₂ stock, ciclo de vida, trazabilidad y reporte.</p>
+            </div>
+            <span class="read">Para fondos →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CLOSING + Smart form
+         ============================================================ -->
+    <section class="closing" id="open-project" data-screen-label="12 Cierre · Abrir proyecto">
+      <div class="shell">
+        <div class="rail" aria-hidden="true">
+          <span class="dot"></span>
+          <span>STATION 12 · OPEN PROJECT</span>
+          <span class="track"></span>
+          <span>READY</span>
+        </div>
+
+        <div class="closing-grid" style="margin-top: 56px;">
+          <div class="pitch">
+            <div class="eyebrow">Cierre</div>
+            <h2 class="display h-section">El próximo edificio<br/>no tiene por qué construirse<br/>como el anterior.</h2>
+            <p class="lede" style="margin-top: 24px;">
+              Trae una parcela, una idea, un anteproyecto o un proyecto ya redactado.
+              ACTIA lo estudia, lo industrializa y lo convierte en un edificio fabricable.
+            </p>
+            <p class="quote">
+              Tu edificio no empieza<br/>en una obra.<br/>
+              <span style="background:var(--yellow);color:var(--graphite);padding:0 .1em;">Empieza en una línea<br/>de producción.</span>
+            </p>
+            <div class="badges">
+              <div class="b"><span class="v">Plazo</span><span>Calendario firmado en fábrica</span></div>
+              <div class="b"><span class="v">Coste</span><span>Cerrado por componente</span></div>
+              <div class="b"><span class="v">Calidad</span><span>Trazada por pieza</span></div>
+              <div class="b"><span class="v">Carbono</span><span>Medido, no declarado</span></div>
+            </div>
+            <div style="margin-top: 32px; display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="#open-project" class="btn primary">Abrir proyecto <span class="arrow"></span></a>
+              <a href="#" class="btn ghost">Hablar con oficina técnica <span class="arrow"></span></a>
+            </div>
+          </div>
+
+          <form class="smart-form" id="smart-form">
+            <div class="form-head">
+              <span>FORM-01 · ABRIR PROYECTO</span>
+              <span class="id">ACTIA-OS / INTAKE</span>
+            </div>
+            <h3>Abrir<br/>proyecto.</h3>
+
+            <fieldset>
+              <legend><span class="n">01</span> ¿Qué tienes ahora?</legend>
+              <div class="opts">
+                <button type="button" class="opt on">Solar o idea</button>
+                <button type="button" class="opt">Anteproyecto</button>
+                <button type="button" class="opt">Proyecto básico</button>
+                <button type="button" class="opt">Proyecto de ejecución</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">02</span> ¿Qué necesitas?</legend>
+              <div class="opts">
+                <button type="button" class="opt on">Llave en mano</button>
+                <button type="button" class="opt">Adaptación a madera</button>
+                <button type="button" class="opt">Fabricación offsite</button>
+                <button type="button" class="opt">Consultoría técnica</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">03</span> ¿Qué tipología es?</legend>
+              <div class="opts">
+                <button type="button" class="opt on">Residencial</button>
+                <button type="button" class="opt">Equipamiento</button>
+                <button type="button" class="opt">Hotel</button>
+                <button type="button" class="opt">Obra pública</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">04</span> Tu correo de contacto</legend>
+              <label class="upload" for="contact-email">
+                <input id="contact-email" name="contact-email" type="email" required
+                       placeholder="nombre@empresa.com"
+                       autocomplete="email"
+                       class="upload-input" />
+                <span class="formats">Te responderemos en menos de 24h · tratamos tus datos según nuestra Política de privacidad</span>
+              </label>
+            </fieldset>
+
+            <button class="btn primary" style="width:100%; justify-content:center; font-size: 13px;" type="submit">
+              Enviar a oficina técnica <span class="arrow"></span>
+            </button>
+
+            <label class="form-consent">
+              <input type="checkbox" required />
+              <span>
+                He leído y acepto la
+                <a href="#privacy">Política de privacidad</a> de ACTIA Desarrollo, S.L.
+                Trataremos tus datos para responder tu consulta y, en su caso, valorar técnicamente tu proyecto.
+                Base jurídica: consentimiento (art. 6.1.a RGPD).
+              </span>
+            </label>
+
+            <p hidden id="form-ok" class="body-sm" style="color:var(--signal-green); margin-top:14px; font-family:var(--mono); letter-spacing:0.1em;">
+              ✓ ABRIENDO TU CLIENTE DE CORREO · hola@actia.tech
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-grid">
+          <div>
+            <h2 class="big">Las nuevas<br/>ciudades<br/><span class="y">salen de<br/>fábrica.</span></h2>
+            <p class="body-sm" style="max-width:36ch; margin-top: 28px;">
+              ACTIA es la plataforma industrial de edificación en madera de
+              Ruiz-Larrea Arquitectura y Grupo Certis. Oficinas en Madrid y Barcelona.
+              Fábrica en Gurrea de Gállego, Huesca.
+            </p>
+          </div>
+          <div>
+            <h5>Plataforma</h5>
+            <ul>
+              <li><a href="#system">Sistema ACTIA OS</a></li>
+              <li><a href="#factory">Fábrica</a></li>
+              <li><a href="#components">Componentes</a></li>
+              <li><a href="#impact">Impacto</a></li>
+              <li><a href="#open-project">Abrir proyecto</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Para quién</h5>
+            <ul>
+              <li><a href="#audience">Promotores</a></li>
+              <li><a href="#audience">Administraciones</a></li>
+              <li><a href="#audience">Operadores</a></li>
+              <li><a href="#audience">Técnicos</a></li>
+              <li><a href="#audience">Inversores</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Compañía</h5>
+            <ul>
+              <li><a href="#">Sobre ACTIA</a></li>
+              <li><a href="#diary">Diario de fábrica</a></li>
+              <li><a href="#">Carreras</a></li>
+              <li><a href="#">Prensa</a></li>
+              <li><a href="#">Contacto técnico</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Legal / RGPD strip -->
+        <div class="footer-legal">
+          <div class="legal-block">
+            <span class="legal-title">Responsable del tratamiento</span>
+            <span class="legal-val">ACTIA Desarrollo, S.L. — CIF B-44680123 · Polígono Industrial La Sardera, s/n · 22280 Gurrea de Gállego, Huesca · Inscrita en el Registro Mercantil de Huesca</span>
+          </div>
+          <div class="legal-block">
+            <span class="legal-title">DPO · Delegado de Protección de Datos</span>
+            <span class="legal-val"><a href="mailto:hola@actia.tech">hola@actia.tech</a> · Derechos ARSULIPO: acceso, rectificación, supresión, oposición, limitación, portabilidad.</span>
+          </div>
+          <div class="legal-block">
+            <span class="legal-title">Marco legal</span>
+            <span class="legal-val">Reglamento (UE) 2016/679 (RGPD) · L.O. 3/2018 (LOPDGDD) · Ley 34/2002 (LSSI-CE) · Directiva ePrivacy</span>
+          </div>
+        </div>
+
+        <div class="footer-meta">
+          <div class="group">
+            <span>© 2026 ACTIA Desarrollo, S.L.</span>
+            <span>Gurrea de Gállego · Huesca · ES</span>
+          </div>
+          <div class="group legal-links">
+            <a href="#aviso-legal">Aviso legal</a>
+            <a href="#privacy">Política de privacidad</a>
+            <a href="#cookies">Política de cookies</a>
+            <a href="#" id="cookie-settings-link">Configuración de cookies</a>
+            <a href="#">ACTIA OS v1.4 · 2026.05</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="intro.js"></script>
+  <script src="interactions.js"></script>
+  <script src="cookies.js"></script>
+
+  <!-- Tweaks: defaults -->
+  <script>
+    const TWEAK_DEFAULS = /*EDITMODE-BEGIN*/{
+      "accent": "#F0A000",
+      "density": "dense",
+      "showHud": true
+    }/*EDITMODE-END*/;
+  </script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+
+</body>
+</html>
