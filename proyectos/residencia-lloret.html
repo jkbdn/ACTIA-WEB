@@ -140,6 +140,7 @@
       aspect-ratio: 3/2;
       background: url("https://framerusercontent.com/images/lXpNdPuAl01ZRKv2brnwEUVFE.jpg?width=2200&height=1467") center/cover no-repeat;
       background-color: var(--graphite-2);
+      margin-top: 1px;
     }
 
     .proj-video {
@@ -148,6 +149,7 @@
       background: var(--ink-panel);
       overflow: hidden;
       position: relative;
+      margin-top: 1px;
     }
     .proj-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
@@ -156,6 +158,7 @@
       aspect-ratio: 3/2;
       background: url("https://framerusercontent.com/images/cBReXl1LIL4yPMW2jy8e0pUH90.jpg?width=2200&height=1467") center/cover no-repeat;
       background-color: var(--graphite-2);
+      margin-top: 1px;
     }
 
     .proj-next {
@@ -199,6 +202,7 @@
       <a href="../index.html" class="brandmark" aria-label="ACTIA home">
         <img src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" class="logo-img" />
       </a>
+      <input type="checkbox" id="navToggle" class="nav-cb" aria-hidden="true" />
       <nav class="nav" aria-label="primary">
         <a href="../index.html#system">Sistema</a>
         <a href="../index.html#factory">Fábrica</a>
@@ -206,7 +210,11 @@
         <a href="../index.html#open-project">Industrializar</a>
         <a href="../index.html#impact">Impacto</a>
         <a href="../index.html#audience">Promotores</a>
+        <a href="../index.html#open-project" class="nav-cta-mobile">Abrir proyecto</a>
       </nav>
+      <label for="navToggle" class="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
       <div class="header-cta">
         <a class="social-link" href="https://www.linkedin.com/company/actia-construccion-madera" target="_blank" rel="noopener noreferrer" aria-label="ACTIA en LinkedIn">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
@@ -236,9 +244,8 @@
       <h1>Residencia Lloret de Mar</h1>
     </section>
 
-    <!-- Hero imagery: drone view + secondary shot -->
+    <!-- Hero image -->
     <div class="proj-media-1" role="img" aria-label="Vista dron de la Residencia Lloret de Mar"></div>
-    <div class="proj-media-2" role="img" aria-label="Fachada del edificio en madera"></div>
 
     <!-- Project facts + long copy -->
     <section class="proj-details">
@@ -284,21 +291,22 @@
       </div>
     </section>
 
-    <!-- Gallery: construction details -->
-    <div class="proj-gallery">
-      <div class="item item-1" role="img" aria-label="Construcción de paneles industrializados de madera"></div>
-      <div class="item item-2 wide" role="img" aria-label="Detalle de la estructura de madera"></div>
-    </div>
-
-    <!-- Wide assembly shot -->
-    <div class="proj-media-wide" role="img" aria-label="Montaje de paneles en obra"></div>
-
     <!-- Project video -->
     <div class="proj-video" aria-label="Vídeo del proceso constructivo">
       <video autoplay muted loop playsinline preload="metadata" controls>
         <source src="https://framerusercontent.com/assets/7jMxuEvg4aHsWGSjP4slbA9ugHQ.mp4" type="video/mp4" />
       </video>
     </div>
+
+    <!-- Gallery: construction details -->
+    <div class="proj-gallery">
+      <div class="item item-1" role="img" aria-label="Construcción de paneles industrializados de madera"></div>
+      <div class="item item-2 wide" role="img" aria-label="Detalle de la estructura de madera"></div>
+    </div>
+
+    <!-- Additional photos -->
+    <div class="proj-media-2" role="img" aria-label="Fachada del edificio en madera"></div>
+    <div class="proj-media-wide" role="img" aria-label="Montaje de paneles en obra"></div>
 
     <!-- Final aerial -->
     <div class="proj-media-final" role="img" aria-label="Vista aérea de Lloret de Mar"></div>
@@ -355,5 +363,6 @@
     </div>
   </footer>
 
+  <script src="../mobile-nav.js"></script>
 </body>
 </html>

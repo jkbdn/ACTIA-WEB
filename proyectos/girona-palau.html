@@ -19,6 +19,7 @@
       <a href="../index.html" class="brandmark" aria-label="ACTIA home">
         <img src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" class="logo-img" />
       </a>
+      <input type="checkbox" id="navToggle" class="nav-cb" aria-hidden="true" />
       <nav class="nav" aria-label="primary">
         <a href="../index.html#system">Sistema</a>
         <a href="../index.html#factory">Fábrica</a>
@@ -26,7 +27,11 @@
         <a href="../index.html#open-project">Industrializar</a>
         <a href="../index.html#impact">Impacto</a>
         <a href="../index.html#audience">Promotores</a>
+        <a href="../index.html#open-project" class="nav-cta-mobile">Abrir proyecto</a>
       </nav>
+      <label for="navToggle" class="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
       <div class="header-cta">
         <a class="social-link" href="https://www.linkedin.com/company/actia-construccion-madera" target="_blank" rel="noopener noreferrer" aria-label="ACTIA en LinkedIn">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
@@ -56,9 +61,8 @@
       <h1>Nuevas viviendas adosadas en Girona Palau</h1>
     </section>
 
-    <!-- Hero imagery: render + plan -->
+    <!-- Hero image -->
     <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/ZBK2DLFONYs1RHIM6xX2kH54E.jpg?width=2400&height=1707'); aspect-ratio: 7/5;" role="img" aria-label="Render exterior de Mirador de Palau"></div>
-    <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/7M1rqwfkwnxzrm8QWME7Rcjv11A.png?width=1624&height=1140'); aspect-ratio: 7/5; margin-top: 1px;" role="img" aria-label="Render del conjunto de viviendas adosadas"></div>
 
     <!-- Project facts + copy -->
     <section class="proj-details">
@@ -107,7 +111,8 @@
     </section>
 
     <!-- Additional renders -->
-    <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/VbwCAXTM55YuwCXbiChErruSnY.jpg?width=2400&height=1707'); aspect-ratio: 7/5;" role="img" aria-label="Vista del conjunto Mirador de Palau"></div>
+    <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/7M1rqwfkwnxzrm8QWME7Rcjv11A.png?width=1624&height=1140'); aspect-ratio: 7/5;" role="img" aria-label="Render del conjunto de viviendas adosadas"></div>
+    <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/VbwCAXTM55YuwCXbiChErruSnY.jpg?width=2400&height=1707'); aspect-ratio: 7/5; margin-top: 1px;" role="img" aria-label="Vista del conjunto Mirador de Palau"></div>
     <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/V6tTsbygCLxKj7WJJE9Z6oGAo.png?width=1764&height=1160'); aspect-ratio: 7/5; margin-top: 1px;" role="img" aria-label="Detalle constructivo del entramado ligero"></div>
 
     <section class="proj-next">
@@ -160,5 +165,6 @@
     </div>
   </footer>
 
+  <script src="../mobile-nav.js"></script>
 </body>
 </html>

@@ -24,6 +24,7 @@
       <a href="#top" class="brandmark" aria-label="ACTIA home">
         <img src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" class="logo-img" />
       </a>
+      <input type="checkbox" id="navToggle" class="nav-cb" aria-hidden="true" />
       <nav class="nav" aria-label="primary">
         <a href="#system" class="active">Sistema</a>
         <a href="#factory">Fábrica</a>
@@ -31,7 +32,11 @@
         <a href="#open-project">Industrializar</a>
         <a href="#impact">Impacto</a>
         <a href="#audience">Promotores</a>
+        <a href="#open-project" class="nav-cta-mobile">Abrir proyecto</a>
       </nav>
+      <label for="navToggle" class="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
       <div class="header-cta">
         <a class="social-link" href="https://www.linkedin.com/company/actia-construccion-madera" target="_blank" rel="noopener noreferrer" aria-label="ACTIA en LinkedIn">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
@@ -217,33 +222,41 @@
           <div class="exploded forjado" id="exploded" data-mode="exploded" aria-label="Forjado ACTIA · vista axonométrica">
             <div class="axis-label">Forjado · vista axonométrica</div>
             <div class="stage">
-              <div class="layer l1" style="--i:0">
-                <div class="slab fermacell"></div>
-                <span class="label">Doble placa Fermacell 12,5 mm · panel de cierre superior</span>
+              <div class="layer l1" style="--i:0; --t:8px">
+                <div class="slab fermacell">
+                  <span class="ef"></span><span class="er"></span>
+                </div>
+                <span class="label">Fermacell 2×12,5 mm · cierre superior</span>
               </div>
-              <div class="layer l2" style="--i:1">
-                <div class="slab floorrock"></div>
+              <div class="layer l2" style="--i:1; --t:11px">
+                <div class="slab floorrock">
+                  <span class="ef"></span><span class="er"></span>
+                </div>
                 <span class="label">Aislamiento FloorRock</span>
               </div>
-              <div class="layer l3" style="--i:2">
-                <div class="slab osb"></div>
-                <span class="label">Panel OSB</span>
+              <div class="layer l3" style="--i:2; --t:8px">
+                <div class="slab osb">
+                  <span class="ef"></span><span class="er"></span>
+                </div>
+                <span class="label">Tablero OSB</span>
               </div>
-              <div class="layer l4" style="--i:3">
-                <div class="slab beams"></div>
-                <span class="label">Vigas forjado madera laminada 200 × 300 mm</span>
+              <div class="layer l4 structure" style="--i:3; --t:30px">
+                <div class="slab beams">
+                  <span class="ef"></span><span class="er"></span>
+                </div>
+                <span class="label">Vigas laminadas 200×300 mm · Aislanat entre montantes</span>
               </div>
-              <div class="layer l5" style="--i:4">
-                <div class="slab aislanat"></div>
-                <span class="label">Aislamiento Aislanat · fibra de papel reciclado e = 15 cm</span>
-              </div>
-              <div class="layer l6" style="--i:5">
-                <div class="slab rastreles"></div>
+              <div class="layer l5" style="--i:4; --t:7px">
+                <div class="slab rastreles">
+                  <span class="ef"></span><span class="er"></span>
+                </div>
                 <span class="label">Rastreles 30 × 20 mm</span>
               </div>
-              <div class="layer l7" style="--i:6">
-                <div class="slab fermacell"></div>
-                <span class="label">Doble placa Fermacell 12,5 mm · panel de cierre inferior</span>
+              <div class="layer l6" style="--i:5; --t:8px">
+                <div class="slab fermacell">
+                  <span class="ef"></span><span class="er"></span>
+                </div>
+                <span class="label">Fermacell 2×12,5 mm · cierre inferior</span>
               </div>
             </div>
             <div class="controls">
@@ -1163,6 +1176,7 @@
 
   <script src="intro.js"></script>
   <script src="interactions.js"></script>
+  <script src="mobile-nav.js"></script>
   <script src="cookies.js"></script>
 
   <!-- Tweaks: defaults -->

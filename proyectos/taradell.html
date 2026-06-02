@@ -19,6 +19,7 @@
       <a href="../index.html" class="brandmark" aria-label="ACTIA home">
         <img src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" class="logo-img" />
       </a>
+      <input type="checkbox" id="navToggle" class="nav-cb" aria-hidden="true" />
       <nav class="nav" aria-label="primary">
         <a href="../index.html#system">Sistema</a>
         <a href="../index.html#factory">Fábrica</a>
@@ -26,7 +27,11 @@
         <a href="../index.html#open-project">Industrializar</a>
         <a href="../index.html#impact">Impacto</a>
         <a href="../index.html#audience">Promotores</a>
+        <a href="../index.html#open-project" class="nav-cta-mobile">Abrir proyecto</a>
       </nav>
+      <label for="navToggle" class="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
       <div class="header-cta">
         <a class="social-link" href="https://www.linkedin.com/company/actia-construccion-madera" target="_blank" rel="noopener noreferrer" aria-label="ACTIA en LinkedIn">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
@@ -56,9 +61,8 @@
       <h1>Nuevas viviendas unifamiliares adosadas en Taradell</h1>
     </section>
 
-    <!-- Hero imagery -->
+    <!-- Hero image -->
     <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/eyCvpZlnHaUUi69YnnIp1CiCmnY.png?width=1968&height=1848'); aspect-ratio: 16/9;" role="img" aria-label="Render principal del conjunto residencial en Taradell"></div>
-    <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/DHZhSIDVLbOXAExW5XJWP7VOT0.png?width=1392&height=964'); aspect-ratio: 16/9; margin-top: 1px;" role="img" aria-label="Plano del conjunto residencial"></div>
 
     <!-- Project facts + copy -->
     <section class="proj-details">
@@ -110,8 +114,9 @@
       </div>
     </section>
 
-    <!-- Additional render -->
-    <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/75ONJJBNWRbFhgdykholR6L8.png?width=1808&height=976'); aspect-ratio: 16/9;" role="img" aria-label="Vista detallada del proyecto Taradell"></div>
+    <!-- Additional renders -->
+    <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/DHZhSIDVLbOXAExW5XJWP7VOT0.png?width=1392&height=964'); aspect-ratio: 16/9;" role="img" aria-label="Plano del conjunto residencial"></div>
+    <div class="proj-media" style="background-image:url('https://framerusercontent.com/images/75ONJJBNWRbFhgdykholR6L8.png?width=1808&height=976'); aspect-ratio: 16/9; margin-top: 1px;" role="img" aria-label="Vista detallada del proyecto Taradell"></div>
 
     <section class="proj-next">
       <h3>Más proyectos</h3>
@@ -163,5 +168,6 @@
     </div>
   </footer>
 
+  <script src="../mobile-nav.js"></script>
 </body>
 </html>
