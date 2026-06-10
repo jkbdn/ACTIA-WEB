@@ -3,13 +3,13 @@
    Modeled after actia.tech Framer aesthetic.
    ========================================================= */
 :root {
-  /* Backgrounds — warm cream paper */
-  --graphite: #F2EBDF;          /* main page paper */
-  --graphite-2: #ECE3D2;        /* card / pane bg */
-  --graphite-3: #E3D8C3;        /* deeper card */
+  /* Backgrounds — Blanco Pergamino */
+  --graphite: #FAF8F5;          /* main page paper */
+  --graphite-2: #F4F0E9;        /* card / pane bg */
+  --graphite-3: #EBE5D8;        /* deeper card */
   --graphite-4: #D5C8AE;        /* hover / press */
-  --rule: #D6CCB5;              /* hairline */
-  --rule-soft: #E6DECC;         /* very faint */
+  --rule: #E2D9C8;              /* hairline */
+  --rule-soft: #EDE8DF;         /* very faint */
 
   /* Ink — text on cream */
   --factory-white: #1A1614;     /* primary text */
@@ -937,6 +937,7 @@ body.nav-open { overflow: hidden; }
 /* Controls — pill toggle */
 .exploded .controls {
   position: absolute; right: 18px; bottom: 18px;
+  z-index: 4;
   display: flex; gap: 6px;
   z-index: 5;
   background: rgba(255,252,245,0.65);
@@ -966,6 +967,23 @@ body.nav-open { overflow: hidden; }
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
   color: var(--tech-grey); text-transform: uppercase;
   z-index: 4;
+}
+
+/* ---- Visor 3D del forjado ---------------------------------------------- */
+.exploded.is-3d { cursor: grab; }
+.exploded.is-3d:active { cursor: grabbing; }
+.forjado-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+.forjado-canvas canvas { outline: none; }
+.forjado-loading {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--tech-grey);
+  pointer-events: none; z-index: 3;
 }
 
 .solution .copy h2 { margin: 0 0 28px 0; }
@@ -1012,7 +1030,9 @@ body.nav-open { overflow: hidden; }
 .modes .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
+  grid-template-rows: auto auto 1fr repeat(5, auto);
+  column-gap: 1px;
+  row-gap: 0;
   background: var(--rule);
   border: 1px solid var(--rule);
 }
@@ -1022,11 +1042,15 @@ body.nav-open { overflow: hidden; }
   background: var(--graphite-2);
   padding: 36px;
   display: grid;
-  gap: 24px;
+  grid-row: 1 / span 8;
+  grid-template-rows: subgrid;
+  gap: 0;
   position: relative;
-  min-height: 480px;
-  align-content: start;
+  align-items: start;
 }
+.mode-card h3   { margin-bottom: 12px; }
+.mode-card .who { margin-bottom: 8px; }
+.mode-card .desc { padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
 .mode-card .ribbon {
   display: flex;
   justify-content: space-between;
@@ -1072,12 +1096,12 @@ body.nav-open { overflow: hidden; }
 .mode-card .desc { color: var(--tech-grey-3); }
 
 .mode-card .scope {
-  margin-top: auto;
-  display: grid; gap: 6px;
+  display: contents;
 }
 .mode-card .scope .row {
   display: grid;
   grid-template-columns: 1fr auto;
+  padding: 5px 0;
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.06em;
@@ -1208,7 +1232,7 @@ body.nav-open { overflow: hidden; }
   will-change: transform;
 }
 .factory-layer-exterior {
-  background-image: url("assets/factory-exterior.png");
+  background-image: url("assets/factory-exterior.jpg");
 }
 .factory-layer-interior {
   background-image: url("assets/factory-interior.jpg");
@@ -1607,33 +1631,33 @@ body.nav-open { overflow: hidden; }
   position: relative;
   background:
     linear-gradient(180deg, rgba(26,22,20,0.25), rgba(26,22,20,0.65)),
-    url("https://framerusercontent.com/images/aL8O3cVrWbc9o34PQ7LO3yB3Vs.jpg") center/cover no-repeat;
+    url("assets/pipeline-a.jpg") center/cover no-repeat;
   overflow: hidden;
 }
 .pipeline .project-card:nth-child(2) .preview {
   background:
     linear-gradient(180deg, rgba(26,22,20,0.25), rgba(26,22,20,0.7)),
-    url("https://framerusercontent.com/images/RBmlfcQrtmWqCp1CT7ybhfnec.jpg") center/cover no-repeat;
+    url("assets/pipeline-b.jpg") center/cover no-repeat;
 }
 .pipeline .project-card:nth-child(3) .preview {
   background:
     linear-gradient(180deg, rgba(26,22,20,0.25), rgba(26,22,20,0.7)),
-    url("https://framerusercontent.com/images/0CSP29VxT6S8W91tzqYn7jtreGY.jpg") center/cover no-repeat;
+    url("assets/pipeline-c.jpg") center/cover no-repeat;
 }
 .pipeline .project-card:nth-child(4) .preview {
   background:
     linear-gradient(180deg, rgba(26,22,20,0.25), rgba(26,22,20,0.7)),
-    url("https://framerusercontent.com/images/UOEkUaZug5qDnCl6Mqh8aotumk.jpg") center/cover no-repeat;
+    url("assets/pipeline-d.jpg") center/cover no-repeat;
 }
 .pipeline .project-card:nth-child(5) .preview {
   background:
     linear-gradient(180deg, rgba(26,22,20,0.25), rgba(26,22,20,0.7)),
-    url("https://framerusercontent.com/images/q5FRmteX2PXFkkzntZlpW8Nchg.jpg") center/cover no-repeat;
+    url("assets/pipeline-e.jpg") center/cover no-repeat;
 }
 .pipeline .project-card:nth-child(6) .preview {
   background:
     linear-gradient(180deg, rgba(26,22,20,0.25), rgba(26,22,20,0.7)),
-    url("https://framerusercontent.com/images/aL8O3cVrWbc9o34PQ7LO3yB3Vs.jpg") center/cover no-repeat;
+    url("assets/pipeline-a.jpg") center/cover no-repeat;
 }
 .project-card .preview .label {
   position: absolute; left: 12px; bottom: 12px;
@@ -2176,7 +2200,7 @@ footer.site-footer {
   aspect-ratio: 16/9;
   background:
     linear-gradient(180deg, rgba(26,22,20,0.15), rgba(26,22,20,0.45)),
-    url("https://framerusercontent.com/images/aL8O3cVrWbc9o34PQ7LO3yB3Vs.jpg") center/cover no-repeat;
+    url("assets/pipeline-a.jpg") center/cover no-repeat;
   border: 1px solid var(--rule);
   margin-bottom: 8px;
 }

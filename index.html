@@ -10,6 +10,16 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="styles.css" />
 
+  <!-- three.js para el visor 3D del forjado -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
@@ -22,17 +32,15 @@
   <header class="site-header">
     <div class="inner">
       <a href="#top" class="brandmark" aria-label="ACTIA home">
-        <img src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" class="logo-img" />
+        <img src="assets/actia-logo.png" alt="ACTIA" class="logo-img" />
       </a>
       <input type="checkbox" id="navToggle" class="nav-cb" aria-hidden="true" />
       <nav class="nav" aria-label="primary">
-        <a href="#system" class="active">Sistema</a>
+        <a href="#solution" class="active">Sistema</a>
         <a href="#factory">Fábrica</a>
         <a href="#projects">Proyectos</a>
-        <a href="#open-project">Industrializar</a>
         <a href="#impact">Impacto</a>
-        <a href="#audience">Promotores</a>
-        <a href="#open-project" class="nav-cta-mobile">Abrir proyecto</a>
+        <a href="#open-project">Industrializar</a>
       </nav>
       <label for="navToggle" class="nav-toggle" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -48,7 +56,6 @@
             <path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.17 8.8 2.16 12 2.16zm0-2.16C8.74 0 8.33.01 7.05.07 5.77.13 4.9.33 4.14.63a6 6 0 00-2.16 1.4A6 6 0 00.59 4.19C.29 4.95.09 5.82.03 7.1.01 8.38 0 8.79 0 12.05s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91a6 6 0 001.4 2.16 6 6 0 002.16 1.4c.76.3 1.63.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56a6 6 0 002.16-1.4 6 6 0 001.4-2.16c.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a6 6 0 00-1.4-2.16A6 6 0 0019.86.59C19.1.29 18.23.09 16.95.03 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm6.4-11.84a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
           </svg>
         </a>
-        <a href="#open-project" class="btn primary">Abrir proyecto <span class="arrow"></span></a>
       </div>
     </div>
   </header>
@@ -65,17 +72,19 @@
         <div class="intro-frame">
           <div class="intro-photo intro-photo-l" role="img" aria-label="Madera estructural en montaje">
             <video class="intro-video" autoplay muted loop playsinline preload="auto" data-offset="0">
+              <source src="assets/video-montaje.mp4" type="video/mp4" />
               <source src="https://framerusercontent.com/assets/2TYxa4gFbwaBRVxdb93ArKvSR0.mp4" type="video/mp4" />
             </video>
           </div>
           <div class="intro-photo intro-photo-r" role="img" aria-label="Fábrica ACTIA en producción">
             <video class="intro-video" autoplay muted loop playsinline preload="auto" data-offset="3.5">
+              <source src="assets/video-montaje.mp4" type="video/mp4" />
               <source src="https://framerusercontent.com/assets/2TYxa4gFbwaBRVxdb93ArKvSR0.mp4" type="video/mp4" />
             </video>
           </div>
 
           <div class="intro-center">
-            <img class="intro-logo" src="https://framerusercontent.com/images/leEP7GtrmBnXYKv0T025uk8EVA.png?width=676&height=159" alt="ACTIA" />
+            <img class="intro-logo" src="assets/actia-logo.png" alt="ACTIA" />
           </div>
 
           <div class="intro-meta-top">
@@ -105,7 +114,6 @@
 
       <div class="hero-main">
         <div>
-          <div class="eyebrow">Estación 00 · Plataforma industrial</div>
           <h1 class="display h-hero" style="margin-top: 28px;">
             Las nuevas<br />
             ciudades salen de <span class="stencil">fábrica</span>.
@@ -125,6 +133,7 @@
       <!-- Hero visual: full-bleed factory reel -->
       <div class="hero-visual" aria-label="Vídeo hero: fábrica + montaje + edificio final">
         <video class="hero-video" autoplay muted loop playsinline preload="auto">
+          <source src="assets/video-proceso.mp4" type="video/mp4" />
           <source src="https://framerusercontent.com/assets/PZ68ioLjaeDhXstWlqnkCwS6o.mp4" type="video/mp4" />
         </video>
       </div>
@@ -155,10 +164,7 @@
     <section class="problem" id="problem" data-screen-label="02 Problema">
       <div class="shell">
         <div class="section-header tight">
-          <div class="meta">
-            <span class="id">02 · Diagnóstico</span>
-            <span class="station-tag">Station 02 / Brief</span>
-          </div>
+
           <h2 class="display h-section">La obra tradicional ha llegado tarde al futuro.</h2>
           <p class="lede">
             Durante décadas, la construcción ha aceptado como normales los retrasos, los sobrecostes,
@@ -219,54 +225,19 @@
     <section class="solution" id="solution" data-screen-label="03 Solución">
       <div class="shell">
         <div class="grid">
-          <div class="exploded forjado" id="exploded" data-mode="exploded" aria-label="Forjado ACTIA · vista axonométrica">
-            <div class="axis-label">Forjado · vista axonométrica</div>
-            <div class="stage">
-              <div class="layer l1" style="--i:0; --t:8px">
-                <div class="slab fermacell">
-                  <span class="ef"></span><span class="er"></span>
-                </div>
-                <span class="label">Fermacell 2×12,5 mm · cierre superior</span>
-              </div>
-              <div class="layer l2" style="--i:1; --t:11px">
-                <div class="slab floorrock">
-                  <span class="ef"></span><span class="er"></span>
-                </div>
-                <span class="label">Aislamiento FloorRock</span>
-              </div>
-              <div class="layer l3" style="--i:2; --t:8px">
-                <div class="slab osb">
-                  <span class="ef"></span><span class="er"></span>
-                </div>
-                <span class="label">Tablero OSB</span>
-              </div>
-              <div class="layer l4 structure" style="--i:3; --t:30px">
-                <div class="slab beams">
-                  <span class="ef"></span><span class="er"></span>
-                </div>
-                <span class="label">Vigas laminadas 200×300 mm · Aislanat entre montantes</span>
-              </div>
-              <div class="layer l5" style="--i:4; --t:7px">
-                <div class="slab rastreles">
-                  <span class="ef"></span><span class="er"></span>
-                </div>
-                <span class="label">Rastreles 30 × 20 mm</span>
-              </div>
-              <div class="layer l6" style="--i:5; --t:8px">
-                <div class="slab fermacell">
-                  <span class="ef"></span><span class="er"></span>
-                </div>
-                <span class="label">Fermacell 2×12,5 mm · cierre inferior</span>
-              </div>
+          <div class="exploded forjado is-3d" id="exploded" aria-label="Forjado ACTIA · visor 3D interactivo">
+            <div class="axis-label">Forjado · visor 3D — arrastra para girar</div>
+            <div id="forjado-canvas" class="forjado-canvas">
+              <div id="forjado-loading" class="forjado-loading">Cargando modelo 3D…</div>
             </div>
             <div class="controls">
               <button class="chip" data-mode-btn="assembled">Ensamblado</button>
               <button class="chip active" data-mode-btn="exploded">Explotado</button>
+              <button class="chip" id="forjado-rotate" title="Girar automáticamente">Girar</button>
             </div>
           </div>
 
           <div class="copy">
-            <div class="eyebrow">03 · Propuesta</div>
             <h2 class="display h-section">Menos obra.<br/><span style="color:var(--yellow)">Más edificio.</span></h2>
             <p class="lede">
               Industrializar no es repetir edificios. Es repetir precisión.
@@ -284,10 +255,7 @@
               <div class="item">Instalaciones</div>
               <div class="item">Acabados</div>
             </div>
-            <div style="margin-top: 32px; display: flex; gap: 10px; flex-wrap: wrap;">
-              <a href="#system" class="btn primary">Ver sistema ACTIA <span class="arrow"></span></a>
-              <a href="#components" class="btn ghost">Explorar componentes <span class="arrow"></span></a>
-            </div>
+
           </div>
         </div>
       </div>
@@ -299,16 +267,12 @@
     <section class="modes" id="modes" data-screen-label="04 Modos de trabajo">
       <div class="shell">
         <div class="section-header">
-          <div class="meta">
-            <span class="id">04 · Modos de entrada</span>
-            <span class="station-tag">Entry · 3 modes</span>
-          </div>
           <h2 class="display h-section">Entramos al principio.<br/>O cuando el proyecto ya existe.</h2>
         </div>
 
         <div class="grid">
           <article class="mode-card">
-            <h3><span class="sub">Para promotores, operadores y administraciones</span>ACTIA<br/>Integral</h3>
+            <h3>ACTIA<br/>Integral</h3>
             <p class="who">Un único socio · ciclo completo · responsabilidad única</p>
             <p class="desc">Diseño, ingeniería, fabricación, montaje, acabados y entrega llave en mano. Tú compartes el objetivo, nosotros entregamos el edificio.</p>
             <div class="scope">
@@ -321,7 +285,7 @@
           </article>
 
           <article class="mode-card">
-            <h3><span class="sub">Para arquitectos, ingenierías y equipos técnicos</span>ACTIA<br/>Compatible</h3>
+            <h3>ACTIA<br/>Compatible</h3>
             <p class="who">Tu proyecto · tu autoría · nuestro sistema</p>
             <p class="desc">Lo analizamos, lo adaptamos y lo hacemos industrializable sin borrar su autoría. Convertimos un proyecto redactado en un proyecto fabricable.</p>
             <div class="scope">
@@ -334,7 +298,7 @@
           </article>
 
           <article class="mode-card">
-            <h3><span class="sub">Para proyectos avanzados listos para fábrica</span>ACTIA<br/>Producción</h3>
+            <h3>ACTIA<br/>Producción</h3>
             <p class="who">Documentación técnica → componentes construibles</p>
             <p class="desc">Convertimos documentación técnica en componentes construibles. Paneles 2D, módulos 3D, fachadas y forjados producidos en línea, listos para obra.</p>
             <div class="scope">
@@ -347,13 +311,7 @@
           </article>
         </div>
 
-        <div class="footer">
-          <p class="body-sm" style="max-width: 56ch; margin: 0;">
-            Cada modo entra por el mismo formulario: <span style="color:var(--yellow)">Abrir proyecto</span>. Te asignamos un técnico
-            de oficina y te devolvemos un diagnóstico industrial sobre tu proyecto en 7 días.
-          </p>
-          <a href="#open-project" class="btn primary">Enviar proyecto para diagnóstico industrial <span class="arrow"></span></a>
-        </div>
+
       </div>
     </section>
 
@@ -363,10 +321,6 @@
     <section class="factory-map" id="factory" data-screen-label="05 Fábrica">
       <div class="shell">
         <div class="section-header">
-          <div class="meta">
-            <span class="id">05 · Centro productivo</span>
-            <span class="station-tag">Station 05 / Factory</span>
-          </div>
         </div>
         <div class="layout">
           <div class="text">
@@ -533,10 +487,6 @@
     <section class="system" id="system" data-screen-label="06 Sistema ACTIA">
       <div class="shell">
         <div class="section-header">
-          <div class="meta">
-            <span class="id">06 · ACTIA OS</span>
-            <span class="station-tag">8 estaciones · Brief → Entrega</span>
-          </div>
           <h2 class="display h-section">Un edificio es una secuencia.<br/>ACTIA la controla completa.</h2>
           <p class="lede">
             Brief → Diseño → Ingeniería → Despiece → Fábrica → Transporte →
@@ -704,25 +654,15 @@
     <section class="projects" id="projects" data-screen-label="08 Proyectos">
       <div class="shell">
         <div class="section-header">
-          <div class="meta">
-            <span class="id">08 · Proyectos</span>
-            <span class="station-tag">Entregados · En curso</span>
-          </div>
           <h2 class="display h-section">Edificios que ya<br/>han salido de la línea.</h2>
           <p class="lede">Cada proyecto es un edificio producido: arquitectura mantenida, industrialización medida, plazo cumplido.</p>
-        </div>
-
-        <div class="filters" role="tablist" aria-label="Filtrar proyectos">
-          <button class="chip-pill active">Todos</button>
-          <button class="chip-pill">Equipamientos</button>
-          <button class="chip-pill">Residencial</button>
         </div>
 
         <div class="proj-grid">
           <a class="proj-card" href="proyectos/residencia-lloret.html">
             <div class="proj-photo">
               <img loading="lazy" alt="Residencia Lloret de Mar"
-                   src="https://framerusercontent.com/images/LuYfCgyAZ0k9LDqexSmyfqiCW3M.jpg?width=1600&height=900" />
+                   src="assets/lloret-hero.jpg" />
             </div>
             <div class="proj-body">
               <h3 class="proj-title">Residencia Lloret de Mar</h3>
@@ -733,7 +673,7 @@
           <a class="proj-card" href="proyectos/residencia-llinars.html">
             <div class="proj-photo">
               <img loading="lazy" alt="Residencia Llinars del Vallès"
-                   src="https://framerusercontent.com/images/JGoQTRr8QFqaD7f6PovRviWGYrA.jpg?width=1600&height=1200" />
+                   src="assets/llinars-card.jpg" />
             </div>
             <div class="proj-body">
               <h3 class="proj-title">Residencia Llinars del Vallès</h3>
@@ -755,7 +695,7 @@
           <a class="proj-card" href="proyectos/girona-palau.html">
             <div class="proj-photo">
               <img loading="lazy" alt="Nuevas viviendas adosadas en Girona Palau"
-                   src="https://framerusercontent.com/images/ZBK2DLFONYs1RHIM6xX2kH54E.jpg?width=1600&height=1138" />
+                   src="assets/palau-hero.jpg" />
             </div>
             <div class="proj-body">
               <h3 class="proj-title">Nuevas viviendas adosadas en Girona Palau</h3>
@@ -766,7 +706,7 @@
           <a class="proj-card" href="proyectos/taradell.html">
             <div class="proj-photo">
               <img loading="lazy" alt="Nuevas viviendas unifamiliares adosadas en Taradell"
-                   src="https://framerusercontent.com/images/eyCvpZlnHaUUi69YnnIp1CiCmnY.png?width=1600&height=1500" />
+                   src="assets/taradell-card.png" />
             </div>
             <div class="proj-body">
               <h3 class="proj-title">Nuevas viviendas unifamiliares adosadas en Taradell</h3>
@@ -775,13 +715,7 @@
           </a>
         </div>
 
-        <div class="proj-cta">
-          <p class="body-sm" style="max-width:60ch; margin:0;">
-            Cada ficha de proyecto abre fotografía de fábrica, montaje y obra final,
-            dossier ambiental y datos as-built.
-          </p>
-          <a href="#" class="btn ghost">Ver todos los proyectos <span class="arrow"></span></a>
-        </div>
+
       </div>
     </section>
 
@@ -791,10 +725,6 @@
     <section class="impact" id="impact" data-screen-label="09 Impacto">
       <div class="shell">
         <div class="section-header">
-          <div class="meta">
-            <span class="id">09 · Impacto medible</span>
-            <span class="station-tag">Live · acumulado plataforma</span>
-          </div>
           <h2 class="display h-section">La sostenibilidad<br/>no se declara.<br/><span style="color:var(--signal-green)">Se calcula.</span></h2>
           <p class="lede">
             ACTIA no comunica sostenibilidad con hojas verdes. La mide por capas:
@@ -804,13 +734,13 @@
 
         <div class="dashboard">
           <div class="cell green">
-            <div class="head"><span>CO₂ almacenado</span><span class="live">LIVE</span></div>
+            <div class="head"><span>CO₂ almacenado</span></div>
             <div class="num" data-counter="3704">0<span class="unit">t</span></div>
             <div class="label">Madera estructural en operación</div>
             <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,22 10,20 20,18 30,15 40,14 50,11 60,9 70,7 80,5 90,3 100,2" stroke="#2E8A5C" fill="none" stroke-width="1.4"/></svg>
           </div>
           <div class="cell">
-            <div class="head"><span>Madera utilizada</span><span class="live">LIVE</span></div>
+            <div class="head"><span>Madera utilizada</span></div>
             <div class="num" data-counter="4635">0<span class="unit">m³</span></div>
             <div class="label">Bosques con gestión certificada PEFC/FSC</div>
             <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,20 12,19 24,17 36,16 48,13 60,11 72,9 84,7 96,5 100,4" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
@@ -822,7 +752,7 @@
             <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,14 10,15 20,13 30,14 40,12 50,13 60,11 70,12 80,10 90,11 100,9" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
           </div>
           <div class="cell">
-            <div class="head"><span>Residuos en obra</span><span class="live">LIVE</span></div>
+            <div class="head"><span>Residuos en obra</span></div>
             <div class="num" data-counter="78">0<span class="unit">%</span></div>
             <div class="label">Menos residuos generados in-situ</div>
             <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,8 10,9 20,10 30,11 40,13 50,14 60,16 70,17 80,19 90,20 100,22" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
@@ -846,7 +776,7 @@
             <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,22 12,20 24,18 36,16 48,15 60,12 72,10 84,8 96,6 100,5" stroke="#F0A000" fill="none" stroke-width="1.4"/></svg>
           </div>
           <div class="cell green">
-            <div class="head"><span>Trazabilidad</span><span class="live">100%</span></div>
+            <div class="head"><span>Trazabilidad</span></div>
             <div class="num" data-counter="100">0<span class="unit">%</span></div>
             <div class="label">Pieza, lote, bosque, transporte y posición</div>
             <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,4 100,4" stroke="#2E8A5C" fill="none" stroke-width="1.4"/></svg>
@@ -914,7 +844,7 @@
           </div>
 
           <div class="calc-result">
-            <div class="top"><span>Resultado preliminar</span><span class="live">LIVE</span></div>
+            <div class="top"><span>Resultado preliminar</span></div>
             <div class="row"><span class="k">Potencial industrialización</span><span class="v" id="r-pot">82<span class="unit">%</span></span></div>
             <div class="row"><span class="k">Ahorro de plazo estimado</span><span class="v" id="r-plazo">−9<span class="unit">meses</span></span></div>
             <div class="row"><span class="k">Madera necesaria</span><span class="v" id="r-madera">820<span class="unit">m³</span></span></div>
@@ -936,54 +866,45 @@
     <section class="for-whom" id="audience" data-screen-label="10 Para quién">
       <div class="shell">
         <div class="section-header">
-          <div class="meta">
-            <span class="id">10 · Audiencias</span>
-            <span class="station-tag">5 perfiles · 5 promesas</span>
-          </div>
           <h2 class="display h-section">Un sistema<br/>para quienes no pueden<br/>permitirse improvisar.</h2>
         </div>
 
         <div class="audience">
-          <a class="a" href="#promoters">
+          <div class="a">
             <div>
-              <div class="code">A · Promotores</div>
-              <h4>Menos<br/>incertidumbre.</h4>
+                            <h4>Menos<br/>incertidumbre.</h4>
               <p>Plazo controlado, coste cerrado y diferenciación comercial medible desde el día uno.</p>
             </div>
             <span class="read">Para promotores →</span>
-          </a>
-          <a class="a" href="#">
+          </div>
+          <div class="a">
             <div>
-              <div class="code">B · Administraciones</div>
-              <h4>Equipamientos<br/>que llegan antes.</h4>
+                            <h4>Equipamientos<br/>que llegan antes.</h4>
               <p>Menor impacto urbano, trazabilidad pública y entrega previsible para servicios esenciales.</p>
             </div>
             <span class="read">Para administraciones →</span>
-          </a>
-          <a class="a" href="#">
+          </div>
+          <div class="a">
             <div>
-              <div class="code">C · Sociosanitario</div>
-              <h4>Residencias<br/>que funcionan mejor.</h4>
+                            <h4>Residencias<br/>que funcionan mejor.</h4>
               <p>Operadores con plazos firmes, módulos sanitarios certificados y mantenimiento previsible.</p>
             </div>
             <span class="read">Para operadores →</span>
-          </a>
-          <a class="a" href="#technicians">
+          </div>
+          <div class="a">
             <div>
-              <div class="code">D · Técnicos</div>
-              <h4>Tu arquitectura,<br/>preparada para fábrica.</h4>
+                            <h4>Tu arquitectura,<br/>preparada para fábrica.</h4>
               <p>Sin perder autoría. Convertimos tu proyecto en un edificio fabricable y coordinado.</p>
             </div>
             <span class="read">Para técnicos →</span>
-          </a>
-          <a class="a" href="#">
+          </div>
+          <div class="a">
             <div>
-              <div class="code">E · Inversores</div>
-              <h4>ESG que<br/>se puede medir.</h4>
+                            <h4>ESG que<br/>se puede medir.</h4>
               <p>Activos con historia ambiental medible: CO₂ stock, ciclo de vida, trazabilidad y reporte.</p>
             </div>
             <span class="read">Para fondos →</span>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -993,16 +914,9 @@
          ============================================================ -->
     <section class="closing" id="open-project" data-screen-label="12 Cierre · Abrir proyecto">
       <div class="shell">
-        <div class="rail" aria-hidden="true">
-          <span class="dot"></span>
-          <span>STATION 12 · OPEN PROJECT</span>
-          <span class="track"></span>
-          <span>READY</span>
-        </div>
 
         <div class="closing-grid" style="margin-top: 56px;">
           <div class="pitch">
-            <div class="eyebrow">Cierre</div>
             <h2 class="display h-section">El próximo edificio<br/>no tiene por qué construirse<br/>como el anterior.</h2>
             <p class="lede" style="margin-top: 24px;">
               Trae una parcela, una idea, un anteproyecto o un proyecto ya redactado.
@@ -1018,17 +932,9 @@
               <div class="b"><span class="v">Calidad</span><span>Trazada por pieza</span></div>
               <div class="b"><span class="v">Carbono</span><span>Medido, no declarado</span></div>
             </div>
-            <div style="margin-top: 32px; display: flex; gap: 10px; flex-wrap: wrap;">
-              <a href="#open-project" class="btn primary">Abrir proyecto <span class="arrow"></span></a>
-              <a href="#" class="btn ghost">Hablar con oficina técnica <span class="arrow"></span></a>
-            </div>
           </div>
 
           <form class="smart-form" id="smart-form">
-            <div class="form-head">
-              <span>FORM-01 · ABRIR PROYECTO</span>
-              <span class="id">ACTIA-OS / INTAKE</span>
-            </div>
             <h3>Abrir<br/>proyecto.</h3>
 
             <fieldset>
@@ -1087,7 +993,7 @@
             </label>
 
             <p hidden id="form-ok" class="body-sm" style="color:var(--signal-green); margin-top:14px; font-family:var(--mono); letter-spacing:0.1em;">
-              ✓ ABRIENDO TU CLIENTE DE CORREO · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdd5d2d1dcfddcdec9d4dc93c9d8ded5">[email&#160;protected]</a>
+              ✓ ABRIENDO TU CLIENTE DE CORREO · hola@actia.tech
             </p>
           </form>
         </div>
@@ -1148,7 +1054,7 @@
           </div>
           <div class="legal-block">
             <span class="legal-title">DPO · Delegado de Protección de Datos</span>
-            <span class="legal-val"><a href="/cdn-cgi/l/email-protection#9ff7f0f3fedffefcebf6feb1ebfafcf7"><span class="__cf_email__" data-cfemail="7c1413101d3c1d1f08151d5208191f14">[email&#160;protected]</span></a> · Derechos ARSULIPO: acceso, rectificación, supresión, oposición, limitación, portabilidad.</span>
+            <span class="legal-val"><a href="mailto:hola@actia.tech">hola@actia.tech</a> · Derechos ARSULIPO: acceso, rectificación, supresión, oposición, limitación, portabilidad.</span>
           </div>
           <div class="legal-block">
             <span class="legal-title">Marco legal</span>
@@ -1174,10 +1080,11 @@
 
   </main>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="intro.js"></script>
+  <script src="intro.js"></script>
   <script src="interactions.js"></script>
   <script src="mobile-nav.js"></script>
   <script src="cookies.js"></script>
+  <script type="module" src="forjado-viewer.js"></script>
 
   <!-- Tweaks: defaults -->
   <script>
