@@ -2279,7 +2279,8 @@ body.hide-hud .building-vis .scale-bar { display: none !important; }
   position: sticky;
   top: 0;
   height: 100vh;
-  overflow: hidden;
+  /* overflow:clip no crea scroll container → sticky funciona en iOS Safari */
+  overflow: clip;
   background: var(--graphite);
 }
 .intro-frame {
@@ -2383,45 +2384,69 @@ body.hide-hud .building-vis .scale-bar { display: none !important; }
   gap: 24px;
 }
 @media (max-width: 720px) {
+  /* ── HUD ── */
   .intro-meta-top .intro-meta-mid { display: none; }
   .intro-meta-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
 
-  /* ── Mobile intro: shorter travel + VERTICAL curtain ──
-     In portrait, a left/right split crushes the video into two thin
-     strips and reads as broken. We split top/bottom instead: each pane
-     is full-width / half-height (a sane crop for a landscape clip), the
-     two halves slide apart vertically and the logo is revealed in the
-     horizontal gap between them. Stage is also much shorter so there is
-     no long dead scroll before the hero. */
-  .intro-stage { height: 175vh; }
+  /* ── Intro mobile: cortina VERTICAL ──────────────────────────────
+     En portrait un split izquierda/derecha aplasta los vídeos a tiras.
+     Usamos top/bottom: dos mitades a todo ancho que se deslizan arriba
+     y abajo, dejando al logo emerger en el hueco central.
+     - 200vh de altura → 100vh de travel → animación completa en 75vh scroll.
+     - dvh: compensa la barra de dirección móvil (iOS/Android).
+  ──────────────────────────────────────────────────────────────────── */
+  .intro-stage { height: 200vh; }
 
+  /* sticky: dvh para que no quede recortado por la barra de navegación */
+  .intro-sticky {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Ambos paneles: ancho completo, altura media */
   .intro-photo {
     width: 100%;
     height: 50%;
-    top: auto; bottom: auto;
+    left: 0;
+    right: 0;
   }
-  .intro-photo-l {        /* top half */
-    top: 0; left: 0;
-    transform: translateY(calc(var(--p) * -102%));
-  }
-  .intro-photo-r {        /* bottom half */
-    bottom: 0; left: 0; right: auto;
-    transform: translateY(calc(var(--p) * 102%));
-  }
-  .intro-photo .intro-video {
-    left: 0; right: auto;
-    width: 100%;
-    height: 200%;          /* video spans both halves; we slide to clip */
-    top: auto;
-  }
-  .intro-photo-l .intro-video { top: 0; bottom: auto; }
-  .intro-photo-r .intro-video { bottom: 0; top: auto; }
 
-  /* Logo: keep it centred in the opening gap with only a gentle rise. */
-  .intro-center {
-    transform: translate(-50%, calc(-50% + 9vh - var(--p) * 9vh));
+  /* Panel superior — sube */
+  .intro-photo-l {
+    top: 0;
+    bottom: auto;
+    transform: translateY(calc(var(--p) * -101%));
   }
-  .intro-logo { height: clamp(58px, 17vw, 96px); }
+
+  /* Panel inferior — baja;
+     reset explícito de right:0 que viene del desktop */
+  .intro-photo-r {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(calc(var(--p) * 101%));
+  }
+
+  /* Vídeos: llenan su panel completamente (sin truco de 200% de ancho) */
+  .intro-photo .intro-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* reset de right:0 del desktop en panel derecho */
+  .intro-photo-r .intro-video { right: 0; }
+
+  /* Logo: empieza 14vh bajo la juntura (tapado por el panel inferior)
+     y sube hasta el centro exacto al terminar la animación. */
+  .intro-center {
+    transform: translate(-50%, calc(-50% + 14vh - var(--p) * 14vh));
+  }
+  .intro-logo { height: clamp(52px, 14vw, 82px); }
 }
 
 .intro-progress {
