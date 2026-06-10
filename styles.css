@@ -2447,6 +2447,39 @@ body.hide-hud .building-vis .scale-bar { display: none !important; }
     transform: translate(-50%, calc(-50% + 14vh - var(--p) * 14vh));
   }
   .intro-logo { height: clamp(52px, 14vw, 82px); }
+
+  /* ── Mode cards: solo titular + tagline ─────────────────────
+     El grid pasa a 1fr (≤900px); reseteamos subgrid y ocultamos
+     desc + scope para que los 3 rectángulos sean compactos.    */
+  .modes .grid { grid-template-rows: none; row-gap: 1px; }
+  .mode-card {
+    display: flex; flex-direction: column; gap: 10px;
+    grid-row: auto;
+    padding: 20px;
+  }
+  .mode-card .desc,
+  .mode-card .scope { display: none; }
+  .mode-card h3 { font-size: clamp(40px, 11vw, 60px); margin: 0; line-height: 0.88; }
+  .mode-card .who { margin: 0; }
+
+  /* ── Sostenibilidad: título sin desborde ────────────────────
+     "La sostenibilidad" es ~18 chars; a 44px mínimo desborda
+     los ~350px disponibles en móvil. Reducimos y añadimos wrap. */
+  .impact .h-section {
+    font-size: clamp(32px, 8vw, 48px);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .dashboard { gap: 1px; margin-bottom: 24px; }
+  .dashboard .cell { padding: 14px 12px; }
+  .dashboard .cell .num { font-size: clamp(26px, 7vw, 40px); }
+
+  /* ── Calculadora: sin desborde ──────────────────────────────
+     padding 36px → 22px; botones de opción más pequeños.      */
+  .calc-shell { min-width: 0; overflow: hidden; }
+  .calc-form,
+  .calc-result { padding: 22px 16px; }
+  .calc-row .opt { padding: 6px 10px; font-size: 10px; letter-spacing: 0.08em; }
 }
 
 .intro-progress {
