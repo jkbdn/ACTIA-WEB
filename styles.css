@@ -2384,7 +2384,44 @@ body.hide-hud .building-vis .scale-bar { display: none !important; }
 }
 @media (max-width: 720px) {
   .intro-meta-top .intro-meta-mid { display: none; }
-  .intro-meta-bottom { flex-direction: column; align-items: flex-start; }
+  .intro-meta-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+  /* ── Mobile intro: shorter travel + VERTICAL curtain ──
+     In portrait, a left/right split crushes the video into two thin
+     strips and reads as broken. We split top/bottom instead: each pane
+     is full-width / half-height (a sane crop for a landscape clip), the
+     two halves slide apart vertically and the logo is revealed in the
+     horizontal gap between them. Stage is also much shorter so there is
+     no long dead scroll before the hero. */
+  .intro-stage { height: 175vh; }
+
+  .intro-photo {
+    width: 100%;
+    height: 50%;
+    top: auto; bottom: auto;
+  }
+  .intro-photo-l {        /* top half */
+    top: 0; left: 0;
+    transform: translateY(calc(var(--p) * -102%));
+  }
+  .intro-photo-r {        /* bottom half */
+    bottom: 0; left: 0; right: auto;
+    transform: translateY(calc(var(--p) * 102%));
+  }
+  .intro-photo .intro-video {
+    left: 0; right: auto;
+    width: 100%;
+    height: 200%;          /* video spans both halves; we slide to clip */
+    top: auto;
+  }
+  .intro-photo-l .intro-video { top: 0; bottom: auto; }
+  .intro-photo-r .intro-video { bottom: 0; top: auto; }
+
+  /* Logo: keep it centred in the opening gap with only a gentle rise. */
+  .intro-center {
+    transform: translate(-50%, calc(-50% + 9vh - var(--p) * 9vh));
+  }
+  .intro-logo { height: clamp(58px, 17vw, 96px); }
 }
 
 .intro-progress {
